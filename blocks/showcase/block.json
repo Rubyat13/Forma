@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/showcase",
+	"title": "Forma 3D Showcase",
+	"category": "forma",
+	"icon": "update",
+	"description": "Pinned section where products rotate into view one by one as visitors scroll.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "(02) — The collection in 3D"
+		},
+		"count": {
+			"type": "number",
+			"default": 4
+		},
+		"products": {
+			"type": "array",
+			"default": []
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Explore this piece"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

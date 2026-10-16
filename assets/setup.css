@@ -1,0 +1,35 @@
+.forma-setup { max-width: 1080px; margin: 24px auto 40px; padding-right: 20px; }
+.forma-setup .frm-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; padding: 36px; border-radius: 20px; background: #141210; color: #f1ebe1; overflow: hidden; }
+.forma-setup .frm-hero h1 { color: #f1ebe1; font-size: 40px; line-height: 1.05; margin: 8px 0 14px; font-weight: 500; letter-spacing: -0.02em; }
+.forma-setup .frm-hero p { font-size: 15px; color: rgba(241, 235, 225, 0.72); margin: 0; }
+.forma-setup .frm-hero img { width: 100%; border-radius: 12px; box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.7); }
+.forma-setup .frm-eyebrow { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px !important; color: #e08a5f !important; }
+.forma-setup .frm-card { margin-top: 20px; padding: 28px 32px; border-radius: 18px; background: #fff; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 10px 30px -18px rgba(0, 0, 0, 0.25); }
+.forma-setup .frm-card h2 { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; font-size: 20px; }
+.forma-setup .frm-num { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #b4532a; color: #fff; font-size: 14px; }
+.forma-setup .frm-plugins { margin: 0; }
+.forma-setup .frm-plugin { display: flex; align-items: center; gap: 16px; padding: 16px 0; margin: 0; border-top: 1px solid #eee; }
+.forma-setup .frm-plugin:first-child { border-top: 0; }
+.forma-setup .frm-dot { width: 12px; height: 12px; border-radius: 50%; background: #d63638; flex: 0 0 auto; }
+.forma-setup .is-installed .frm-dot { background: #dba617; }
+.forma-setup .is-active .frm-dot { background: #00a32a; }
+.forma-setup .frm-plugin__text { flex: 1; display: grid; gap: 2px; }
+.forma-setup .frm-plugin__text strong { font-size: 15px; }
+.forma-setup .frm-plugin__text span { color: #646970; }
+.forma-setup .frm-badge { padding: 4px 12px; border-radius: 99px; background: #edfaef; color: #00a32a; font-weight: 600; }
+.forma-setup .frm-import { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+.forma-setup .frm-list { margin: 0; }
+.forma-setup .frm-list li { position: relative; padding-left: 26px; margin-bottom: 10px; font-size: 14px; }
+.forma-setup .frm-list li::before { content: "✓"; position: absolute; left: 0; color: #b4532a; font-weight: 700; }
+.forma-setup .frm-action { display: grid; gap: 14px; justify-items: stretch; }
+.forma-setup .frm-action .button-hero { text-align: center; }
+.forma-setup .frm-progress { padding: 14px; border-radius: 12px; background: #f6f7f7; }
+.forma-setup .frm-bar { height: 10px; border-radius: 99px; background: #dcdcde; overflow: hidden; }
+.forma-setup .frm-bar i { display: block; height: 100%; width: 0; background: #b4532a; transition: width 0.4s ease; }
+.forma-setup .is-done .frm-bar i { background: #00a32a; }
+.forma-setup .frm-status { margin: 10px 0 0; font-weight: 500; }
+.forma-setup .is-error .frm-status { color: #d63638; }
+.forma-setup .frm-warn { margin: 0; color: #d63638; }
+.forma-setup .frm-foot { margin-top: 18px; color: #8c8f94; font-size: 12px; }
+@media (max-width: 900px) { .forma-setup .frm-hero, .forma-setup .frm-import { grid-template-columns: 1fr; } }
+.forma-setup [hidden] { display: none !important; }

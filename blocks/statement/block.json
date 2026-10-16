@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/statement",
+	"title": "Forma Statement",
+	"category": "forma",
+	"icon": "editor-quote",
+	"description": "A paragraph whose words light up as you scroll, plus three facts.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "(01) — Why 3D"
+		},
+		"text": {
+			"type": "string",
+			"default": "A photo shows you one side of a chair. We show you all of them. Every object in our collection is scanned and modelled at true scale, so the curve of an armrest, the grain of the oak and the depth of a seat look exactly the way they will in your living room."
+		},
+		"facts": {
+			"type": "array",
+			"default": [
+				{
+					"value": "360°",
+					"label": "Every angle, rendered live"
+				},
+				{
+					"value": "1:1",
+					"label": "True-to-scale dimensions"
+				},
+				{
+					"value": "AR",
+					"label": "Place it in your room"
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

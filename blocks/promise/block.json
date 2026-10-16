@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/promise",
+	"title": "Forma Promise",
+	"category": "forma",
+	"icon": "awards",
+	"description": "Four promises with icons and a customer quote.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "(06) — The Forma promise"
+		},
+		"title": {
+			"type": "string",
+			"default": "What you see<br>is <em>what arrives.</em>"
+		},
+		"items": {
+			"type": "array",
+			"default": [
+				{
+					"icon": "cube",
+					"title": "Real 3D, not renders",
+					"text": "Every product page is a live, physically-based model you control."
+				},
+				{
+					"icon": "truck",
+					"title": "White-glove delivery",
+					"text": "Free, scheduled to the hour, unpacked and placed in the room you choose."
+				},
+				{
+					"icon": "return",
+					"title": "30 nights to decide",
+					"text": "Live with it for a month. If it is not right, we collect it for free."
+				},
+				{
+					"icon": "shield",
+					"title": "10-year frame warranty",
+					"text": "Solid joinery, kiln-dried hardwoods and parts we still stock."
+				}
+			]
+		},
+		"quote": {
+			"type": "string",
+			"default": "“I spun the sofa around on my phone at midnight, dropped it into my living room in AR, and ordered it before breakfast. It looks exactly the same in real life.”"
+		},
+		"cite": {
+			"type": "string",
+			"default": "Maya R. — Copenhagen"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

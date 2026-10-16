@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/arrivals",
+	"title": "Forma Product Grid",
+	"category": "forma",
+	"icon": "grid-view",
+	"description": "A grid of product cards: newest, featured or on sale.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "(05) — Just landed"
+		},
+		"title": {
+			"type": "string",
+			"default": "New <em>arrivals</em>"
+		},
+		"linkText": {
+			"type": "string",
+			"default": "Shop everything"
+		},
+		"count": {
+			"type": "number",
+			"default": 8
+		},
+		"source": {
+			"type": "string",
+			"default": "latest"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

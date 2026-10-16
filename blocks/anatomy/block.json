@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/anatomy",
+	"title": "Forma Anatomy",
+	"category": "forma",
+	"icon": "search",
+	"description": "A product turns while three labels point out its details.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "(04) — Anatomy of a chair"
+		},
+		"title": {
+			"type": "string",
+			"default": "Made to be seen<br><em>from every side.</em>"
+		},
+		"product": {
+			"type": "string",
+			"default": "sora-velvet-chair"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Open in 3D viewer"
+		},
+		"callouts": {
+			"type": "array",
+			"default": [
+				{
+					"title": "Performance velvet",
+					"text": "Dense, stain-resistant pile with a soft sheen that shifts as you move around it."
+				},
+				{
+					"title": "Channel-tufted back",
+					"text": "Hand-stitched channels hold their shape for decades, not seasons."
+				},
+				{
+					"title": "Solid hardwood legs",
+					"text": "Kiln-dried, tapered and finished with a hard-wax oil."
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

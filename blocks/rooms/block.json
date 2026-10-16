@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/rooms",
+	"title": "Forma Shop by Room",
+	"category": "forma",
+	"icon": "columns",
+	"description": "Product categories that scroll sideways.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "(03) — Shop by room"
+		},
+		"title": {
+			"type": "string",
+			"default": "Pieces that<br><em>belong together.</em>"
+		},
+		"linkText": {
+			"type": "string",
+			"default": "View all furniture"
+		},
+		"endText": {
+			"type": "string",
+			"default": "New pieces arrive every season."
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

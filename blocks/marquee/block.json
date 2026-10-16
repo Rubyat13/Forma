@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/marquee",
+	"title": "Forma Marquee",
+	"category": "forma",
+	"icon": "editor-alignleft",
+	"description": "Large scrolling words that speed up with the page.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [
+				"Rotate",
+				"Zoom in",
+				"Place in your room",
+				"Free delivery",
+				"10-year warranty"
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}

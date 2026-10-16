@@ -1,0 +1,538 @@
+{
+    "categories": [
+        {
+            "slug": "sofas",
+            "name": "Sofas",
+            "description": "Deep seats, generous proportions and fabrics that age beautifully.",
+            "bg": "#e0dbd3",
+            "order": 0,
+            "image": "GlamVelvetSofa-0.webp"
+        },
+        {
+            "slug": "seating",
+            "name": "Seating",
+            "description": "Lounge chairs, dining chairs and ottomans — each one modelled to the millimetre.",
+            "bg": "#e6dacb",
+            "order": 1,
+            "image": "mid_century_lounge_chair-0.webp"
+        },
+        {
+            "slug": "tables",
+            "name": "Tables",
+            "description": "Coffee, side and pedestal tables in marble, oak and concrete.",
+            "bg": "#dfe0dc",
+            "order": 2,
+            "image": "coffee_table_round_01-0.webp"
+        },
+        {
+            "slug": "storage",
+            "name": "Storage",
+            "description": "Sideboards, chests and shelving built from solid timber.",
+            "bg": "#e7dccb",
+            "order": 3,
+            "image": "modern_wooden_cabinet-0.webp"
+        }
+    ],
+    "products": [
+        {
+            "slug": "orbit-lounge-chair",
+            "name": "Orbit Lounge Chair",
+            "model": "mid_century_lounge_chair",
+            "category": "seating",
+            "regular_price": "1290",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 10,
+            "short_description": "A swivelling mid-century lounger with a moulded walnut shell and deeply quilted, aged leather. Built for long afternoons.",
+            "description": "<p>The Orbit takes its cues from the great 1960s lounge chairs: a single moulded shell, a cushion that feels poured into place and a four-star base that turns a full 360°.</p><p>The quilted leather is vegetable-tanned and lightly waxed, so it darkens and softens with every year of use. A concealed tilt mechanism lets the seat lean back a few degrees when you do.</p>",
+            "width": "101",
+            "depth": "119",
+            "height": "117",
+            "weight": "24",
+            "bg": "#e6d9ca",
+            "materials": "Aged top-grain leather, moulded walnut veneer shell, polished aluminium swivel base",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Cognac",
+                    "color": "#8a5a3c",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Smoke",
+                    "color": "#6b625b",
+                    "tint": [
+                        0.73999999999999999,
+                        0.71999999999999997,
+                        0.69999999999999996
+                    ]
+                },
+                {
+                    "name": "Espresso",
+                    "color": "#3c2e26",
+                    "tint": [
+                        0.46000000000000002,
+                        0.40000000000000002,
+                        0.37
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "luna-curved-sofa",
+            "name": "Luna Curved Sofa",
+            "model": "GlamVelvetSofa",
+            "category": "sofas",
+            "regular_price": "2890",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 1,
+            "short_description": "A sweeping, kidney-shaped sofa in plush velvet that turns any corner into a conversation pit.",
+            "description": "<p>Luna's open curve invites people in from every side. The seat is cut deep enough to tuck your feet under, while the low back keeps sightlines open in the middle of a room.</p><p>Choose from five performance velvets — each one stain-resistant, pet-friendly and swappable in the viewer above.</p>",
+            "width": "219",
+            "depth": "102",
+            "height": "79",
+            "weight": "62",
+            "bg": "#e1ddd6",
+            "materials": "Performance cotton velvet, high-resilience foam, solid beech frame, brass-capped steel legs",
+            "designer": "Ines Marlow for Forma",
+            "finishes": [
+                {
+                    "name": "Navy",
+                    "color": "#24335c",
+                    "variant": "Navy"
+                },
+                {
+                    "name": "Champagne",
+                    "color": "#cfb894",
+                    "variant": "Champagne"
+                },
+                {
+                    "name": "Gray",
+                    "color": "#8e8e8b",
+                    "variant": "Gray"
+                },
+                {
+                    "name": "Black",
+                    "color": "#2a2a2a",
+                    "variant": "Black"
+                },
+                {
+                    "name": "Pale Pink",
+                    "color": "#e4bcb6",
+                    "variant": "Pale Pink"
+                }
+            ]
+        },
+        {
+            "slug": "fjord-lounge-armchair",
+            "name": "Fjord Lounge Armchair",
+            "model": "modern_arm_chair_01",
+            "category": "seating",
+            "regular_price": "890",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 2,
+            "short_description": "Scandinavian lines, a solid-oak frame and plump leather cushions that sit back at just the right angle.",
+            "description": "<p>Fjord is a study in restraint: a frame of solid, oiled oak with softly radiused arms, and two loose leather cushions strapped to it.</p><p>Pick the frame finish in the viewer — the leather stays the same rich black.</p>",
+            "width": "82",
+            "depth": "99",
+            "height": "102",
+            "weight": "14",
+            "bg": "#e6dccd",
+            "materials": "Solid oak frame, saddle-leather seat and back cushions",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Natural Oak",
+                    "color": "#c99c66",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "material": "modern_arm_chair_01_legs"
+                },
+                {
+                    "name": "Smoked Oak",
+                    "color": "#7a5c45",
+                    "tint": [
+                        0.59999999999999998,
+                        0.52000000000000002,
+                        0.45000000000000001
+                    ],
+                    "material": "modern_arm_chair_01_legs"
+                },
+                {
+                    "name": "Black Oak",
+                    "color": "#2d2926",
+                    "tint": [
+                        0.26000000000000001,
+                        0.23999999999999999,
+                        0.23000000000000001
+                    ],
+                    "material": "modern_arm_chair_01_legs"
+                }
+            ]
+        },
+        {
+            "slug": "halo-marble-coffee-table",
+            "name": "Halo Marble Coffee Table",
+            "model": "coffee_table_round_01",
+            "category": "tables",
+            "regular_price": "980",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 3,
+            "short_description": "A floating disc of honed Carrara marble on a single ribbon of bent steel.",
+            "description": "<p>Halo's base is formed from one continuous strip of steel, bent into interlocking loops so the marble seems to hover above the floor.</p><p>Every top is cut from a different slab — the veining on yours will be one of a kind.</p>",
+            "width": "130",
+            "depth": "130",
+            "height": "49",
+            "weight": "38",
+            "bg": "#dcdfdc",
+            "materials": "Honed Carrara marble top, bent blackened-steel base",
+            "designer": "Ines Marlow for Forma",
+            "finishes": []
+        },
+        {
+            "slug": "reed-sideboard",
+            "name": "Reed Sideboard",
+            "model": "modern_wooden_cabinet",
+            "category": "storage",
+            "regular_price": "1640",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 4,
+            "short_description": "A long, low media sideboard with hand-reeded doors that catch the light.",
+            "description": "<p>At almost two and a half metres, Reed is made for long walls and big record collections. Four push-to-open doors hide adjustable shelves and cable ports.</p><p>The reeded fronts are milled from solid walnut and finished with a matt hard-wax oil.</p>",
+            "width": "244",
+            "depth": "52",
+            "height": "68",
+            "weight": "71",
+            "bg": "#e3d6c6",
+            "materials": "Walnut veneer, solid walnut reeded doors, powder-coated steel hairpin legs",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Walnut",
+                    "color": "#5c3d29",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Ebonised",
+                    "color": "#2b2622",
+                    "tint": [
+                        0.41999999999999998,
+                        0.40000000000000002,
+                        0.39000000000000001
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "sora-velvet-chair",
+            "name": "Sora Velvet Chair",
+            "model": "SheenChair",
+            "category": "seating",
+            "regular_price": "640",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 15,
+            "short_description": "A low, wide-seated accent chair with a channel-tufted back and a velvet that glows as you walk past.",
+            "description": "<p>Sora sits a little lower and a little wider than a dining chair, which makes it the perfect reading perch or bedroom chair.</p><p>The velvet's sheen is rendered physically in the viewer — rotate it toward the light to see it shift.</p>",
+            "width": "83",
+            "depth": "57",
+            "height": "69",
+            "weight": "11",
+            "bg": "#eadfd2",
+            "materials": "Mystere performance velvet, kiln-dried hardwood legs",
+            "designer": "Ines Marlow for Forma",
+            "finishes": [
+                {
+                    "name": "Mango Velvet",
+                    "color": "#e2702f",
+                    "variant": "Mango Velvet"
+                },
+                {
+                    "name": "Peacock Velvet",
+                    "color": "#1e5c61",
+                    "variant": "Peacock Velvet"
+                }
+            ]
+        },
+        {
+            "slug": "aldridge-heritage-sofa",
+            "name": "Aldridge Heritage Sofa",
+            "model": "SheenWoodLeatherSofa",
+            "category": "sofas",
+            "regular_price": "3450",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 16,
+            "short_description": "A grand three-seater with rolled arms, a carved frame and a pile of mix-and-match jacquard cushions.",
+            "description": "<p>Aldridge is our nod to the English country house: rolled arms, a hand-carved show-wood frame and loose cushions in paisley and stripe.</p><p>Eight-way hand-tied springs mean it will still feel this good in thirty years.</p>",
+            "width": "273",
+            "depth": "92",
+            "height": "112",
+            "weight": "88",
+            "bg": "#e6dbcd",
+            "materials": "Hand-carved hardwood frame, aniline leather, jacquard cushions",
+            "designer": "Forma Heritage",
+            "finishes": []
+        },
+        {
+            "slug": "noir-tufted-loveseat",
+            "name": "Noir Tufted Loveseat",
+            "model": "sofa_02",
+            "category": "sofas",
+            "regular_price": "1980",
+            "sale_price": "1690",
+            "featured": false,
+            "menu_order": 17,
+            "short_description": "A compact Chesterfield-style loveseat with deep buttoning and a gently scalloped base.",
+            "description": "<p>Noir packs Chesterfield attitude into a two-seater that fits a study, a bay window or the end of a bed.</p><p>Each button is hand-tied, and the leather is finished to resist scuffs and spills.</p>",
+            "width": "181",
+            "depth": "82",
+            "height": "71",
+            "weight": "46",
+            "bg": "#dfdbd5",
+            "materials": "Deep-buttoned black leather, mahogany-stained hardwood base",
+            "designer": "Forma Heritage",
+            "finishes": []
+        },
+        {
+            "slug": "wren-dining-chair",
+            "name": "Wren Dining Chair",
+            "model": "dining_chair_02",
+            "category": "seating",
+            "regular_price": "340",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 18,
+            "short_description": "A tall, diamond-tufted dining chair that makes every dinner feel like an occasion.",
+            "description": "<p>Wren's high back and diamond tufting bring a little ceremony to the table. It wipes clean in seconds and stacks neatly against the wall.</p>",
+            "width": "43",
+            "depth": "58",
+            "height": "97",
+            "weight": "7",
+            "bg": "#e5ddd2",
+            "materials": "Diamond-tufted faux leather, solid birch legs",
+            "designer": "Studio Forma",
+            "finishes": []
+        },
+        {
+            "slug": "bram-leather-ottoman",
+            "name": "Bram Leather Ottoman",
+            "model": "Ottoman_01",
+            "category": "seating",
+            "regular_price": "460",
+            "sale_price": "399",
+            "featured": false,
+            "menu_order": 19,
+            "short_description": "A pillowy leather ottoman — footrest, extra seat or coffee table with a tray on top.",
+            "description": "<p>Bram's distressed leather looks like it has already lived a good life, and only gets better from here.</p>",
+            "width": "89",
+            "depth": "62",
+            "height": "62",
+            "weight": "13",
+            "bg": "#e2d9cf",
+            "materials": "Distressed full-grain leather, hardwood feet",
+            "designer": "Forma Heritage",
+            "finishes": []
+        },
+        {
+            "slug": "versailles-bergere-chair",
+            "name": "Versailles Bergère Chair",
+            "model": "ArmChair_01",
+            "category": "seating",
+            "regular_price": "1150",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 20,
+            "short_description": "A classic French bergère with a hand-carved, ebonised frame and a soft linen seat.",
+            "description": "<p>Carved by hand in a family workshop, Versailles balances ornament and comfort: a deep seat, closed arms and a barrel back that wraps around you.</p>",
+            "width": "85",
+            "depth": "77",
+            "height": "107",
+            "weight": "19",
+            "bg": "#e3e1dc",
+            "materials": "Hand-carved beech frame in ebonised finish, linen-blend upholstery",
+            "designer": "Forma Heritage",
+            "finishes": []
+        },
+        {
+            "slug": "kite-coffee-table",
+            "name": "Kite Coffee Table",
+            "model": "modern_coffee_table_01",
+            "category": "tables",
+            "regular_price": "720",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 21,
+            "short_description": "A low concrete-and-oak table with a geometric inlay that wraps over the edges.",
+            "description": "<p>Kite pairs a cool, polished concrete top with warm oak chevrons that fold down into the legs. Sealed against rings and spills.</p>",
+            "width": "120",
+            "depth": "60",
+            "height": "39",
+            "weight": "29",
+            "bg": "#e5ddcf",
+            "materials": "Polished concrete top, solid oak inlay and frame",
+            "designer": "Studio Forma",
+            "finishes": []
+        },
+        {
+            "slug": "cube-oak-side-table",
+            "name": "Cube Oak Side Table",
+            "model": "side_table_01",
+            "category": "tables",
+            "regular_price": "260",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 22,
+            "short_description": "A two-tier side table in solid oak, with room for a lamp up top and books below.",
+            "description": "<p>Simple, sturdy and endlessly useful. Cube is joined with traditional mortise-and-tenon joints — no visible screws.</p>",
+            "width": "55",
+            "depth": "45",
+            "height": "55",
+            "weight": "8",
+            "bg": "#ebe1d2",
+            "materials": "Solid oak, water-based lacquer",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Natural Oak",
+                    "color": "#c99c66",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Honey Oak",
+                    "color": "#b97a3c",
+                    "tint": [
+                        1,
+                        0.80000000000000004,
+                        0.57999999999999996
+                    ]
+                },
+                {
+                    "name": "Walnut Stain",
+                    "color": "#5e4030",
+                    "tint": [
+                        0.5,
+                        0.35999999999999999,
+                        0.27000000000000002
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "stem-pedestal-table",
+            "name": "Stem Pedestal Table",
+            "model": "side_table_tall_01",
+            "category": "tables",
+            "regular_price": "310",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 23,
+            "short_description": "A slender pedestal table with flared legs and a lower shelf — perfect beside a reading chair.",
+            "description": "<p>Stem's splayed legs give it a surprisingly steady stance for such a small footprint.</p>",
+            "width": "38",
+            "depth": "38",
+            "height": "76",
+            "weight": "6",
+            "bg": "#e4dbd2",
+            "materials": "Solid mahogany, hand-rubbed finish",
+            "designer": "Forma Heritage",
+            "finishes": []
+        },
+        {
+            "slug": "archive-chest-of-drawers",
+            "name": "Archive Chest of Drawers",
+            "model": "vintage_wooden_drawer_01",
+            "category": "storage",
+            "regular_price": "1190",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 24,
+            "short_description": "A six-drawer chest inspired by old library card catalogues, complete with brass label pulls.",
+            "description": "<p>Archive is built from reclaimed pine, so every knot and nail hole has a story. The drawers run on solid wood runners, waxed for a smooth glide.</p>",
+            "width": "172",
+            "depth": "101",
+            "height": "109",
+            "weight": "64",
+            "bg": "#e7dccb",
+            "materials": "Reclaimed pine, brass label-holder pulls",
+            "designer": "Forma Heritage",
+            "finishes": []
+        },
+        {
+            "slug": "grid-shelving-unit",
+            "name": "Grid Shelving Unit",
+            "model": "wooden_display_shelves_01",
+            "category": "storage",
+            "regular_price": "540",
+            "sale_price": "480",
+            "featured": false,
+            "menu_order": 25,
+            "short_description": "A nine-cube shelving unit in solid pine — room divider, bookcase and display in one.",
+            "description": "<p>Use Grid against a wall or float it in the middle of a room: it is finished on both sides. Linen boxes slide into the bottom row.</p>",
+            "width": "108",
+            "depth": "37",
+            "height": "156",
+            "weight": "34",
+            "bg": "#ebe3d6",
+            "materials": "Solid pine, linen storage boxes",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Natural Oak",
+                    "color": "#c99c66",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Honey Oak",
+                    "color": "#b97a3c",
+                    "tint": [
+                        1,
+                        0.80000000000000004,
+                        0.57999999999999996
+                    ]
+                },
+                {
+                    "name": "Walnut Stain",
+                    "color": "#5e4030",
+                    "tint": [
+                        0.5,
+                        0.35999999999999999,
+                        0.27000000000000002
+                    ]
+                }
+            ]
+        }
+    ],
+    "home": "<!-- wp:forma/hero {\"line2\":\"\\u003cem\\u003eyou\\u003c/em\\u003e turn\",\"product\":\"sora-velvet-chair\"} /-->\n\n<!-- wp:forma/statement /-->\n\n<!-- wp:forma/showcase /-->\n\n<!-- wp:forma/rooms /-->\n\n<!-- wp:forma/anatomy {\"title\":\"Made to be seen\\u003cbr\\u003e\\u003cem\\u003efrom every side \\u003c/em\\u003e\\u003cbr\\u003e\\u003cem\\u003eby side.\\u003c/em\\u003e\"} /-->\n\n<!-- wp:forma/marquee /-->\n\n<!-- wp:forma/arrivals /-->\n\n<!-- wp:forma/promise /-->",
+    "site": {
+        "tagline": "Furniture you can turn around"
+    },
+    "options": {
+        "woocommerce_price_num_decimals": "0",
+        "woocommerce_enable_reviews": "no",
+        "woocommerce_thumbnail_cropping": "uncropped"
+    }
+}

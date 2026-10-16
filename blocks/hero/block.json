@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/hero",
+	"title": "Forma Hero",
+	"category": "forma",
+	"icon": "cover-image",
+	"description": "Big headline with the turning 3D product and a shop button.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"3d",
+		"home"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "Autumn collection — 2026"
+		},
+		"note": {
+			"type": "string",
+			"default": "Every piece is a true-to-scale<br>3D model. Spin it, zoom in,<br>place it in your room."
+		},
+		"line1": {
+			"type": "string",
+			"default": "Furniture"
+		},
+		"line2": {
+			"type": "string",
+			"default": "<em>you can</em> turn"
+		},
+		"line3": {
+			"type": "string",
+			"default": "around."
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Shop the collection"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"product": {
+			"type": "string",
+			"default": "orbit-lounge-chair"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": false,
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor"
+}
