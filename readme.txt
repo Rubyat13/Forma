@@ -3,7 +3,7 @@ Contributors: rubyat13
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, one-column, grid-layout, custom-logo, custom-menu, editor-style, featured-images, block-patterns, wide-blocks, threaded-comments, translation-ready
@@ -45,6 +45,9 @@ Featured products with a 3D model. Mark a product as featured with the star in P
 Yes. Colours, fonts and buttons come from theme.json, and the "Forma 3D" pattern category has ready-made sections.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix: product pages, the shop and the homepage no longer stop with an error when the free 3D Viewer plugin is active.
 
 = 1.0.0 =
 * Initial release.

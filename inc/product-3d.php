@@ -33,8 +33,12 @@ function forma_3d_bp3d_model_url( $product_id ) {
 		return '';
 	}
 	$meta = get_post_meta( $product_id, '_bp3d_product_', true );
-	$meta = \BP3D\Woocommerce\Product::withLegacyFreeModel( is_array( $meta ) ? $meta : array() );
-	$src  = $meta['bp3d_models'][0]['model_src'] ?? '';
+	$meta = is_array( $meta ) ? $meta : array();
+	// 3D Viewer Pro converts the older single-model format itself; the free plugin reads both formats.
+	if ( method_exists( '\BP3D\Woocommerce\Product', 'withLegacyFreeModel' ) ) {
+		$meta = \BP3D\Woocommerce\Product::withLegacyFreeModel( $meta );
+	}
+	$src = $meta['bp3d_models'][0]['model_src'] ?? ( $meta['bp3d_model_src'] ?? '' );
 	if ( is_array( $src ) ) {
 		$src = $src['url'] ?? '';
 	}
