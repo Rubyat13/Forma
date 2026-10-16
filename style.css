@@ -1,0 +1,19 @@
+/*
+Theme Name: Forma 3D
+Theme URI: https://github.com/Rubyat13/Forma
+Author: Al Rubyat
+Author URI: https://profiles.wordpress.org/rubyat13/
+Description: Forma 3D is a WooCommerce theme for stores that show products as interactive 3D models. A scroll-animated homepage turns your featured products in real 3D, the shop has a 3D quick view, and product pages work with the free 3D Viewer plugin for rotate, zoom, dimensions and AR. Built for the block editor with theme.json colours, fonts and block patterns.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: forma-3d
+Tags: e-commerce, one-column, grid-layout, custom-logo, custom-menu, editor-style, featured-images, block-patterns, wide-blocks, threaded-comments, translation-ready
+WC requires at least: 9.0
+WC tested up to: 11.2
+*/
+
+/* Theme styles are in assets/css/main.css. */

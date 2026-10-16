@@ -1,0 +1,888 @@
+# Copyright (C) 2026 Al Rubyat
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Forma 3D 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/forma-3d\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-16T16:54:33+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: forma-3d\n"
+
+#. Theme Name of the theme
+#: style.css
+#: inc/patterns.php:16
+msgid "Forma 3D"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/Rubyat13/Forma"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Forma 3D is a WooCommerce theme for stores that show products as interactive 3D models. A scroll-animated homepage turns your featured products in real 3D, the shop has a 3D quick view, and product pages work with the free 3D Viewer plugin for rotate, zoom, dimensions and AR. Built for the block editor with theme.json colours, fonts and block patterns."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Al Rubyat"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://profiles.wordpress.org/rubyat13/"
+msgstr ""
+
+#: 404.php:15
+msgid "This room is <em>empty.</em>"
+msgstr ""
+
+#: 404.php:16
+msgid "The page you were looking for has moved or never existed."
+msgstr ""
+
+#: 404.php:17
+msgid "Browse furniture"
+msgstr ""
+
+#. translators: %s: number of comments.
+#: comments.php:21
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:14
+#: inc/customizer.php:29
+msgid "Showroom in your pocket"
+msgstr ""
+
+#: footer.php:15
+#: inc/customizer.php:30
+msgid "Turn it over.<br><em>Then take it home.</em>"
+msgstr ""
+
+#: footer.php:16
+#: inc/customizer.php:31
+msgid "Explore the collection"
+msgstr ""
+
+#: footer.php:53
+#: footer.php:54
+msgid "Shop"
+msgstr ""
+
+#: footer.php:56
+msgid "All products"
+msgstr ""
+
+#. translators: 1: theme name, 2: theme author link.
+#: footer.php:76
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
+#: footer.php:88
+msgid "Cart"
+msgstr ""
+
+#: footer.php:90
+msgid "Your cart"
+msgstr ""
+
+#: footer.php:91
+msgid "Close cart"
+msgstr ""
+
+#: footer.php:100
+msgid "Close"
+msgstr ""
+
+#: footer.php:103
+msgid "Drag to rotate · Pinch or scroll to zoom"
+msgstr ""
+
+#: footer.php:111
+#: woocommerce/single-product.php:149
+msgid "Finish"
+msgstr ""
+
+#: footer.php:116
+#: woocommerce/single-product.php:168
+#: woocommerce/single-product.php:319
+msgid "Add to cart"
+msgstr ""
+
+#: footer.php:117
+msgid "Full details"
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:27
+#: inc/setup.php:58
+msgid "Primary"
+msgstr ""
+
+#: header.php:40
+#: header.php:66
+#: inc/sections.php:438
+msgid "Shop all"
+msgstr ""
+
+#: header.php:51
+#: header.php:71
+msgid "Account"
+msgstr ""
+
+#: header.php:52
+msgid "Open cart"
+msgstr ""
+
+#: header.php:57
+msgid "Menu"
+msgstr ""
+
+#: inc/assets.php:35
+msgid "Could not add to cart. Please try again."
+msgstr ""
+
+#: inc/assets.php:36
+msgid "Open this page on a phone or tablet to place it in your room."
+msgstr ""
+
+#. translators: %s: product name.
+#: inc/assets.php:38
+#, php-format
+msgid "3D model of %s"
+msgstr ""
+
+#. translators: %s: product dimensions, e.g. "82 × 99 × 102 cm".
+#: inc/assets.php:40
+#, php-format
+msgid "W × D × H — %s"
+msgstr ""
+
+#: inc/blocks.php:75
+msgid "Loading"
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Forma 3D options"
+msgstr ""
+
+#: inc/customizer.php:28
+msgid "Show the footer call to action"
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "Footer call to action: small heading"
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "Footer call to action: headline (<em> and <br> allowed)"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Footer call to action: button text (links to the shop)"
+msgstr ""
+
+#: inc/customizer.php:32
+msgid "Footer text (defaults to the site tagline)"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "Product page highlights, one per line (e.g. delivery time, returns, warranty)"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "Product page \"Delivery & returns\" text (hidden when empty)"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid "Product page care instructions (hidden when empty)"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "Note under the cart total (hidden when empty)"
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "Show the \"Try it in your room\" section on shop pages"
+msgstr ""
+
+#: inc/patterns.php:21
+msgid "Dark call to action"
+msgstr ""
+
+#: inc/patterns.php:25
+msgid "Visit the collection"
+msgstr ""
+
+#: inc/patterns.php:29
+msgid "See every piece <em>in 3D.</em>"
+msgstr ""
+
+#: inc/patterns.php:33
+msgid "Turn products around, zoom into the details and check the real size before you buy."
+msgstr ""
+
+#: inc/patterns.php:38
+msgid "Shop now"
+msgstr ""
+
+#: inc/patterns.php:48
+#: inc/sections.php:167
+#: inc/sections.php:181
+#: woocommerce/single-product.php:242
+msgid "Every angle"
+msgstr ""
+
+#: inc/patterns.php:48
+msgid "Spin each product a full 360° and look at it from any side."
+msgstr ""
+
+#: inc/patterns.php:49
+#: inc/sections.php:181
+#: inc/sections.php:201
+msgid "True to scale"
+msgstr ""
+
+#: inc/patterns.php:49
+msgid "Real dimensions are shown on the model, so you know it fits."
+msgstr ""
+
+#: inc/patterns.php:50
+msgid "In your room"
+msgstr ""
+
+#: inc/patterns.php:50
+msgid "On supported phones, place the product in your own space."
+msgstr ""
+
+#: inc/patterns.php:66
+msgid "Three features"
+msgstr ""
+
+#: inc/patterns.php:77
+msgid "Large quote"
+msgstr ""
+
+#: inc/patterns.php:81
+msgid "Add a short quote from a customer or your studio here."
+msgstr ""
+
+#: inc/patterns.php:82
+msgid "Name, City"
+msgstr ""
+
+#: inc/patterns.php:90
+msgid "How do I view a product in 3D?"
+msgstr ""
+
+#: inc/patterns.php:91
+msgid "Can I see the product in my room?"
+msgstr ""
+
+#: inc/patterns.php:92
+msgid "Are the dimensions accurate?"
+msgstr ""
+
+#: inc/patterns.php:98
+msgid "Write the answer…"
+msgstr ""
+
+#: inc/patterns.php:106
+msgid "Questions and answers"
+msgstr ""
+
+#: inc/patterns.php:109
+msgid "Questions"
+msgstr ""
+
+#: inc/sections.php:121
+msgid "New collection"
+msgstr ""
+
+#: inc/sections.php:122
+msgid "Every product is a true-to-scale<br>3D model. Spin it, zoom in<br>and see every detail."
+msgstr ""
+
+#: inc/sections.php:123
+msgid "Furniture"
+msgstr ""
+
+#: inc/sections.php:124
+msgid "<em>you can</em> turn"
+msgstr ""
+
+#: inc/sections.php:125
+msgid "around."
+msgstr ""
+
+#: inc/sections.php:126
+msgid "Shop the collection"
+msgstr ""
+
+#: inc/sections.php:131
+msgid "(01) — Why 3D"
+msgstr ""
+
+#: inc/sections.php:132
+msgid "A photo shows one side of a product. A 3D model shows all of them. Shoppers can turn every piece around, zoom into the details and check the real size before they buy."
+msgstr ""
+
+#: inc/sections.php:136
+msgid "Every angle, rendered live"
+msgstr ""
+
+#: inc/sections.php:140
+msgid "True-to-scale dimensions"
+msgstr ""
+
+#: inc/sections.php:144
+msgid "View it in your room"
+msgstr ""
+
+#: inc/sections.php:149
+msgid "(02) — The collection in 3D"
+msgstr ""
+
+#: inc/sections.php:152
+msgid "Explore this piece"
+msgstr ""
+
+#: inc/sections.php:155
+msgid "(03) — Shop by category"
+msgstr ""
+
+#: inc/sections.php:156
+msgid "Pieces that<br><em>belong together.</em>"
+msgstr ""
+
+#: inc/sections.php:157
+msgid "View all products"
+msgstr ""
+
+#: inc/sections.php:158
+msgid "Browse the full collection."
+msgstr ""
+
+#: inc/sections.php:161
+msgid "(04) — Up close"
+msgstr ""
+
+#: inc/sections.php:162
+msgid "Made to be seen<br><em>from every side.</em>"
+msgstr ""
+
+#: inc/sections.php:164
+msgid "Open in 3D viewer"
+msgstr ""
+
+#: inc/sections.php:168
+msgid "Drag to turn the product and see it from any side."
+msgstr ""
+
+#: inc/sections.php:171
+msgid "Every detail"
+msgstr ""
+
+#: inc/sections.php:172
+msgid "Zoom in on materials, stitching and finishes."
+msgstr ""
+
+#: inc/sections.php:175
+msgid "Real size"
+msgstr ""
+
+#: inc/sections.php:176
+msgid "Dimensions are shown right on the model."
+msgstr ""
+
+#: inc/sections.php:181
+msgid "Rotate"
+msgstr ""
+
+#: inc/sections.php:181
+msgid "Zoom in"
+msgstr ""
+
+#: inc/sections.php:181
+msgid "Place in your room"
+msgstr ""
+
+#: inc/sections.php:184
+msgid "(05) — Just landed"
+msgstr ""
+
+#: inc/sections.php:185
+msgid "New <em>arrivals</em>"
+msgstr ""
+
+#: inc/sections.php:186
+msgid "Shop everything"
+msgstr ""
+
+#: inc/sections.php:191
+msgid "(06) — Shop with confidence"
+msgstr ""
+
+#: inc/sections.php:192
+msgid "What you see<br>is <em>what arrives.</em>"
+msgstr ""
+
+#: inc/sections.php:196
+msgid "Live 3D views"
+msgstr ""
+
+#: inc/sections.php:197
+msgid "Every product page shows a model you can turn and zoom."
+msgstr ""
+
+#: inc/sections.php:202
+msgid "Real dimensions on the model, so you know it fits."
+msgstr ""
+
+#: inc/sections.php:206
+#: woocommerce/single-product.php:119
+msgid "View in your room"
+msgstr ""
+
+#: inc/sections.php:207
+msgid "Place products in your space on supported phones."
+msgstr ""
+
+#: inc/sections.php:211
+msgid "Easy checkout"
+msgstr ""
+
+#: inc/sections.php:212
+msgid "A fast, familiar checkout powered by WooCommerce."
+msgstr ""
+
+#: inc/sections.php:259
+msgid "Scroll"
+msgstr ""
+
+#: inc/sections.php:363
+msgid "Try a finish"
+msgstr ""
+
+#: inc/sections.php:378
+msgid "Keep scrolling to turn it"
+msgstr ""
+
+#. translators: %d count
+#: inc/sections.php:431
+#, php-format
+msgid "%d piece"
+msgid_plural "%d pieces"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/setup.php:59
+msgid "Footer column 1"
+msgstr ""
+
+#: inc/setup.php:60
+msgid "Footer column 2"
+msgstr ""
+
+#: inc/setup.php:61
+msgid "Footer column 3"
+msgstr ""
+
+#: inc/setup.php:84
+msgid "Footer"
+msgstr ""
+
+#: inc/setup.php:86
+msgid "Widgets shown as a column in the footer."
+msgstr ""
+
+#: inc/setup.php:105
+msgid "Card"
+msgstr ""
+
+#: inc/setup.php:112
+msgid "Rounded"
+msgstr ""
+
+#: inc/setup.php:119
+msgid "With arrow"
+msgstr ""
+
+#. translators: %d finish count
+#: inc/template-tags.php:114
+#, php-format
+msgid "%d finish"
+msgid_plural "%d finishes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:177
+msgid "Sale"
+msgstr ""
+
+#: inc/template-tags.php:179
+msgid "New"
+msgstr ""
+
+#: inc/template-tags.php:185
+msgid "View in 3D"
+msgstr ""
+
+#. translators: %s product name
+#: inc/template-tags.php:199
+#, php-format
+msgid "Add %s to cart"
+msgstr ""
+
+#: inc/woocommerce.php:27
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/woocommerce.php:29
+msgid "Home"
+msgstr ""
+
+#. translators: %d quantity
+#: inc/woocommerce.php:78
+#, php-format
+msgid "Qty %d"
+msgstr ""
+
+#: inc/woocommerce.php:82
+msgid "Remove"
+msgstr ""
+
+#: inc/woocommerce.php:90
+msgid "Subtotal"
+msgstr ""
+
+#: inc/woocommerce.php:95
+msgid "Checkout"
+msgstr ""
+
+#: inc/woocommerce.php:96
+msgid "View cart"
+msgstr ""
+
+#: inc/woocommerce.php:103
+msgid "Your cart is empty."
+msgstr ""
+
+#: inc/woocommerce.php:104
+msgid "Browse the collection"
+msgstr ""
+
+#. translators: %s search query
+#: index.php:18
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: index.php:22
+msgid "Journal"
+msgstr ""
+
+#: index.php:46
+msgid "Nothing found."
+msgstr ""
+
+#: page.php:40
+#: single.php:30
+msgid "Page"
+msgstr ""
+
+#: page.php:40
+#: single.php:30
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: list of categories.
+#: single.php:42
+#, php-format
+msgid "Posted in %s"
+msgstr ""
+
+#. translators: %s: list of tags.
+#: single.php:46
+#, php-format
+msgid "Tagged %s"
+msgstr ""
+
+#: single.php:54
+msgid "Previous"
+msgstr ""
+
+#: single.php:55
+msgid "Next"
+msgstr ""
+
+#. translators: %s search query
+#: woocommerce/archive-product.php:31
+#, php-format
+msgid "Results for “%s”"
+msgstr ""
+
+#: woocommerce/archive-product.php:33
+msgid "The <em>collection</em>"
+msgstr ""
+
+#: woocommerce/archive-product.php:42
+msgid "Products with a 3D model can be turned around right here: hover for another angle, or tap “View in 3D”."
+msgstr ""
+
+#: woocommerce/archive-product.php:50
+msgid "Categories"
+msgstr ""
+
+#: woocommerce/archive-product.php:51
+msgid "All"
+msgstr ""
+
+#: woocommerce/archive-product.php:82
+msgid "Nothing here yet — new pieces are on their way."
+msgstr ""
+
+#: woocommerce/archive-product.php:83
+msgid "See all furniture"
+msgstr ""
+
+#: woocommerce/archive-product.php:90
+msgid "Augmented reality"
+msgstr ""
+
+#: woocommerce/archive-product.php:91
+msgid "Try it in <em>your</em> room."
+msgstr ""
+
+#: woocommerce/archive-product.php:92
+msgid "Open any product on your phone and tap “View in your room” to place a true-scale model on your floor — no app needed."
+msgstr ""
+
+#: woocommerce/archive-product.php:95
+msgid "Open a product on your phone"
+msgstr ""
+
+#: woocommerce/archive-product.php:96
+msgid "Tap “View in your room”"
+msgstr ""
+
+#: woocommerce/archive-product.php:97
+msgid "Point at the floor and place it"
+msgstr ""
+
+#: woocommerce/single-product.php:32
+msgid "Width"
+msgstr ""
+
+#: woocommerce/single-product.php:33
+msgid "Depth"
+msgstr ""
+
+#: woocommerce/single-product.php:34
+msgid "Height"
+msgstr ""
+
+#. translators: %s product
+#: woocommerce/single-product.php:59
+#, php-format
+msgid "Interactive 3D model of %s"
+msgstr ""
+
+#: woocommerce/single-product.php:104
+msgid "3D · True to scale"
+msgstr ""
+
+#: woocommerce/single-product.php:105
+msgid "Drag to rotate · Scroll to zoom"
+msgstr ""
+
+#: woocommerce/single-product.php:108
+msgid "Viewer controls"
+msgstr ""
+
+#: woocommerce/single-product.php:109
+msgid "Auto-rotate"
+msgstr ""
+
+#: woocommerce/single-product.php:114
+msgid "Toggle auto-rotate"
+msgstr ""
+
+#: woocommerce/single-product.php:115
+msgid "Show dimensions"
+msgstr ""
+
+#: woocommerce/single-product.php:116
+msgid "Reset view"
+msgstr ""
+
+#: woocommerce/single-product.php:117
+msgid "Fullscreen"
+msgstr ""
+
+#: woocommerce/single-product.php:124
+msgid "Product views"
+msgstr ""
+
+#. translators: %d image number
+#: woocommerce/single-product.php:129
+#, php-format
+msgid "Image %d"
+msgstr ""
+
+#: woocommerce/single-product.php:163
+msgid "Decrease quantity"
+msgstr ""
+
+#: woocommerce/single-product.php:164
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/single-product.php:165
+msgid "Increase quantity"
+msgstr ""
+
+#: woocommerce/single-product.php:187
+msgid "Description"
+msgstr ""
+
+#: woocommerce/single-product.php:192
+msgid "Dimensions"
+msgstr ""
+
+#: woocommerce/single-product.php:201
+msgid "Weight"
+msgstr ""
+
+#: woocommerce/single-product.php:204
+msgid "Tip: tap the ruler in the 3D viewer to see these on the model."
+msgstr ""
+
+#: woocommerce/single-product.php:210
+msgid "Materials & details"
+msgstr ""
+
+#: woocommerce/single-product.php:217
+msgid "SKU"
+msgstr ""
+
+#: woocommerce/single-product.php:229
+msgid "Delivery & returns"
+msgstr ""
+
+#: woocommerce/single-product.php:243
+msgid "No hidden sides.<br><em>No surprises.</em>"
+msgstr ""
+
+#: woocommerce/single-product.php:297
+msgid "Pairs well with"
+msgstr ""
+
+#: woocommerce/single-product.php:298
+msgid "You may <em>also like</em>"
+msgstr ""
+
+#. translators: %s category
+#: woocommerce/single-product.php:301
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Charcoal"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Stone"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Linen"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sand"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Paper"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cream"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Espresso"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Terracotta"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter Tight"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Instrument Serif"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr ""

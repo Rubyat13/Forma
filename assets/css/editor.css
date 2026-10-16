@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Forma — block editor styles (loaded with add_editor_style)
+   ========================================================================== */
+
+body {
+	font-family: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+	color: #171513;
+	background: #eeeae3;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: "Instrument Serif", serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1; }
+h1 { font-size: 64px; } h2 { font-size: 48px; } h3 { font-size: 34px; }
+.editor-post-title__input, .wp-block-post-title { font-family: "Instrument Serif", serif !important; font-weight: 400 !important; font-size: 72px !important; letter-spacing: -0.03em; }
+.wp-block-quote { border-left: 2px solid #b4532a; padding-left: 20px; font-family: "Instrument Serif", serif; font-size: 28px; line-height: 1.2; }
+.wp-block-separator { border-color: rgba(23, 21, 19, 0.15); }
+
+/* Block styles */
+.is-style-forma-3d-card { padding: clamp(24px, 3vw, 40px); border-radius: var(--radius-lg, 28px); background: var(--paper, #f7f4ef); box-shadow: 0 30px 60px -40px rgba(40, 30, 20, 0.45); }
+.is-style-forma-3d-rounded img { border-radius: 28px; }
+.is-style-forma-3d-arrow .wp-block-button__link::after { content: " →"; display: inline-block; margin-left: 6px; transition: transform 0.4s; }
+.is-style-forma-3d-arrow .wp-block-button__link:hover::after { transform: translateX(4px); }
