@@ -20,6 +20,11 @@ require FORMA_3D_DIR . '/inc/blocks.php';
 require FORMA_3D_DIR . '/inc/customizer.php';
 require FORMA_3D_DIR . '/inc/patterns.php';
 
+// Store-kit edition only (not in the WordPress.org version): one-click plugin install.
+if ( is_admin() ) {
+	require FORMA_3D_DIR . '/inc/plugin-installer.php';
+}
+
 if ( class_exists( 'WooCommerce' ) ) {
 	require FORMA_3D_DIR . '/inc/woocommerce.php';
 }

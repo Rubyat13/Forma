@@ -1,0 +1,146 @@
+/* Store-kit edition: plugin install dialog (admin). */
+
+.forma-installer {
+	--fi-ink: #171513;
+	--fi-muted: #6b645b;
+	--fi-line: rgba(23, 21, 19, 0.12);
+	--fi-bg: #f7f4ef;
+	--fi-ok: #2f7a4b;
+	--fi-err: #b42318;
+	width: min(560px, calc(100vw - 32px));
+	box-sizing: border-box;
+	padding: 32px;
+	border: 0;
+	border-radius: 20px;
+	background: var(--fi-bg);
+	color: var(--fi-ink);
+	box-shadow: 0 30px 80px rgba(20, 18, 16, 0.35);
+}
+
+.forma-installer::backdrop {
+	background: rgba(20, 18, 16, 0.55);
+}
+
+.forma-installer h2 {
+	margin: 0 0 8px;
+	font-size: 26px;
+	line-height: 1.2;
+}
+
+.forma-installer p {
+	margin: 0 0 16px;
+	font-size: 14px;
+	color: var(--fi-muted);
+}
+
+.forma-installer .forma-installer__eyebrow {
+	margin: 0 0 6px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #b4532a;
+}
+
+.forma-installer__list {
+	margin: 0 0 16px;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid var(--fi-line);
+}
+
+.forma-installer__list li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0;
+	padding: 14px 0;
+	border-bottom: 1px solid var(--fi-line);
+}
+
+.forma-installer__dot {
+	flex: none;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #c9c2b8;
+}
+
+.forma-installer__text {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.forma-installer__text strong {
+	font-size: 14px;
+}
+
+.forma-installer__text span,
+.forma-installer__state {
+	font-size: 13px;
+	color: var(--fi-muted);
+}
+
+.forma-installer li[data-state="active"] .forma-installer__dot {
+	background: var(--fi-ok);
+}
+
+.forma-installer li[data-state="active"] .forma-installer__state {
+	color: var(--fi-ok);
+}
+
+.forma-installer li[data-state="working"] .forma-installer__dot {
+	background: #b4532a;
+	animation: forma-installer-pulse 0.9s ease-in-out infinite alternate;
+}
+
+.forma-installer li[data-state="error"] .forma-installer__dot {
+	background: var(--fi-err);
+}
+
+.forma-installer .forma-installer__message {
+	min-height: 20px;
+	color: var(--fi-ok);
+}
+
+.forma-installer .forma-installer__message.is-error {
+	color: var(--fi-err);
+}
+
+.forma-installer__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 16px;
+}
+
+.forma-installer__actions .button-primary {
+	border-color: var(--fi-ink);
+	background: var(--fi-ink);
+}
+
+.forma-installer__actions .button-primary:hover,
+.forma-installer__actions .button-primary:focus {
+	border-color: #3b3631;
+	background: #3b3631;
+}
+
+#forma-3d-installer-notice .button {
+	margin-left: 8px;
+	vertical-align: baseline;
+}
+
+@keyframes forma-installer-pulse {
+	to {
+		opacity: 0.35;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.forma-installer li[data-state="working"] .forma-installer__dot {
+		animation: none;
+	}
+}
