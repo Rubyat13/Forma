@@ -64,7 +64,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Forma 3D bundles the following third-party resources:
+Forma 3D bundles the following third-party resources. Each minified library file in assets/vendor/ ships next to its original, unminified build (loaded when SCRIPT_DEBUG is on).
 
 three.js, Copyright 2010-2024 three.js authors
 License: MIT
