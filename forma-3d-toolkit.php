@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Forma 3D Toolkit
  * Description:       Companion plugin for the Forma 3D theme: homepage blocks for the block editor, product finishes and stage colours, .glb uploads and one-click demo store import.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Al Rubyat
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FORMA_3D_TK_VERSION', '1.0.1' );
+define( 'FORMA_3D_TK_VERSION', '1.0.2' );
 define( 'FORMA_3D_TK_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FORMA_3D_TK_URI', plugin_dir_url( __FILE__ ) );
 

@@ -63,12 +63,27 @@ add_action(
 	}
 );
 
-// Welcome notice: shown with the Forma 3D theme until the demo is imported or the notice is dismissed.
+/**
+ * Whether to show the welcome notice: with the Forma 3D theme, until the demo is imported or the notice is dismissed.
+ */
+function forma_3d_tk_show_notice() {
+	$screen = get_current_screen();
+	return forma_3d_tk_theme_active() && current_user_can( 'manage_options' ) && ! get_option( 'forma_demo_imported' ) && ! get_user_meta( get_current_user_id(), 'forma_3d_tk_notice_dismissed', true ) && ! ( $screen && 'appearance_page_' . FORMA_3D_TK_SETUP_SLUG === $screen->id );
+}
+
+add_action(
+	'admin_enqueue_scripts',
+	function () {
+		if ( forma_3d_tk_show_notice() ) {
+			wp_enqueue_script( 'forma-3d-tk-notice', FORMA_3D_TK_URI . 'assets/notice.js', array(), FORMA_3D_TK_VERSION, true );
+		}
+	}
+);
+
 add_action(
 	'admin_notices',
 	function () {
-		$screen = get_current_screen();
-		if ( ! forma_3d_tk_theme_active() || ! current_user_can( 'manage_options' ) || get_option( 'forma_demo_imported' ) || get_user_meta( get_current_user_id(), 'forma_3d_tk_notice_dismissed', true ) || ( $screen && 'appearance_page_' . FORMA_3D_TK_SETUP_SLUG === $screen->id ) ) {
+		if ( ! forma_3d_tk_show_notice() ) {
 			return;
 		}
 		printf(
@@ -78,9 +93,6 @@ add_action(
 			esc_url( admin_url( 'themes.php?page=' . FORMA_3D_TK_SETUP_SLUG ) ),
 			esc_html__( 'Open Forma Setup', 'forma-3d-toolkit' ),
 			esc_attr( wp_create_nonce( 'forma-3d-tk-dismiss' ) )
-		);
-		wp_print_inline_script_tag(
-			"document.addEventListener('click',function(e){var n=e.target.closest('#forma-3d-tk-notice .notice-dismiss');if(!n)return;var b=new URLSearchParams({action:'forma_3d_tk_dismiss_notice',nonce:n.closest('.notice').dataset.nonce});fetch(ajaxurl,{method:'POST',credentials:'same-origin',body:b});});"
 		);
 	}
 );

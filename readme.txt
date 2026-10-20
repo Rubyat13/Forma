@@ -4,7 +4,7 @@ Tags: 3d, woocommerce, blocks, demo import, product viewer
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,10 @@ Yes. Products are matched by SKU and updated, and media files that were already 
 The product fields and .glb uploads do. The homepage blocks and the demo homepage need the Forma 3D theme.
 
 == Changelog ==
+
+= 1.0.2 =
+* The model picker in the "Forma Display" tab and the welcome notice now load their scripts with wp_enqueue_script().
+* The model picker's labels can be translated.
 
 = 1.0.1 =
 * The demo import now brings in the demo's own homepage (hero product and headings), its tagline when the site has none, and its store settings: prices without cents, product reviews off and uncropped product thumbnails.

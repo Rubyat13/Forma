@@ -235,38 +235,6 @@ add_action(
 );
 
 add_action(
-	'admin_footer',
-	function () {
-		$screen = get_current_screen();
-		if ( ! $screen || 'product' !== $screen->post_type || class_exists( '\BP3D\Woocommerce\Product' ) ) {
-			return;
-		}
-		?>
-		<script>
-		jQuery(function ($) {
-			var frame;
-			$('#forma_model_pick').on('click', function (e) {
-				e.preventDefault();
-				if (frame) { frame.open(); return; }
-				frame = wp.media({ title: 'Select 3D model', button: { text: 'Use this model' }, multiple: false });
-				frame.on('select', function () {
-					var a = frame.state().get('selection').first().toJSON();
-					$('#forma_model_id').val(a.id);
-					$('#forma_model_name').text(a.filename);
-				});
-				frame.open();
-			});
-			$('#forma_model_clear').on('click', function () {
-				$('#forma_model_id').val('');
-				$('#forma_model_name').text('');
-			});
-		});
-		</script>
-		<?php
-	}
-);
-
-add_action(
 	'woocommerce_admin_process_product_object',
 	function ( $product ) {
 		if ( ! isset( $_POST['forma_3d_tk_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['forma_3d_tk_nonce'] ), 'forma_3d_tk_save' ) ) {
@@ -288,9 +256,25 @@ add_action(
 	'admin_enqueue_scripts',
 	function () {
 		$screen = get_current_screen();
-		if ( $screen && 'product' === $screen->post_type ) {
-			wp_enqueue_media();
+		if ( ! $screen || 'product' !== $screen->post_type ) {
+			return;
 		}
+		wp_enqueue_media();
+		// With the 3D Viewer plugin active, the tab has no model picker.
+		if ( class_exists( '\BP3D\Woocommerce\Product' ) ) {
+			return;
+		}
+		wp_enqueue_script( 'forma-3d-tk-product-fields', FORMA_3D_TK_URI . 'assets/product-fields.js', array( 'jquery', 'media-editor' ), FORMA_3D_TK_VERSION, true );
+		wp_localize_script(
+			'forma-3d-tk-product-fields',
+			'FORMA_PRODUCT_FIELDS',
+			array(
+				'i18n' => array(
+					'title'  => __( 'Select 3D model', 'forma-3d-toolkit' ),
+					'button' => __( 'Use this model', 'forma-3d-toolkit' ),
+				),
+			)
+		);
 	}
 );
 
