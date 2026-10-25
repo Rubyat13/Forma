@@ -1,0 +1,201 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+	.banner {
+		position: relative; width: 772px; height: 250px; overflow: hidden;
+		background: radial-gradient(90% 130% at 80% 20%, var(--paper) 0%, var(--bg) 50%, var(--bg-2) 100%);
+	}
+
+	/* Left: brand and message */
+	.copy { position: absolute; left: 38px; top: 30px; width: 350px; }
+	.lockup { display: flex; align-items: center; gap: 7px; }
+	.lockup .mark { width: 15px; height: 15px; }
+	.lockup__word { font-family: var(--serif); font-size: 21px; line-height: 1; letter-spacing: -0.01em; }
+	.lockup__tag {
+		margin-left: 6px; padding: 3px 7px 3px; border-radius: 999px;
+		background: var(--ink); color: var(--cream);
+		font-size: 8.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+	}
+	h1 {
+		margin-top: 20px;
+		font-family: var(--serif); font-weight: 400; font-size: 47px; line-height: 0.9; letter-spacing: -0.025em;
+	}
+	h1 em { display: block; padding-left: 36px; }
+	h1 .dot { color: var(--accent); }
+	p {
+		margin-top: 14px; width: 300px;
+		font-size: 11px; line-height: 1.5; color: var(--ink-2);
+	}
+	.chips { display: flex; gap: 5px; margin-top: 13px; }
+	.chip {
+		display: flex; align-items: center; gap: 5px;
+		padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(23, 21, 19, 0.16);
+		font-size: 9px; font-weight: 500; color: var(--ink-2); background: rgba(247, 244, 239, 0.6);
+	}
+	.chip i { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+	/* Right: a fan of ready-made store designs */
+	.stage { position: absolute; left: 398px; top: 0; width: 368px; height: 250px; transform: scale(0.9); transform-origin: 30% 45%; }
+	.card {
+		position: absolute; top: 34px; width: 150px; height: 196px; padding: 10px 11px;
+		border-radius: 9px; overflow: hidden; transform-origin: 50% 130%;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 22px 40px -12px rgba(23, 21, 19, 0.35), 0 2px 6px rgba(23, 21, 19, 0.12);
+	}
+	.card--a { left: 4px;   transform: rotate(-9deg) translateY(12px); background: var(--dark); color: var(--cream); }
+	.card--b { left: 104px; transform: translateY(-6px); background: var(--cream); z-index: 2; width: 158px; height: 206px; }
+	.card--c { left: 214px; transform: rotate(9deg) translateY(12px); text-align: right; background: var(--accent); color: var(--cream); }
+
+	.card__bar { display: flex; align-items: center; gap: 4px; font-family: var(--serif); font-size: 9px; }
+	.card__bar .mark { width: 6px; height: 6px; --ring: 0.6px; }
+	.card__nav { display: flex; gap: 3px; margin-left: auto; }
+	.card__nav span { width: 11px; height: 2px; border-radius: 2px; background: currentColor; opacity: 0.35; }
+	.card__eyebrow { margin-top: 14px; font-size: 4.5px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; }
+	.card h2 { margin-top: 4px; font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 0.9; letter-spacing: -0.02em; }
+	.card h2 em { display: block; padding-left: 12px; }
+	.card--c h2 em { padding-left: 0; padding-right: 10px; }
+	.card--c .card__bar { flex-direction: row-reverse; }
+	.card--c .card__nav { margin-left: 0; margin-right: auto; }
+	.card--c .card__btn { left: auto; right: 11px; }
+	.card--b h2 { font-size: 19px; }
+	.card img { position: absolute; }
+	.card__btn {
+		position: absolute; left: 11px; bottom: 11px; padding: 3px 7px; border-radius: 999px;
+		font-size: 5px; font-weight: 600; background: var(--ink); color: var(--cream);
+	}
+	.card--a .card__btn, .card--c .card__btn { background: var(--cream); color: var(--ink); }
+
+	.card--a img { width: 60px; left: 14px; bottom: 30px; }
+	.card--b .turn { width: 167px; left: 45px; top: 61px; }
+	.card--c img { width: 104px; right: 8px; bottom: 44px; }
+
+	/* The import action on the front card */
+	.import {
+		position: absolute; z-index: 3; left: 124px; top: 200px;
+		width: 112px; height: 27px; border-radius: 999px;
+		background: var(--ink); color: var(--cream);
+		font-size: 10px; font-weight: 600; letter-spacing: 0.01em;
+		box-shadow: 0 10px 22px -6px rgba(23, 21, 19, 0.5);
+	}
+	.import span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 6px; }
+	.import__done { opacity: 0; }
+	.import svg { width: 11px; height: 11px; }
+	.cursor { position: absolute; z-index: 4; left: 206px; top: 214px; width: 17px; transform-origin: 3px 2px; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25)); }
+</style>
+
+<div class="banner">
+	<div class="copy">
+		<div class="lockup">
+			<span class="mark"></span>
+			<span class="lockup__word">Forma</span>
+			<span class="lockup__tag">3D Toolkit</span>
+		</div>
+		<h1>Your 3D store,<em>one click away<span class="dot">.</span></em></h1>
+		<p>Homepage blocks, 3D product finishes and a one-click demo store for the Forma&nbsp;3D block theme.</p>
+		<div class="chips">
+			<span class="chip"><i></i>Block editor</span>
+			<span class="chip"><i></i>Real 3D models</span>
+			<span class="chip"><i></i>One-click import</span>
+		</div>
+	</div>
+
+	<div class="stage">
+		<div class="card card--a">
+			<div class="card__bar"><span class="mark mark--light"></span>Forma<span class="card__nav"><span></span><span></span><span></span></span></div>
+			<div class="card__eyebrow">Classic collection</div>
+			<h2>Quiet<em>classics.</em></h2>
+			<img data-trim src="../../demo/images/ArmChair_01-0.webp" alt="">
+			<span class="card__btn">Shop now</span>
+		</div>
+		<div class="card card--c">
+			<div class="card__bar"><span class="mark mark--light"></span>Forma<span class="card__nav"><span></span><span></span><span></span></span></div>
+			<div class="card__eyebrow">Living room</div>
+			<h2>Deep<em>seats.</em></h2>
+			<img data-trim src="../../demo/images/sofa_02-0.webp" alt="">
+			<span class="card__btn">Explore</span>
+		</div>
+		<div class="card card--b">
+			<div class="card__bar"><span class="mark"></span>Forma<span class="card__nav"><span></span><span></span><span></span></span></div>
+			<div class="card__eyebrow">Autumn collection</div>
+			<h2>Furniture<em>you can turn</em>around.</h2>
+			<img class="turn" src="../../demo/images/mid_century_lounge_chair-0.webp" alt="">
+			<img class="turn" src="../../demo/images/mid_century_lounge_chair-1.webp" alt="" style="opacity:0">
+			<img class="turn" src="../../demo/images/mid_century_lounge_chair-2.webp" alt="" style="opacity:0">
+		</div>
+
+		<div class="import">
+			<span class="import__idle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13.5h10"/></svg>Import design</span>
+			<span class="import__done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 4.8"/></svg>Imported</span>
+		</div>
+		<svg class="cursor" viewBox="0 0 24 24"><path d="M5 3l14 8-6.2 1.6L9.6 19z" fill="#fff" stroke="#171513" stroke-width="1.6" stroke-linejoin="round"/></svg>
+	</div>
+</div>
+<script>
+	// One 6 s loop, drawn for any time t so frames can be captured one by one.
+	const T = 6;
+	const ease = (x) => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+	const seg = (t, a, b) => ease(Math.min(1, Math.max(0, (t - a) / (b - a))));
+	const mix = (a, b, f) => a + (b - a) * f;
+	const mixRgb = (a, b, f) => `rgb(${a.map((v, i) => Math.round(mix(v, b[i], f))).join(',')})`;
+
+	const turns = [...document.querySelectorAll('.turn')];
+	const button = document.querySelector('.import');
+	const idle = document.querySelector('.import__idle');
+	const done = document.querySelector('.import__done');
+	const cursor = document.querySelector('.cursor');
+	const INK = [23, 21, 19], ACCENT = [180, 83, 42];
+	const REST = [244, 236], ON = [210, 213];
+
+	// Chair angle sequence: front-left, front, front-right, front, front-left.
+	const steps = [[1.0, 0, 1], [1.5, 1, 2], [2.2, 2, 1], [2.7, 1, 0]];
+	const FADE = 0.12;
+
+	window.__frame = (t) => {
+		t = ((t % T) + T) % T;
+		let from = 0, to = 0, f = 1;
+		for (const [at, a, b] of steps) {
+			if (t >= at) { from = a; to = b; f = Math.min(1, (t - at) / FADE); }
+		}
+		turns.forEach((img, i) => {
+			img.style.opacity = i === to ? f : i === from ? 1 - f : 0;
+		});
+
+		const go = seg(t, 3.0, 3.6) - seg(t, 5.0, 5.6);
+		const press = seg(t, 3.62, 3.72) - seg(t, 3.74, 3.88);
+		cursor.style.transform = `translate(${mix(REST[0], ON[0], go) - 206}px, ${mix(REST[1], ON[1], go) - 214}px) scale(${1 - 0.12 * press})`;
+		button.style.transform = `scale(${1 - 0.06 * press})`;
+
+		const state = seg(t, 3.78, 3.98) - seg(t, 5.3, 5.5);
+		button.style.background = mixRgb(INK, ACCENT, state);
+		idle.style.opacity = 1 - state;
+		done.style.opacity = state;
+	};
+	// Line the angles up on the chair's base (bottom centre of its solid pixels) and match its height, so it turns in place.
+	window.__prep = async () => {
+		const base = await Promise.all(turns.map(async (img) => {
+			await img.decode();
+			const c = document.createElement('canvas');
+			c.width = img.naturalWidth; c.height = img.naturalHeight;
+			const ctx = c.getContext('2d');
+			ctx.drawImage(img, 0, 0);
+			const { data, width, height } = ctx.getImageData(0, 0, c.width, c.height);
+			let x0 = width, x1 = 0, y0 = height, y1 = 0;
+			for (let y = 0; y < height; y++) {
+				for (let x = 0; x < width; x++) {
+					if (data[(y * width + x) * 4 + 3] > 250) {
+						if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+					}
+				}
+			}
+			return [(x0 + x1) / 2, y1, y1 - y0];
+		}));
+		const k = turns[0].getBoundingClientRect().width / turns[0].naturalWidth;
+		turns.forEach((img, i) => {
+			img.style.transformOrigin = `${base[i][0] * k}px ${base[i][1] * k}px`;
+			img.style.scale = String(base[0][2] / base[i][2]);
+			img.style.translate = `${(base[0][0] - base[i][0]) * k}px ${(base[0][1] - base[i][1]) * k}px`;
+		});
+	};
+	window.__frame(0);
+</script>
+<script src="trim.js"></script>
