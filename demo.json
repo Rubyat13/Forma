@@ -4,7 +4,7 @@
             "slug": "chandeliers",
             "name": "Chandeliers",
             "description": "Statement lights for the dining room and the hall.",
-            "bg": "#e7ddcd",
+            "bg": "#1d1712",
             "order": 0,
             "image": "Chandelier_01-0.webp"
         },
@@ -12,7 +12,7 @@
             "slug": "pendants",
             "name": "Pendants",
             "description": "Single lights to hang over a table, an island or a stair.",
-            "bg": "#dfe2dc",
+            "bg": "#15171a",
             "order": 1,
             "image": "modern_ceiling_lamp_01-0.webp"
         },
@@ -20,7 +20,7 @@
             "slug": "table-lamps",
             "name": "Table & desk lamps",
             "description": "Light where you read, work and sit.",
-            "bg": "#e9dfd2",
+            "bg": "#1e1610",
             "order": 2,
             "image": "desk_lamp_arm_01-0.webp"
         },
@@ -28,7 +28,7 @@
             "slug": "wall-lights",
             "name": "Wall lights",
             "description": "Sconces and bulkheads for halls, porches and bedsides.",
-            "bg": "#e1ddd6",
+            "bg": "#181613",
             "order": 3,
             "image": "industrial_wall_sconce-0.webp"
         },
@@ -36,7 +36,7 @@
             "slug": "lanterns-candles",
             "name": "Lanterns & candles",
             "description": "Real flame for tables, mantels and summer evenings.",
-            "bg": "#ebe3d6",
+            "bg": "#1f1813",
             "order": 4,
             "image": "brass_candleholders-0.webp"
         }
@@ -57,7 +57,7 @@
             "depth": "82",
             "height": "80",
             "weight": "9",
-            "bg": "#e9dfcf",
+            "bg": "#1e1812",
             "materials": "Solid brass, pleated cotton shades, mouth-blown glass",
             "designer": "Studio Forma",
             "finishes": [
@@ -75,9 +75,9 @@
                     "name": "Linen",
                     "color": "#dccdb0",
                     "tint": [
-                        0.93000000000000005,
+                        0.93,
                         0.87,
-                        0.76000000000000001
+                        0.76
                     ],
                     "material": "lamps_classic_chandelier_1"
                 },
@@ -86,8 +86,8 @@
                     "color": "#9c968f",
                     "tint": [
                         0.62,
-                        0.59999999999999998,
-                        0.57999999999999996
+                        0.6,
+                        0.58
                     ],
                     "material": "lamps_classic_chandelier_1"
                 }
@@ -108,7 +108,7 @@
             "depth": "62",
             "height": "85",
             "weight": "7",
-            "bg": "#e6ddd0",
+            "bg": "#1b1611",
             "materials": "Brushed brass, linen shades",
             "designer": "Studio Forma",
             "finishes": []
@@ -128,7 +128,7 @@
             "depth": "79",
             "height": "104",
             "weight": "14",
-            "bg": "#e4dccd",
+            "bg": "#1d1813",
             "materials": "Cast brass, cut glass, wrought iron rod",
             "designer": "Atelier Versailles",
             "finishes": []
@@ -148,7 +148,7 @@
             "depth": "43",
             "height": "95",
             "weight": "2.4",
-            "bg": "#e0e3dd",
+            "bg": "#141619",
             "materials": "Mouth-blown opal glass, metal fitting, fabric cord",
             "designer": "Studio Forma",
             "finishes": [
@@ -167,8 +167,8 @@
                     "color": "#c9a764",
                     "tint": [
                         1,
-                        0.82999999999999996,
-                        0.52000000000000002
+                        0.83,
+                        0.52
                     ],
                     "material": "modern_ceiling_globe"
                 },
@@ -199,7 +199,7 @@
             "depth": "55",
             "height": "136",
             "weight": "6",
-            "bg": "#dfe2da",
+            "bg": "#151815",
             "materials": "Enamelled steel, cast aluminium, glass, steel chain",
             "designer": "Workshop Lumen",
             "finishes": []
@@ -219,7 +219,7 @@
             "depth": "88",
             "height": "75",
             "weight": "8",
-            "bg": "#ebe0d3",
+            "bg": "#211610",
             "materials": "Carved hardwood, hand-painted silk, silk tassels",
             "designer": "Studio Forma",
             "finishes": []
@@ -239,7 +239,7 @@
             "depth": "57",
             "height": "88",
             "weight": "7",
-            "bg": "#e4ddd2",
+            "bg": "#1a1612",
             "materials": "Aged bronze, glass panels",
             "designer": "Atelier Versailles",
             "finishes": []
@@ -259,7 +259,7 @@
             "depth": "61",
             "height": "89",
             "weight": "2.8",
-            "bg": "#ece0d3",
+            "bg": "#1f1611",
             "materials": "Powder-coated steel, steel springs",
             "designer": "Workshop Lumen",
             "finishes": [
@@ -277,9 +277,9 @@
                     "name": "Rust",
                     "color": "#a5553a",
                     "tint": [
-                        0.78000000000000003,
-                        0.55000000000000004,
-                        0.47999999999999998
+                        0.78,
+                        0.55,
+                        0.48
                     ],
                     "material": "desk_lamp_arm_01"
                 },
@@ -287,9 +287,9 @@
                     "name": "Graphite",
                     "color": "#474645",
                     "tint": [
-                        0.34000000000000002,
-                        0.34000000000000002,
-                        0.35999999999999999
+                        0.34,
+                        0.34,
+                        0.36
                     ],
                     "material": "desk_lamp_arm_01"
                 }
@@ -310,7 +310,7 @@
             "depth": "26",
             "height": "36",
             "weight": "3.5",
-            "bg": "#e2e0db",
+            "bg": "#171717",
             "materials": "Galvanised steel pipe, steel shade, cast iron base",
             "designer": "Workshop Lumen",
             "finishes": []
@@ -330,7 +330,7 @@
             "depth": "22",
             "height": "80",
             "weight": "2.2",
-            "bg": "#ebe1d6",
+            "bg": "#1e1714",
             "materials": "Hand-painted porcelain, brass, glass chimney",
             "designer": "Studio Forma",
             "finishes": []
@@ -350,7 +350,7 @@
             "depth": "25",
             "height": "34",
             "weight": "1.8",
-            "bg": "#e2ddd5",
+            "bg": "#181613",
             "materials": "Enamelled steel, aged brass",
             "designer": "Workshop Lumen",
             "finishes": []
@@ -370,7 +370,7 @@
             "depth": "14",
             "height": "43",
             "weight": "3.2",
-            "bg": "#dfdcd6",
+            "bg": "#161514",
             "materials": "Cast iron, ribbed glass",
             "designer": "Workshop Lumen",
             "finishes": []
@@ -390,7 +390,7 @@
             "depth": "10",
             "height": "29",
             "weight": "1.1",
-            "bg": "#ebe4d8",
+            "bg": "#1d1712",
             "materials": "Brass, glass globe, cotton wick",
             "designer": "Studio Forma",
             "finishes": []
@@ -410,7 +410,7 @@
             "depth": "36",
             "height": "84",
             "weight": "5",
-            "bg": "#ece4d6",
+            "bg": "#1f1913",
             "materials": "Cast brass",
             "designer": "Atelier Versailles",
             "finishes": []
