@@ -1,0 +1,439 @@
+{
+    "categories": [
+        {
+            "slug": "vases",
+            "name": "Vases & vessels",
+            "description": "Stoneware, porcelain and brass for stems, branches or nothing at all.",
+            "bg": "#e5e2da",
+            "order": 0,
+            "image": "antique_ceramic_vase_01-0.webp"
+        },
+        {
+            "slug": "plants",
+            "name": "Plants & planters",
+            "description": "Lifelike faux plants in real terracotta and glazed pots.",
+            "bg": "#dfe4da",
+            "order": 1,
+            "image": "potted_plant_02-0.webp"
+        },
+        {
+            "slug": "clocks-mirrors",
+            "name": "Clocks & mirrors",
+            "description": "For the mantel, the hall and the bedside.",
+            "bg": "#e8ded2",
+            "order": 2,
+            "image": "mantel_clock_01-0.webp"
+        },
+        {
+            "slug": "objects",
+            "name": "Objects",
+            "description": "Sculpture, bowls and baskets: the things that finish a room.",
+            "bg": "#e7e0d6",
+            "order": 3,
+            "image": "carved_wooden_elephant-0.webp"
+        }
+    ],
+    "products": [
+        {
+            "slug": "pebble-carafe-vase",
+            "name": "Pebble Carafe Vase",
+            "model": "ceramic_vase_01",
+            "category": "vases",
+            "regular_price": "68",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 10,
+            "short_description": "A tall glazed stoneware carafe with a pinched lip, for a single stem or a loose branch.",
+            "description": "<p>Thrown on the wheel, then pinched at the lip while the clay is still soft, so no two are quite the same.</p><p>The glaze is food-safe and watertight.</p>",
+            "width": "20",
+            "depth": "20",
+            "height": "40",
+            "weight": "1.6",
+            "bg": "#e3e1da",
+            "materials": "Glazed stoneware",
+            "designer": "Maison Studio",
+            "finishes": [
+                {
+                    "name": "Chalk",
+                    "color": "#ecebe6",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Sage",
+                    "color": "#a8b7a1",
+                    "tint": [
+                        0.76000000000000001,
+                        0.82999999999999996,
+                        0.73999999999999999
+                    ]
+                },
+                {
+                    "name": "Clay",
+                    "color": "#c49a83",
+                    "tint": [
+                        0.88,
+                        0.69999999999999996,
+                        0.59999999999999998
+                    ]
+                },
+                {
+                    "name": "Charcoal",
+                    "color": "#4f4f4f",
+                    "tint": [
+                        0.35999999999999999,
+                        0.35999999999999999,
+                        0.37
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "dune-stoneware-vase",
+            "name": "Dune Stoneware Vase",
+            "model": "ceramic_vase_02",
+            "category": "vases",
+            "regular_price": "84",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 20,
+            "short_description": "Wide-shouldered and matt, with a raw stoneware texture.",
+            "description": "<p>A broad, sturdy vase with a dry matt finish that shows the grain of the clay.</p><p>Big enough for a full bunch of hydrangeas or a few branches of eucalyptus.</p>",
+            "width": "22",
+            "depth": "22",
+            "height": "31",
+            "weight": "2.4",
+            "bg": "#e6e2d9",
+            "materials": "Matt stoneware",
+            "designer": "Maison Studio",
+            "finishes": [
+                {
+                    "name": "Chalk",
+                    "color": "#ecebe6",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Sage",
+                    "color": "#a8b7a1",
+                    "tint": [
+                        0.76000000000000001,
+                        0.82999999999999996,
+                        0.73999999999999999
+                    ]
+                },
+                {
+                    "name": "Clay",
+                    "color": "#c49a83",
+                    "tint": [
+                        0.88,
+                        0.69999999999999996,
+                        0.59999999999999998
+                    ]
+                },
+                {
+                    "name": "Charcoal",
+                    "color": "#4f4f4f",
+                    "tint": [
+                        0.35999999999999999,
+                        0.35999999999999999,
+                        0.37
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "delft-blue-vase",
+            "name": "Delft Blue Vase",
+            "model": "antique_ceramic_vase_01",
+            "category": "vases",
+            "regular_price": "190",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 30,
+            "short_description": "Hand-painted cobalt blossoms on a tall porcelain body.",
+            "description": "<p>A tall porcelain vase painted by hand in cobalt blue with branches of blossom, in the tradition of Delft and Jingdezhen.</p><p>Turn it round in 3D to see that the pattern runs all the way around.</p>",
+            "width": "26",
+            "depth": "26",
+            "height": "44",
+            "weight": "3",
+            "bg": "#e1e3e3",
+            "materials": "Hand-painted porcelain",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "engraved-brass-vase",
+            "name": "Engraved Brass Vase",
+            "model": "brass_vase_03",
+            "category": "vases",
+            "regular_price": "56",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 40,
+            "short_description": "A small footed vase in spun brass, engraved by hand.",
+            "description": "<p>Spun from a single sheet of brass, then engraved by hand with a band of leaves.</p><p>Left unlacquered, so it darkens slowly to a warm patina.</p>",
+            "width": "8",
+            "depth": "8",
+            "height": "20",
+            "weight": "0.6",
+            "bg": "#e9e1d2",
+            "materials": "Solid brass",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "ficus-tree-terracotta",
+            "name": "Ficus Tree in Terracotta",
+            "model": "potted_plant_01",
+            "category": "plants",
+            "regular_price": "145",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 50,
+            "short_description": "A lifelike faux ficus, 135 cm tall, in a footed terracotta urn.",
+            "description": "<p>All the green of a small ficus tree without the watering, the dropped leaves or the search for the right window.</p><p>The urn is real terracotta, weighted so the tree stands steady.</p>",
+            "width": "59",
+            "depth": "63",
+            "height": "135",
+            "weight": "9",
+            "bg": "#e0e5da",
+            "materials": "Faux foliage, terracotta pot",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "arrowhead-plant",
+            "name": "Arrowhead Plant in Clay Bowl",
+            "model": "potted_plant_02",
+            "category": "plants",
+            "regular_price": "98",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 60,
+            "short_description": "A faux syngonium with arrow-shaped leaves in a wide terracotta bowl.",
+            "description": "<p>Broad, veined leaves spill over the rim of a low terracotta bowl. It looks freshly potted every day of the year.</p><p>Wipe the leaves with a damp cloth to keep them bright.</p>",
+            "width": "70",
+            "depth": "66",
+            "height": "84",
+            "weight": "6",
+            "bg": "#dee4d8",
+            "materials": "Faux foliage, terracotta bowl",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "zebra-haworthia",
+            "name": "Zebra Haworthia",
+            "model": "potted_plant_04",
+            "category": "plants",
+            "regular_price": "32",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 70,
+            "short_description": "A striped succulent in a white glazed pot. Faux, so it never needs water.",
+            "description": "<p>A small succulent for a desk or a bathroom shelf, with white-striped leaves in a glazed pot.</p><p>It sits happily in rooms with no daylight at all.</p>",
+            "width": "17",
+            "depth": "18",
+            "height": "27",
+            "weight": "0.7",
+            "bg": "#e4e5df",
+            "materials": "Faux succulent, glazed ceramic pot",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "westminster-mantel-clock",
+            "name": "Westminster Mantel Clock",
+            "model": "mantel_clock_01",
+            "category": "clocks-mirrors",
+            "regular_price": "280",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 80,
+            "short_description": "A walnut-veneer tambour case with a silvered dial and brass bezel.",
+            "description": "<p>The classic tambour shape, in walnut veneer polished by hand, with a silvered dial behind a hinged brass bezel.</p><p>A silent sweep movement means no tick in a quiet room.</p>",
+            "width": "34",
+            "depth": "13",
+            "height": "16",
+            "weight": "3.5",
+            "bg": "#e8ddd0",
+            "materials": "Walnut veneer, brass bezel, glass",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "twin-bell-alarm-clock",
+            "name": "Twin-Bell Alarm Clock",
+            "model": "alarm_clock_01",
+            "category": "clocks-mirrors",
+            "regular_price": "48",
+            "sale_price": "39",
+            "featured": false,
+            "menu_order": 90,
+            "short_description": "A mint-green twin-bell alarm clock with a loud, honest ring.",
+            "description": "<p>Two chrome bells and a hammer: the alarm clock that actually wakes you up.</p><p>Wind the alarm on the back, set the red hand and it rings at the time you chose.</p>",
+            "width": "13",
+            "depth": "7",
+            "height": "17",
+            "weight": "0.5",
+            "bg": "#e2e6e1",
+            "materials": "Lacquered steel, chrome, glass",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "arched-gilt-mirror",
+            "name": "Arched Gilt Mirror",
+            "model": "ornate_mirror_01",
+            "category": "clocks-mirrors",
+            "regular_price": "340",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 100,
+            "short_description": "An arched mirror in a carved giltwood frame.",
+            "description": "<p>A tall arch of bevelled mirror glass in a carved frame finished in water gilding, with a crest of scrolls at the top.</p><p>Hang it over a console or lean it on a mantel.</p>",
+            "width": "49",
+            "depth": "3",
+            "height": "74",
+            "weight": "6",
+            "bg": "#ebe2d3",
+            "materials": "Carved wood, gold leaf, bevelled mirror glass",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "classical-marble-bust",
+            "name": "Classical Marble Bust",
+            "model": "marble_bust_01",
+            "category": "objects",
+            "regular_price": "290",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 110,
+            "short_description": "A cast marble bust after a Roman original.",
+            "description": "<p>Cast from crushed marble and resin after a Roman portrait bust, then finished by hand for a soft, honed surface.</p><p>Heavy enough to stand on a plinth or a bookshelf without moving.</p>",
+            "width": "27",
+            "depth": "30",
+            "height": "51",
+            "weight": "11",
+            "bg": "#e5e3de",
+            "materials": "Cast marble",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "carved-teak-elephant",
+            "name": "Carved Teak Elephant",
+            "model": "carved_wooden_elephant",
+            "category": "objects",
+            "regular_price": "42",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 120,
+            "short_description": "A small elephant carved by hand from a single block of teak.",
+            "description": "<p>Carved by hand from one piece of reclaimed teak and finished with beeswax.</p><p>Pick the natural teak or the ebonised finish.</p>",
+            "width": "11",
+            "depth": "6",
+            "height": "10",
+            "weight": "0.4",
+            "bg": "#ebe0d1",
+            "materials": "Reclaimed teak, beeswax",
+            "designer": "Maison Studio",
+            "finishes": [
+                {
+                    "name": "Teak",
+                    "color": "#b0763f",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Ebonised",
+                    "color": "#3d3330",
+                    "tint": [
+                        0.35999999999999999,
+                        0.31,
+                        0.28999999999999998
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "burl-wood-bowl",
+            "name": "Burl Wood Bowl",
+            "model": "wooden_bowl_02",
+            "category": "objects",
+            "regular_price": "64",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 130,
+            "short_description": "Turned from a single piece of burl, so no two are alike.",
+            "description": "<p>Burl is the knotted, swirling growth on the side of a tree. Turned on the lathe, it shows a pattern that is different in every bowl.</p><p>For keys, fruit or nothing at all. Oil it now and then to keep the colour deep.</p>",
+            "width": "13",
+            "depth": "12",
+            "height": "7",
+            "weight": "0.5",
+            "bg": "#ece1d2",
+            "materials": "Burl wood, food-safe oil",
+            "designer": "Maison Studio",
+            "finishes": []
+        },
+        {
+            "slug": "lidded-wicker-basket",
+            "name": "Lidded Wicker Basket",
+            "model": "wicker_basket_02",
+            "category": "objects",
+            "regular_price": "88",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 140,
+            "short_description": "Hand-woven rattan on short legs, with a lift-off lid.",
+            "description": "<p>Woven by hand from rattan around a light frame, with short legs that keep it off a damp floor.</p><p>For throws, toys or laundry.</p>",
+            "width": "35",
+            "depth": "25",
+            "height": "20",
+            "weight": "1.8",
+            "bg": "#ebe2d4",
+            "materials": "Hand-woven rattan",
+            "designer": "Maison Studio",
+            "finishes": [
+                {
+                    "name": "Natural",
+                    "color": "#c79a5a",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "name": "Smoked",
+                    "color": "#7b6350",
+                    "tint": [
+                        0.59999999999999998,
+                        0.52000000000000002,
+                        0.46000000000000002
+                    ]
+                }
+            ]
+        }
+    ],
+    "site": {
+        "tagline": "Objects worth a closer look"
+    },
+    "options": {
+        "woocommerce_price_num_decimals": "0",
+        "woocommerce_enable_reviews": "no",
+        "woocommerce_thumbnail_cropping": "uncropped"
+    },
+    "home": "<!-- wp:forma/hero {\"eyebrow\":\"Objects \\u0026 accents — 2026\",\"note\":\"Every object is a true-to-scale\\u003cbr\\u003e3D model. Spin it, zoom in,\\u003cbr\\u003eplace it on your shelf.\",\"line1\":\"Objects\",\"line2\":\"\\u003cem\\u003eworth a\\u003c/em\\u003e closer\",\"line3\":\"look.\",\"buttonText\":\"Shop the edit\",\"product\":\"delft-blue-vase\"} /-->\n\n<!-- wp:forma/statement {\"text\":\"A photo shows you one side of a vase. We show you all of them: the glaze, the brushwork and the way it sits on a shelf.\"} /-->\n\n<!-- wp:forma/showcase {\"buttonText\":\"Explore this piece\"} /-->\n\n<!-- wp:forma/rooms {\"eyebrow\":\"(03) — Shop by category\",\"title\":\"Small things,\\u003cbr\\u003e\\u003cem\\u003ebig difference.\\u003c/em\\u003e\",\"linkText\":\"View all decor\",\"endText\":\"New pieces arrive every month.\"} /-->\n\n<!-- wp:forma/anatomy {\"eyebrow\":\"(04) — Anatomy of a clock\",\"product\":\"westminster-mantel-clock\",\"callouts\":[{\"title\":\"Walnut-veneer case\",\"text\":\"Bookmatched veneer over a solid frame, polished by hand.\"},{\"title\":\"Silvered dial\",\"text\":\"Roman numerals and blued hands under a brass bezel.\"},{\"title\":\"Silent movement\",\"text\":\"A sweep movement with no tick, made for quiet rooms.\"}]} /-->\n\n<!-- wp:forma/marquee {\"items\":[\"Rotate\",\"Zoom in\",\"Place it on your shelf\",\"Gift wrapping\",\"Free delivery\"]} /-->\n\n<!-- wp:forma/arrivals {\"linkText\":\"Shop all decor\"} /-->\n\n<!-- wp:forma/promise {\"title\":\"What you see\\u003cbr\\u003eis \\u003cem\\u003ewhat arrives.\\u003c/em\\u003e\",\"items\":[{\"icon\":\"cube\",\"title\":\"Real 3D, not renders\",\"text\":\"Every product page is a live, physically-based model you control.\"},{\"icon\":\"truck\",\"title\":\"Packed by hand\",\"text\":\"Every piece is wrapped by hand in recycled packaging.\"},{\"icon\":\"return\",\"title\":\"30 days to decide\",\"text\":\"Live with it for a month. Not right? Send it back for free.\"},{\"icon\":\"shield\",\"title\":\"Breakage covered\",\"text\":\"If anything arrives damaged, we replace it free.\"}],\"quote\":\"“I turned the vase round on my phone to check the pattern on the back. It’s even prettier on the shelf.”\",\"cite\":\"Amara O. — Lisbon\"} /-->"
+}
