@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Forma 3D Toolkit — "Soft" store design
+   Light and airy: oat and sage with a terracotta accent, a rounded serif
+   (Fraunces with its "soft" axis) and DM Sans, arched product cards, very
+   rounded corners and pill buttons. Loaded after the Forma 3D theme stylesheet.
+   ========================================================================== */
+
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/fraunces-latin-full-normal.woff2) format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 100 900; font-display: swap; src: url(fonts/fraunces-latin-full-italic.woff2) format("woff2"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 100 1000; font-display: swap; src: url(fonts/dm-sans-latin-wght-normal.woff2) format("woff2"); }
+
+:root {
+	--bg: #f4efe6;
+	--bg-2: #ebe4d6;
+	--paper: #fbf8f2;
+	--ink: #2f2a24;
+	--ink-2: #5b5249;
+	--muted: #958a7c;
+	--line: rgba(47, 42, 36, 0.12);
+	--line-2: rgba(47, 42, 36, 0.22);
+	--accent: #c0663f;
+	--dark: #34443a;
+	--cream: #f6f1e7;
+	--sage: #dfe6da;
+	--radius: 22px;
+	--radius-lg: 36px;
+	--serif: "Fraunces", Georgia, "Times New Roman", serif;
+	--sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--wp--preset--color--bg: #f4efe6;
+	--wp--preset--color--bg-2: #ebe4d6;
+	--wp--preset--color--paper: #fbf8f2;
+	--wp--preset--color--ink: #2f2a24;
+	--wp--preset--color--ink-2: #5b5249;
+	--wp--preset--color--muted: #958a7c;
+	--wp--preset--color--cream: #f6f1e7;
+	--wp--preset--color--dark: #34443a;
+	--wp--preset--color--accent: #c0663f;
+	--wp--preset--font-family--serif: var(--serif);
+	--wp--preset--font-family--sans: var(--sans);
+}
+
+/* Soft colour fields behind the 3D stage (drawn under the canvas). */
+body.forma-design-soft.has-3d-stage {
+	background-image:
+		radial-gradient(34% 44% at 72% 52%, rgba(192, 102, 63, 0.12), transparent 70%),
+		radial-gradient(36% 40% at 18% 86%, rgba(52, 68, 58, 0.1), transparent 70%);
+	background-attachment: fixed;
+}
+
+/* Type: Fraunces with the soft, wonky cut; terracotta italics. */
+.display, .hero__title, .shop-hero__title, .page__title, .pdp__title, .sc-item__title, .site-footer__title, .qv__title,
+.statement__text, .quote p, .marquee__group span, .room-card__foot h3, .site-footer__word, .logo, .mobile-menu a, .entry h1, .entry h2, .entry h3 {
+	font-variation-settings: "SOFT" 100, "WONK" 1;
+	font-weight: 360;
+}
+.hero__title { line-height: 0.92; letter-spacing: -0.03em; }
+.display em, .hero__title em, .shop-hero__title em, .page__title em, .site-footer__title em { color: var(--accent); font-weight: 300; }
+.rooms .display em, .shop-ar .display em { color: #e8b49a !important; }
+.eyebrow { letter-spacing: 0.1em; font-weight: 600; color: var(--accent); }
+.rooms .eyebrow, .site-footer .eyebrow, .shop-ar .eyebrow { color: #e8b49a; }
+
+/* Buttons: sage pills that warm up to terracotta. */
+.btn { --btn-bg: var(--dark); --btn-fg: var(--cream); font-weight: 600; letter-spacing: 0; }
+.btn::before { background: var(--accent); }
+.btn--ghost { --btn-bg: var(--paper); --btn-fg: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
+.btn--ghost::before { background: var(--dark); }
+.btn--ghost:hover { color: var(--cream); }
+.btn--light { --btn-bg: var(--cream); --btn-fg: var(--ink); }
+.btn--light:hover { color: var(--cream); }
+.wp-element-button, .wp-block-button__link { background: var(--dark) !important; color: var(--cream) !important; }
+.wp-element-button:hover, .wp-block-button__link:hover { background: var(--accent) !important; }
+.wp-block-button.is-style-outline > .wp-block-button__link { background: transparent !important; color: var(--ink) !important; }
+
+/* Header: rounded pill navigation on a soft bar. */
+.site-header.is-scrolled { background: rgba(244, 239, 230, 0.82); }
+.site-nav__list { gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.45); box-shadow: inset 0 0 0 1px var(--line); }
+.site-nav__list .current-menu-item a { background: var(--dark); color: var(--cream); }
+.logo { font-style: italic; }
+.logo__mark { border-radius: 50% 50% 50% 0; }
+
+/* Arched cards: rounded tops, flags and the 3D button moved clear of the curve. */
+.p-card { background: var(--card-bg); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset; }
+.products--home .p-card,
+.products--related .p-card,
+.shop .products > li:not(:nth-child(6n + 1)) .p-card { border-radius: 50% 50% var(--radius-lg) var(--radius-lg) / 30% 30% var(--radius-lg) var(--radius-lg); }
+.p-card:hover { box-shadow: 0 30px 60px -32px rgba(52, 68, 58, 0.45); transform: translateY(-4px); }
+.products--home .p-card__flags,
+.products--related .p-card__flags,
+.shop .products > li:not(:nth-child(6n + 1)) .p-card__flags { top: 22%; left: 18px; flex-direction: column; align-items: flex-start; }
+.products--home .p-card__quick,
+.products--related .p-card__quick,
+.shop .products > li:not(:nth-child(6n + 1)) .p-card__quick { top: auto; bottom: 12px; right: 50%; transform: translate(50%, 6px); }
+.products--home .p-card:hover .p-card__quick,
+.products--related .p-card:hover .p-card__quick,
+.shop .products > li:not(:nth-child(6n + 1)) .p-card:hover .p-card__quick { transform: translate(50%, 0); }
+.flag { background: rgba(255, 255, 255, 0.85); }
+.p-card__quick { background: var(--dark); }
+.p-card__title { font-weight: 600; }
+.p-card__add { background: #fff; }
+.p-card__add:hover { background: var(--dark); }
+.swatch.is-active, .thumb.is-active { outline-color: var(--accent); }
+
+/* Homepage sections. */
+.hero__tag { background: rgba(255, 255, 255, 0.7); }
+.statement__facts { border-top: 0; gap: 14px; }
+.statement__facts > div { padding: 22px 24px; border-radius: var(--radius); background: rgba(255, 255, 255, 0.55); }
+.statement__facts strong, .statement__facts span { color: var(--accent); }
+.showcase__num { -webkit-text-stroke: 1.5px rgba(192, 102, 63, 0.16); }
+.showcase__nav li i { height: 6px; border-radius: 99px; }
+.showcase__nav li i::after { background: var(--accent); }
+.rooms { background: var(--dark); }
+.room-card { border-radius: 50% 50% var(--radius-lg) var(--radius-lg) / 26% 26% var(--radius-lg) var(--radius-lg); }
+.room-card__num { left: 50%; top: 14%; transform: translateX(-50%); }
+.room-card__foot { border-top: 0; }
+.room-card__go { background: var(--accent); }
+.room-card:hover .room-card__go { background: var(--dark); }
+.rooms__progress { height: 4px; border-radius: 99px; }
+.rooms__progress i { border-radius: 99px; background: #e8b49a; }
+.callout__dot { background: var(--accent); box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9), 0 6px 18px rgba(52, 68, 58, 0.3); }
+.callout__dot::after { border-color: rgba(192, 102, 63, 0.5); }
+.callout__card { border-radius: var(--radius); background: rgba(255, 255, 255, 0.86); }
+.marquee { background: var(--accent); color: var(--cream); border: 0; }
+.marquee__group span { font-style: italic; }
+.marquee__group i { color: var(--cream); }
+.arrivals .section-head { flex-direction: column; align-items: center; text-align: center; }
+.promise { background: var(--sage); }
+.promise__list li { border-top: 0; margin-bottom: 12px; padding: 22px 24px; border-radius: var(--radius); background: rgba(255, 255, 255, 0.6); }
+.promise__list li:last-child { border-bottom: 0; }
+.promise__list .icon { color: var(--accent); }
+.quote p { font-style: italic; }
+
+/* Footer: deep sage with an italic store name. */
+.site-footer { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.site-footer__word { font-style: italic; color: #f1e3d3; }
+.site-footer__col a:hover { color: #e8b49a; }
+
+/* Shop and product page. */
+.shop-bar { background: var(--bg); }
+.pill { background: rgba(255, 255, 255, 0.5); }
+.pill.is-active, .woocommerce-pagination .current { background: var(--dark); color: var(--cream); }
+.shop-ar { background: var(--dark); }
+.viewer::before { background: radial-gradient(ellipse 60% 50% at 50% 42%, rgba(255, 255, 255, 0.7), transparent 70%); }
+.tool[aria-pressed="true"], .viewer__ar { background: var(--dark); }
+.viewer__ar:hover { background: var(--accent); }
+.pdp-story__fig { border-radius: 50% 50% var(--radius-lg) var(--radius-lg) / 24% 24% var(--radius-lg) var(--radius-lg); }
+.pdp-story__fig--0 { border-radius: var(--radius-lg); }
+.pdp-story__dims strong { color: var(--accent); }
+.pdp__form--wc .single_add_to_cart_button { background: var(--dark); }
+.toast { background: var(--dark); }
+.drawer__panel, .qv__panel { border-radius: var(--radius-lg); }

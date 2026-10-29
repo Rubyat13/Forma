@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Forma 3D Toolkit — "Noir" store design
+   A dark night showroom: near-black, warm ivory text, gold accents, a
+   high-contrast serif (Bodoni Moda) with a geometric sans (Jost), square
+   corners, hairline borders and a warm glow behind the 3D models.
+   Loaded after the Forma 3D theme stylesheet.
+   ========================================================================== */
+
+@font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 400 900; font-display: swap; src: url(fonts/bodoni-moda-latin-opsz-normal.woff2) format("woff2"); }
+@font-face { font-family: "Bodoni Moda"; font-style: italic; font-weight: 400 900; font-display: swap; src: url(fonts/bodoni-moda-latin-opsz-italic.woff2) format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/jost-latin-wght-normal.woff2) format("woff2"); }
+
+:root {
+	--bg: #0d0b09;
+	--bg-2: #17130f;
+	--paper: #1a1612;
+	--ink: #f2e8d5;
+	--ink-2: #c9bba3;
+	--muted: #8e826f;
+	--line: rgba(242, 232, 213, 0.12);
+	--line-2: rgba(242, 232, 213, 0.24);
+	--accent: #e0b25a;
+	--dark: #060504;
+	--cream: #f2e8d5;
+	--on-accent: #120f0b;
+	--radius: 2px;
+	--radius-lg: 4px;
+	--serif: "Bodoni Moda", Didot, "Times New Roman", serif;
+	--sans: "Jost", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--wp--preset--color--bg: #0d0b09;
+	--wp--preset--color--bg-2: #17130f;
+	--wp--preset--color--paper: #1a1612;
+	--wp--preset--color--ink: #f2e8d5;
+	--wp--preset--color--ink-2: #c9bba3;
+	--wp--preset--color--muted: #8e826f;
+	--wp--preset--color--cream: #f2e8d5;
+	--wp--preset--color--dark: #060504;
+	--wp--preset--color--accent: #e0b25a;
+	--wp--preset--font-family--serif: var(--serif);
+	--wp--preset--font-family--sans: var(--sans);
+	color-scheme: dark;
+}
+
+/* A warm spotlight behind the 3D stage (drawn under the canvas). */
+body.forma-design-noir { background-color: var(--bg); }
+body.forma-design-noir.has-3d-stage {
+	background-image:
+		radial-gradient(38% 52% at 70% 52%, rgba(224, 178, 90, 0.17), transparent 70%),
+		radial-gradient(60% 40% at 30% 110%, rgba(224, 178, 90, 0.06), transparent 70%);
+	background-attachment: fixed;
+}
+::selection { background: var(--accent); color: var(--on-accent); }
+.skip-link { background: var(--accent); color: var(--on-accent); }
+
+/* Type: Bodoni for display, gold italics, wide uppercase labels. */
+.display, .hero__title, .shop-hero__title, .page__title, .pdp__title, .sc-item__title, .site-footer__title, .qv__title { letter-spacing: -0.02em; }
+.hero__title { font-weight: 500; line-height: 0.9; }
+.display em, .hero__title em, .shop-hero__title em, .page__title em, .site-footer__title em, .rooms .display em, .shop-ar .display em { color: var(--accent) !important; }
+.eyebrow, .sc-item__cat, .p-card__cat, .hero__scroll, .pdp-story__dims span { letter-spacing: 0.24em; }
+.statement__text, .quote p { font-style: italic; }
+.marquee__group span { font-style: italic; color: transparent; -webkit-text-stroke: 1px rgba(242, 232, 213, 0.55); }
+.marquee__group i { color: var(--accent); }
+
+/* Buttons: square, gold, uppercase. */
+.btn { --btn-bg: var(--accent); --btn-fg: var(--on-accent); border-radius: 0; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; }
+.btn::before { background: var(--ink); }
+.btn--lg { font-size: 12.5px; }
+.btn--ghost { --btn-bg: transparent; --btn-fg: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); }
+.btn--ghost::before { background: var(--accent); }
+.btn--ghost:hover, .btn--light:hover, .rooms__end .btn:hover { color: var(--on-accent); }
+.btn--light, .rooms__end .btn { --btn-bg: var(--ink); --btn-fg: var(--on-accent); }
+.btn--light::before, .rooms__end .btn::before { background: var(--accent); }
+.link-arrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; border-color: rgba(224, 178, 90, 0.5); }
+.link-arrow:hover { border-color: var(--accent); }
+.wp-element-button, .wp-block-button__link { background: var(--accent) !important; color: var(--on-accent) !important; border-radius: 0 !important; text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px !important; }
+.wp-block-button.is-style-outline > .wp-block-button__link { background: transparent !important; color: var(--ink) !important; box-shadow: inset 0 0 0 1px var(--accent); }
+
+/* Header. */
+.site-header.is-scrolled { background: rgba(13, 11, 9, 0.82); }
+.site-nav__list a { border-radius: 0; text-transform: uppercase; letter-spacing: 0.16em; font-size: 11.5px; }
+.site-nav__list a:hover { background: transparent; color: var(--accent); }
+.site-nav__list .current-menu-item a { background: transparent; color: var(--accent); box-shadow: inset 0 -1px 0 var(--accent); }
+.icon-btn:hover, .qty button:hover, .tool:hover, .tool[data-tool="rotate"][aria-pressed="true"]:hover { background: rgba(242, 232, 213, 0.08); }
+.cart-count, .flag--sale { background: var(--accent); color: var(--on-accent); }
+.logo { font-weight: 500; letter-spacing: 0; }
+
+/* Cards: hairline frames that light up in gold. */
+.p-card { box-shadow: inset 0 0 0 1px var(--line); }
+.p-card:hover { box-shadow: inset 0 0 0 1px rgba(224, 178, 90, 0.55), 0 30px 80px -30px rgba(224, 178, 90, 0.28); }
+.flag { background: rgba(13, 11, 9, 0.6); color: var(--ink); border-radius: 0; }
+.p-card__quick { background: var(--accent); color: var(--on-accent); border-radius: 0; }
+.p-card__quick:hover { background: var(--ink); }
+.p-card__add { background: rgba(242, 232, 213, 0.08); border-radius: 0; }
+.p-card__add:hover { background: var(--accent); color: var(--on-accent); }
+.p-card__title { font-family: var(--serif); font-size: 21px; font-weight: 500; }
+.p-card__price ins, .pdp__price ins, .qv__price ins { color: var(--accent); }
+.dots i, .swatch { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+.swatch.is-active, .thumb.is-active { outline-color: var(--accent); }
+
+/* Homepage sections. */
+.hero__tag { background: rgba(242, 232, 213, 0.06); box-shadow: inset 0 0 0 1px var(--line); border-radius: 0; }
+.hero__tag-dot { box-shadow: 0 0 0 0 rgba(224, 178, 90, 0.6); animation-name: noir-pulse; }
+@keyframes noir-pulse { 70% { box-shadow: 0 0 0 12px rgba(224, 178, 90, 0); } 100% { box-shadow: 0 0 0 0 rgba(224, 178, 90, 0); } }
+.hero__scroll i::after { background: var(--accent); }
+.statement__facts { border-color: rgba(224, 178, 90, 0.35); }
+.statement__facts strong, .statement__facts span { color: var(--accent); }
+.showcase__num { -webkit-text-stroke: 1px rgba(224, 178, 90, 0.2); }
+.showcase__nav li i::after { background: var(--accent); }
+.rooms { background: var(--dark); }
+.room-card { box-shadow: inset 0 0 0 1px var(--line); color: var(--ink); }
+.room-card__go { background: var(--accent); color: var(--on-accent) !important; border-radius: 0; }
+.room-card:hover .room-card__go { background: var(--ink); }
+.rooms__progress i { background: var(--accent); }
+.callout__dot { background: var(--accent); box-shadow: 0 0 0 5px rgba(13, 11, 9, 0.85), 0 0 22px rgba(224, 178, 90, 0.7); }
+.callout__dot::after { border-color: rgba(224, 178, 90, 0.55); }
+.callout__card { background: rgba(23, 19, 15, 0.88); box-shadow: inset 0 0 0 1px var(--line), 0 18px 40px -18px rgba(0, 0, 0, 0.7); border-radius: 0; }
+.marquee { border-color: rgba(224, 178, 90, 0.25); }
+.promise { background: var(--paper); }
+.promise__list .icon { color: var(--accent); }
+.quote cite { letter-spacing: 0.2em; text-transform: uppercase; font-size: 12px; }
+
+/* Footer: the store name in a gold gradient. */
+.site-footer__word { font-weight: 500; background: linear-gradient(180deg, #f6ecd9 10%, #e0b25a 60%, #7a5a22 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.site-footer__grid { border-top-color: rgba(224, 178, 90, 0.25); }
+.site-footer__col a:hover { color: var(--accent); }
+
+/* Shop. */
+.shop-bar { background: var(--bg); }
+.pill { border-radius: 0; text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; }
+.pill:hover { box-shadow: inset 0 0 0 1px var(--accent); }
+.pill.is-active, .woocommerce-pagination .current { background: var(--accent); color: var(--on-accent); }
+.pill.is-active sup { color: rgba(18, 15, 11, 0.6); }
+.woocommerce-ordering select { border-radius: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23f2e8d5' stroke-width='1.6'%3E%3Cpath d='m1 1.5 5 5 5-5'/%3E%3C/svg%3E"); }
+.woocommerce-ordering select option { background: var(--paper); color: var(--ink); }
+.woocommerce-pagination a, .woocommerce-pagination span { border-radius: 0; }
+.shop-ar { box-shadow: inset 0 0 0 1px rgba(224, 178, 90, 0.3); background: radial-gradient(60% 80% at 85% 50%, rgba(224, 178, 90, 0.12), transparent 70%), var(--dark); }
+
+/* Product page and quick view. */
+.viewer::before { background: radial-gradient(ellipse 55% 50% at 50% 45%, rgba(224, 178, 90, 0.2), transparent 70%); }
+.viewer, .thumb, .pdp-story__fig { box-shadow: inset 0 0 0 1px var(--line); }
+.viewer__badge, .viewer__hint, .viewer__tools, .qv__hint { background: rgba(13, 11, 9, 0.62); color: var(--ink); border-radius: 0; }
+.tool { border-radius: 0; }
+.tool[aria-pressed="true"], .viewer__ar { background: var(--accent); color: var(--on-accent); border-radius: 0; }
+.viewer__ar:hover { background: var(--ink); }
+.viewer__progress, .qv__progress { background: rgba(242, 232, 213, 0.1); }
+.viewer__progress i, .qv__progress i { background: var(--accent); }
+.dim-dot { background: var(--accent); box-shadow: 0 0 0 3px rgba(13, 11, 9, 0.8); }
+.dim-label { background: var(--accent); color: var(--on-accent); }
+.dim-line { stroke: var(--accent); }
+.qty { border-radius: 0; }
+.pdp__form--wc .single_add_to_cart_button { background: var(--accent); color: var(--on-accent); border-radius: 0; }
+.pdp-story__dims strong { color: var(--accent); }
+.buybar { background: rgba(23, 19, 15, 0.9); border-radius: 0; }
+.drawer__panel, .qv__panel { border-radius: 0; box-shadow: inset 0 0 0 1px var(--line); }
+.drawer__scrim, .qv__scrim { background: rgba(0, 0, 0, 0.62); }
+.toast { background: var(--accent); color: var(--on-accent); border-radius: 0; }
+
+/* Forms (account, cart and checkout). */
+.forma-design-noir input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.forma-design-noir select,
+.forma-design-noir textarea { background-color: var(--paper); color: var(--ink); border-color: var(--line-2); }
+.forma-design-noir .wc-block-components-text-input input,
+.forma-design-noir .wc-block-components-text-input label,
+.forma-design-noir .wc-blocks-components-select .wc-blocks-components-select__select,
+.forma-design-noir .wc-block-components-combobox .wc-block-components-combobox-control input { background-color: var(--paper) !important; color: var(--ink) !important; }
+.forma-design-noir .wc-block-components-text-input label { background: transparent !important; color: var(--muted) !important; }
+.forma-design-noir .wc-block-components-button:not(.is-link),
+.forma-design-noir .wc-block-cart__submit-button,
+.forma-design-noir .wc-block-components-checkout-place-order-button { background: var(--accent) !important; color: var(--on-accent) !important; border-radius: 0 !important; }
+.woocommerce-message, .woocommerce-info, .woocommerce-error, .wc-block-components-notice-banner { border-radius: 0; }

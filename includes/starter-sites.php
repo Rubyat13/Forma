@@ -25,6 +25,7 @@ function forma_3d_tk_starter_sites() {
 			'products'   => 16,
 			'categories' => 4,
 			'remote'     => false,
+			'design'     => 'original',
 		),
 		'lighting'  => array(
 			'name'       => __( 'Lighting', 'forma-3d-toolkit' ),
@@ -33,6 +34,8 @@ function forma_3d_tk_starter_sites() {
 			'categories' => 5,
 			'remote'     => true,
 			'size'       => 9,
+			'design'     => 'noir',
+			'package'    => 2,
 		),
 		'decor'     => array(
 			'name'       => __( 'Home Decor', 'forma-3d-toolkit' ),
@@ -41,6 +44,8 @@ function forma_3d_tk_starter_sites() {
 			'categories' => 4,
 			'remote'     => true,
 			'size'       => 8,
+			'design'     => 'soft',
+			'package'    => 1,
 		),
 	);
 	foreach ( $sites as $id => $site ) {
@@ -75,7 +80,8 @@ function forma_3d_tk_starter_site( $site ) {
  * @param string $site Starter site ID.
  */
 function forma_3d_tk_starter_package( $site ) {
-	$url = 'https://github.com/Rubyat13/Forma/archive/refs/tags/starter-' . rawurlencode( $site ) . '-v1.zip';
+	$info = forma_3d_tk_starter_site( $site );
+	$url  = 'https://github.com/Rubyat13/Forma/archive/refs/tags/starter-' . rawurlencode( $site ) . '-v' . (int) ( $info['package'] ?? 1 ) . '.zip';
 
 	/**
 	 * Filters where a starter site's zip package is downloaded from.

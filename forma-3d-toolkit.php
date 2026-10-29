@@ -23,6 +23,7 @@ define( 'FORMA_3D_TK_URI', plugin_dir_url( __FILE__ ) );
 require FORMA_3D_TK_DIR . 'includes/product-fields.php';
 require FORMA_3D_TK_DIR . 'includes/blocks.php';
 require FORMA_3D_TK_DIR . 'includes/patterns.php';
+require FORMA_3D_TK_DIR . 'includes/designs.php';
 
 if ( is_admin() ) {
 	require FORMA_3D_TK_DIR . 'includes/starter-sites.php';

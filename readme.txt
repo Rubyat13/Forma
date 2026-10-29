@@ -8,13 +8,14 @@ Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Companion plugin for the Forma 3D theme: homepage blocks, page templates, product finishes for 3D models and one-click 3D starter sites.
+Companion plugin for the Forma 3D theme: one-click 3D starter sites with their own designs, page templates and homepage blocks.
 
 == Description ==
 
 Forma 3D Toolkit adds the store features of the [Forma 3D](https://wordpress.org/themes/forma-3d/) theme:
 
 * Appearance > Forma Setup: three one-click starter sites, each with products, true-to-scale 3D models, photos, categories and a homepage (see below).
+* Three store designs: Original, Noir (dark, gold, high-contrast serif) and Soft (oat and sage, terracotta, rounded serif, arched cards). Each starter site comes with its own design; change it any time in Appearance > Customize > Forma 3D options.
 * Six page templates, offered when you create a new page: About us, Contact, Lookbook, FAQ, Shop the room and a 3D campaign landing page.
 * Eight homepage blocks for the block editor (Hero, Statement, 3D Showcase, Shop by Room, Anatomy, Marquee, Product Grid, Promise) and the "Forma 3D homepage" pattern.
 * A "Forma Display" product tab: finishes (colour swatches that recolour the 3D model), stage colour, materials and designer.
@@ -23,9 +24,9 @@ Forma 3D Toolkit adds the store features of the [Forma 3D](https://wordpress.org
 
 = Starter sites =
 
-* Furniture: 16 sofas, chairs, tables and storage pieces. Included in the plugin.
-* Lighting: 14 chandeliers, pendants, table lamps, wall lights and lanterns. Downloaded when you import it.
-* Home Decor: 14 vases, faux plants, clocks, mirrors and decorative objects. Downloaded when you import it.
+* Furniture (Original design): 16 sofas, chairs, tables and storage pieces. Included in the plugin.
+* Lighting (Noir design): 14 chandeliers, pendants, table lamps, wall lights and lanterns. Downloaded when you import it.
+* Home Decor (Soft design): 14 vases, faux plants, clocks, mirrors and decorative objects. Downloaded when you import it.
 
 The blocks are drawn by the Forma 3D theme, so they show nothing with another theme. The 3D models on product pages are shown by the free [3D Viewer](https://wordpress.org/plugins/3d-viewer/) plugin, and the store runs on [WooCommerce](https://wordpress.org/plugins/woocommerce/).
 
@@ -49,6 +50,10 @@ Yes. Choose another starter site in Forma Setup. By default the products of the 
 
 Yes. Products are matched by SKU and updated, and media files that were already imported are reused.
 
+= Can I use a design without its starter site? =
+
+Yes. Go to Appearance > Customize > Forma 3D options and choose Original, Noir or Soft under "Store design". Importing a starter site switches to that starter site's design.
+
 = How do I use the page templates? =
 
 Go to Pages > Add New Page. The "Choose a pattern" window lists the Forma 3D page templates; pick one and edit the text and photos. They are also in the block inserter under Patterns > Forma 3D pages.
@@ -70,6 +75,7 @@ The Furniture starter site is included in the plugin and needs no download.
 = 1.1.0 =
 * New: Lighting and Home Decor starter sites in Forma Setup, next to Furniture. Pick one and import it in one click.
 * New: switching starter sites moves the previous starter site's products to the Trash and gives the Home page the new design (the old version stays in its revisions).
+* New: three store designs (Original, Noir and Soft) with their own colours, fonts and shapes. Lighting uses Noir, Home Decor uses Soft; switch in Appearance > Customize.
 * New: six page templates for new pages: About us, Contact, Lookbook, FAQ, Shop the room and a 3D campaign landing page.
 * Imported product data is sanitised, and starter site homepages keep only Forma blocks.
 
@@ -93,3 +99,5 @@ Furniture starter site 3D models: Poly Haven (CC0, https://polyhaven.com) and Kh
 Lighting and Home Decor starter site 3D models: Poly Haven (CC0, https://polyhaven.com).
 
 Demo product photos and the starter site previews are renders of these models and use the same licences.
+
+Fonts in the Noir and Soft designs, all under the SIL Open Font License 1.1 (licence files in assets/designs/fonts): Bodoni Moda (The Bodoni Moda Project Authors, https://github.com/indestructible-type/Bodoni), Jost (The Jost Project Authors, https://github.com/indestructible-type/Jost), Fraunces (The Fraunces Project Authors, https://github.com/undercasetype/Fraunces) and DM Sans (The DM Sans Project Authors, https://github.com/googlefonts/dm-fonts).

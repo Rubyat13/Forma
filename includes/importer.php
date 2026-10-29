@@ -244,6 +244,12 @@ function forma_3d_tk_setup_page() {
 								<?php
 								/* translators: 1: number of products, 2: number of categories. */
 								echo esc_html( sprintf( __( '%1$d products · %2$d categories', 'forma-3d-toolkit' ), $site['products'], $site['categories'] ) );
+								$designs = forma_3d_tk_designs();
+								if ( ! empty( $site['design'] ) && isset( $designs[ $site['design'] ] ) ) {
+									echo ' · ';
+									/* translators: %s: store design name, e.g. "Noir". */
+									echo esc_html( sprintf( __( '%s design', 'forma-3d-toolkit' ), $designs[ $site['design'] ]['name'] ) );
+								}
 								if ( ! empty( $site['remote'] ) ) {
 									echo ' · ';
 									/* translators: %d: download size in megabytes. */
@@ -583,6 +589,8 @@ function forma_3d_tk_demo_finish( $site ) {
 	}
 	flush_rewrite_rules();
 	update_option( 'forma_demo_site', $site );
+	$info = forma_3d_tk_starter_site( $site );
+	update_option( 'forma_3d_tk_design', forma_3d_tk_sanitize_design( $info['design'] ?? 'original' ) );
 	update_option( 'forma_demo_imported', time() );
 	forma_3d_tk_cleanup_package( $site );
 }
