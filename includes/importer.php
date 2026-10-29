@@ -473,15 +473,22 @@ function forma_3d_tk_demo_product( $site, $index ) {
 	$product->set_reviews_allowed( false );
 	$pid = $product->save();
 
-	$model  = forma_3d_tk_demo_media( $site, 'models/' . $file . '.glb', $pid, $name . ' 3D model' );
+	// The 3D model is optional (the Fashion starter site has photos only).
+	$model = $file ? forma_3d_tk_demo_media( $site, 'models/' . $file . '.glb', $pid, $name . ' 3D model' ) : 0;
+	// Photos: an explicit list of files in images/, or "<model>-0/1/2.webp".
+	$files  = ! empty( $it['images'] ) && is_array( $it['images'] )
+		? array_map( 'sanitize_file_name', $it['images'] )
+		: array( $file . '-0.webp', $file . '-1.webp', $file . '-2.webp' );
 	$images = array();
-	foreach ( array( 0, 1, 2 ) as $k ) {
-		$img = forma_3d_tk_demo_media( $site, 'images/' . $file . '-' . $k . '.webp', $pid, $name );
-		update_post_meta( $img, '_wp_attachment_image_alt', $name );
-		$images[] = $img;
+	foreach ( $files as $image_file ) {
+		$img = forma_3d_tk_demo_media( $site, 'images/' . $image_file, $pid, $name );
+		if ( $img ) {
+			update_post_meta( $img, '_wp_attachment_image_alt', $name );
+			$images[] = $img;
+		}
 	}
 	$finishes = forma_3d_tk_sanitize_finishes( $it['finishes'] ?? array() );
-	$product->set_image_id( $images[0] );
+	$product->set_image_id( $images[0] ?? 0 );
 	$product->set_gallery_image_ids( array_slice( $images, 1 ) );
 	$product->update_meta_data( '_forma_model_id', $model );
 	$product->update_meta_data( '_forma_bg', (string) sanitize_hex_color( $it['bg'] ) );
@@ -491,6 +498,9 @@ function forma_3d_tk_demo_product( $site, $index ) {
 	$product->update_meta_data( '_forma_demo_site', $site );
 	$product->save();
 
+	if ( ! $model ) {
+		return;
+	}
 	// Hand the model to the 3D Viewer plugin (read by it even before it is activated).
 	$meta = get_post_meta( $pid, '_bp3d_product_', true );
 	$meta = is_array( $meta ) ? $meta : array();
@@ -550,7 +560,7 @@ function forma_3d_tk_demo_finish( $site ) {
 	}
 
 	// The starter site's own homepage (its block settings and text), or every Forma block with its defaults.
-	$markup  = ! empty( $data['home'] ) ? forma_3d_tk_clean_home( $data['home'] ) : '';
+	$markup  = ! empty( $data['home'] ) ? forma_3d_tk_prepare_looks( $site, forma_3d_tk_clean_home( $data['home'] ) ) : '';
 	$markup  = '' !== $markup ? $markup : forma_3d_tk_home_markup();
 	$home    = get_page_by_path( 'home' );
 	$home_id = $home ? $home->ID : wp_insert_post(
@@ -591,6 +601,8 @@ function forma_3d_tk_demo_finish( $site ) {
 	update_option( 'forma_demo_site', $site );
 	$info = forma_3d_tk_starter_site( $site );
 	update_option( 'forma_3d_tk_design', forma_3d_tk_sanitize_design( $info['design'] ?? 'original' ) );
+	// The shop's "Try it in your room" (AR) section only makes sense for starter sites with 3D models.
+	set_theme_mod( 'forma_3d_shop_ar', ! isset( $info['models'] ) || (bool) $info['models'] );
 	update_option( 'forma_demo_imported', time() );
 	forma_3d_tk_cleanup_package( $site );
 }

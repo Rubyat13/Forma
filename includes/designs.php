@@ -3,9 +3,10 @@
  * Store designs: colour, type and shape presets for the Forma 3D theme.
  *
  * "Original" is the theme's own design. "Noir" (dark, gold, high-contrast
- * serif) and "Soft" (oat and sage, terracotta, rounded serif, arched cards)
- * load one extra stylesheet after the theme's. Importing a starter site
- * switches to its design; Appearance > Customize > Forma 3D options changes it.
+ * serif), "Soft" (oat and sage, terracotta, rounded serif, arched cards) and
+ * "Studio" (pale grey and black, light sans-serif) load one extra stylesheet
+ * after the theme's. Importing a starter site switches to its design;
+ * Appearance > Customize > Forma 3D options changes it.
  *
  * @package Forma3DToolkit
  */
@@ -30,6 +31,10 @@ function forma_3d_tk_designs() {
 		'soft'     => array(
 			'name' => __( 'Soft', 'forma-3d-toolkit' ),
 			'desc' => __( 'Oat and sage with terracotta, a rounded serif and arched cards.', 'forma-3d-toolkit' ),
+		),
+		'studio'   => array(
+			'name' => __( 'Studio', 'forma-3d-toolkit' ),
+			'desc' => __( 'Pale grey and black with light sans-serif headings, like a photo studio.', 'forma-3d-toolkit' ),
 		),
 	);
 }

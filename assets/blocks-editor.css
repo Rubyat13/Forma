@@ -84,3 +84,15 @@
 
 /* Forma sections are full-width on the site, so give their cards room in the editor. */
 .forma-ed { max-width: min(1120px, 100%) !important; margin-left: auto !important; margin-right: auto !important; }
+/* Try the Look */
+.forma-ed__looks { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin: 18px 0 8px; }
+.forma-ed__look { display: grid; gap: 4px; align-content: start; }
+.forma-ed__look img, .forma-ed__look-empty { width: 100%; height: 180px; object-fit: contain; border-radius: 10px; background: rgba(0, 0, 0, 0.04); }
+.forma-ed__look-empty { display: grid; place-items: center; font-size: 12px; color: #757575; }
+.forma-ed__look strong { font-size: 13px; }
+.forma-ed__look span { font-size: 11px; color: #757575; line-height: 1.35; }
+.forma-ed__look-media { display: grid; gap: 8px; margin-bottom: 8px; }
+.forma-ed__look-media img { max-height: 180px; width: auto; object-fit: contain; background: #f0f0f0; border-radius: 6px; }
+.forma-ed__checklist { max-height: 220px; overflow-y: auto; padding: 8px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 4px; }
+.forma-ed__checklist .components-base-control { margin-bottom: 6px; }
+.forma-ed__row { display: flex; flex-wrap: wrap; gap: 4px; }

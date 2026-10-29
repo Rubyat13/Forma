@@ -24,6 +24,7 @@ require FORMA_3D_TK_DIR . 'includes/product-fields.php';
 require FORMA_3D_TK_DIR . 'includes/blocks.php';
 require FORMA_3D_TK_DIR . 'includes/patterns.php';
 require FORMA_3D_TK_DIR . 'includes/designs.php';
+require FORMA_3D_TK_DIR . 'includes/looks.php';
 
 if ( is_admin() ) {
 	require FORMA_3D_TK_DIR . 'includes/starter-sites.php';

@@ -260,6 +260,75 @@
 				), 'forma-ed--paper')
 			);
 		},
+
+		looks(props) {
+			const a = props.attributes;
+			const looks = a.looks || [];
+			const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
+			const setLook = (i, patch) => props.setAttributes({ looks: looks.map((l, k) => (k === i ? { ...l, ...patch } : l)) });
+			const move = (i, d) => {
+				const next = looks.slice();
+				const [it] = next.splice(i, 1);
+				next.splice(Math.max(0, Math.min(next.length, i + d)), 0, it);
+				props.setAttributes({ looks: next });
+			};
+			const hasProduct = (l, slug) => (l.products || []).map(String).includes(String(slug));
+			const toggleProduct = (i, slug, on) => {
+				const cur = (looks[i].products || []).map(String);
+				setLook(i, { products: on ? cur.concat(String(slug)) : cur.filter((s) => s !== String(slug)) });
+			};
+			const lookProducts = (l) => (l.products || []).map((ref) => DATA.products.find((p) => p.slug === ref || String(p.id) === String(ref))).filter(Boolean);
+
+			return h(Fragment, null,
+				h(InspectorControls, null,
+					looks.map((l, i) => h(PanelBody, { key: i, title: (l.name || __('Look', 'forma-3d-toolkit')) + ' (' + (i + 1) + ')', initialOpen: false },
+						h(TextControl, { label: __('Look name', 'forma-3d-toolkit'), value: l.name || '', onChange: (v) => setLook(i, { name: v }) }),
+						h(MediaUploadCheck, null, h(MediaUpload, {
+							allowedTypes: ['image'],
+							value: l.imageId,
+							onSelect: (m) => setLook(i, { imageId: m.id, image: (m.sizes && m.sizes.large ? m.sizes.large.url : m.url) }),
+							render: ({ open }) => h('div', { className: 'forma-ed__look-media' },
+								l.image ? h('img', { src: l.image, alt: '' }) : null,
+								h(Button, { variant: 'secondary', onClick: open }, l.image ? __('Replace photo', 'forma-3d-toolkit') : __('Choose photo', 'forma-3d-toolkit'))
+							),
+						})),
+						h('p', { className: 'forma-ed__small' }, __('Use a full-body photo with a transparent background (PNG or WebP).', 'forma-3d-toolkit')),
+						h('p', { className: 'components-base-control__label' }, __('Pieces in this look', 'forma-3d-toolkit')),
+						h('div', { className: 'forma-ed__checklist' }, DATA.products.map((p) => h(CheckboxControl, {
+							key: p.slug, label: p.name, checked: hasProduct(l, p.slug),
+							onChange: (on) => toggleProduct(i, p.slug, on),
+						}))),
+						h('div', { className: 'forma-ed__row' },
+							h(Button, { variant: 'tertiary', disabled: i === 0, onClick: () => move(i, -1) }, __('Move up', 'forma-3d-toolkit')),
+							h(Button, { variant: 'tertiary', disabled: i === looks.length - 1, onClick: () => move(i, 1) }, __('Move down', 'forma-3d-toolkit')),
+							h(Button, { variant: 'tertiary', isDestructive: true, onClick: () => props.setAttributes({ looks: looks.filter((x, k) => k !== i) }) }, __('Remove', 'forma-3d-toolkit'))
+						)
+					)),
+					h(PanelBody, { title: __('Looks', 'forma-3d-toolkit') },
+						h(Button, { variant: 'primary', onClick: () => props.setAttributes({ looks: looks.concat({ name: __('New look', 'forma-3d-toolkit'), image: '', imageId: 0, products: [] }) }) }, __('Add a look', 'forma-3d-toolkit'))
+					),
+					h(PanelBody, { title: __('Complete the look', 'forma-3d-toolkit') },
+						h(RangeControl, { label: __('Bundle discount (%)', 'forma-3d-toolkit'), min: 0, max: 50, value: a.discount, onChange: (v) => props.setAttributes({ discount: v }), help: __('Applied in the cart when every piece of a look was added with the bundle button. 0 turns the discount off.', 'forma-3d-toolkit') }),
+						h(TextControl, { label: __('Button text', 'forma-3d-toolkit'), value: a.buttonText, onChange: (v) => props.setAttributes({ buttonText: v }) })
+					)
+				),
+				Card(props, __('Try the Look', 'forma-3d-toolkit'), false, h('div', null,
+					Rich(props, 'eyebrow', 'p', 'forma-ed__eyebrow'),
+					Rich(props, 'title', 'h2', 'forma-ed__display'),
+					Rich(props, 'intro', 'p', 'forma-ed__note', '', true),
+					looks.length
+						? h('div', { className: 'forma-ed__looks' }, looks.map((l, i) => h('div', { key: i, className: 'forma-ed__look' },
+							l.image ? h('img', { src: l.image, alt: '' }) : h('div', { className: 'forma-ed__look-empty' }, __('No photo', 'forma-3d-toolkit')),
+							h('strong', null, l.name || __('Look', 'forma-3d-toolkit') + ' ' + (i + 1)),
+							h('span', null, lookProducts(l).map((p) => p.name).join(' · ') || __('No pieces yet', 'forma-3d-toolkit'))
+						)))
+						: h(Notice, { status: 'info', isDismissible: false }, __('Add looks in the block settings: a photo, a name and the pieces in it.', 'forma-3d-toolkit')),
+					h('p', { className: 'forma-ed__small' }, a.discount
+						? __('Bundle discount', 'forma-3d-toolkit') + ': ' + a.discount + '%'
+						: __('No bundle discount', 'forma-3d-toolkit'))
+				), 'forma-ed--light')
+			);
+		},
 	};
 
 	Object.keys(blocks).forEach((slug) => {

@@ -1,0 +1,61 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "forma/looks",
+	"title": "Forma Try the Look",
+	"category": "forma",
+	"icon": "groups",
+	"description": "A carousel of styled outfits. Shoppers add single pieces or the whole look with a bundle discount.",
+	"textdomain": "forma-3d-toolkit",
+	"keywords": [
+		"forma",
+		"look",
+		"outfit",
+		"bundle",
+		"fashion"
+	],
+	"attributes": {
+		"eyebrow": {
+			"type": "string",
+			"default": "New season"
+		},
+		"title": {
+			"type": "string",
+			"default": "Try the Look."
+		},
+		"intro": {
+			"type": "string",
+			"default": "Outfits styled by our team. Pick a look to see every piece in it, or add the whole look in one tap."
+		},
+		"looks": {
+			"type": "array",
+			"default": []
+		},
+		"discount": {
+			"type": "number",
+			"default": 10
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Add full look to bag"
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"align": [
+			"wide",
+			"full"
+		],
+		"reusable": false
+	},
+	"editorScript": "forma-3d-tk-blocks",
+	"editorStyle": "forma-3d-tk-blocks-editor",
+	"style": "forma-3d-tk-looks",
+	"viewScript": "forma-3d-tk-looks"
+}

@@ -47,6 +47,17 @@ function forma_3d_tk_starter_sites() {
 			'design'     => 'soft',
 			'package'    => 1,
 		),
+		'fashion'   => array(
+			'name'       => __( 'Fashion', 'forma-3d-toolkit' ),
+			'desc'       => __( 'Six styled looks with jackets, denim, knitwear, shoes and accessories, and a "Try the Look" homepage.', 'forma-3d-toolkit' ),
+			'products'   => 19,
+			'categories' => 5,
+			'remote'     => true,
+			'size'       => 3,
+			'design'     => 'studio',
+			'package'    => 1,
+			'models'     => false,
+		),
 	);
 	foreach ( $sites as $id => $site ) {
 		$sites[ $id ]['thumb'] = FORMA_3D_TK_URI . 'assets/starter-sites/' . $id . '.webp';
@@ -301,6 +312,32 @@ function forma_3d_tk_clean_home( $markup ) {
 			return ! empty( $block['blockName'] ) && 0 === strpos( $block['blockName'], 'forma/' );
 		}
 	);
+	return implode( "\n\n", array_map( 'serialize_block', $blocks ) );
+}
+
+/**
+ * Point "Try the Look" blocks of an imported homepage at the media library:
+ * look photos given as "images/<file>" are imported and replaced by their URL and ID.
+ *
+ * @param string $site   Starter site ID.
+ * @param string $markup Block markup.
+ */
+function forma_3d_tk_prepare_looks( $site, $markup ) {
+	$blocks = parse_blocks( (string) $markup );
+	foreach ( $blocks as $i => $block ) {
+		if ( 'forma/looks' !== $block['blockName'] || empty( $block['attrs']['looks'] ) || ! is_array( $block['attrs']['looks'] ) ) {
+			continue;
+		}
+		foreach ( $block['attrs']['looks'] as $k => $look ) {
+			$image = (string) ( $look['image'] ?? '' );
+			if ( 0 !== strpos( $image, 'images/' ) ) {
+				continue;
+			}
+			$id = forma_3d_tk_demo_media( $site, $image, 0, sanitize_text_field( $look['name'] ?? '' ) );
+			$blocks[ $i ]['attrs']['looks'][ $k ]['imageId'] = $id;
+			$blocks[ $i ]['attrs']['looks'][ $k ]['image']   = $id ? (string) wp_get_attachment_image_url( $id, 'large' ) : '';
+		}
+	}
 	return implode( "\n\n", array_map( 'serialize_block', $blocks ) );
 }
 

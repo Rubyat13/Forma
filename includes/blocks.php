@@ -116,6 +116,7 @@ add_action(
 				)
 			) as $p ) {
 				$products[] = array(
+					'id'       => $p->get_id(),
 					'slug'     => $p->get_slug(),
 					'name'     => $p->get_name(),
 					'thumb'    => (string) wp_get_attachment_image_url( $p->get_image_id(), 'woocommerce_thumbnail' ),

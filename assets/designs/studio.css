@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Forma 3D Toolkit — "Studio" store design
+   A photo studio: pale grey, black type, light-weight sans-serif headings
+   (the theme's Inter Tight), small radii and red only for sale prices.
+   Loaded after the Forma 3D theme stylesheet.
+   ========================================================================== */
+
+:root {
+	--bg: #efefed;
+	--bg-2: #e4e4e1;
+	--paper: #f7f7f5;
+	--ink: #141414;
+	--ink-2: #3d3d3b;
+	--muted: #8b8b88;
+	--line: rgba(20, 20, 20, 0.1);
+	--line-2: rgba(20, 20, 20, 0.2);
+	--accent: #141414;
+	--dark: #141414;
+	--cream: #f5f5f3;
+	--sale: #e2412b;
+	--radius: 8px;
+	--radius-lg: 12px;
+	--serif: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--wp--preset--color--bg: #efefed;
+	--wp--preset--color--bg-2: #e4e4e1;
+	--wp--preset--color--paper: #f7f7f5;
+	--wp--preset--color--ink: #141414;
+	--wp--preset--color--ink-2: #3d3d3b;
+	--wp--preset--color--muted: #8b8b88;
+	--wp--preset--color--cream: #f5f5f3;
+	--wp--preset--color--dark: #141414;
+	--wp--preset--color--accent: #141414;
+	--wp--preset--font-family--serif: var(--serif);
+	--wp--preset--font-family--sans: var(--sans);
+}
+
+/* Type: light, tight sans-serif headings; emphasis in grey, not italics. */
+.display, .hero__title, .shop-hero__title, .page__title, .pdp__title, .sc-item__title, .site-footer__title, .qv__title,
+.statement__text, .quote p, .marquee__group span, .room-card__foot h3, .site-footer__word, .drawer__head h2, .mobile-menu a,
+.entry h1, .entry h2, .entry h3, .looks__title { font-weight: 300; letter-spacing: -0.045em; }
+.display em, .hero__title em, .shop-hero__title em, .page__title em, .site-footer__title em, .looks__title em { font-style: normal; color: var(--muted) !important; }
+.rooms .display em, .shop-ar .display em { color: rgba(245, 245, 243, 0.5) !important; }
+.eyebrow { letter-spacing: 0.08em; }
+.logo { font-weight: 500; font-size: 24px; letter-spacing: -0.03em; }
+.logo__mark { border-radius: 5px; background: var(--ink); box-shadow: none; }
+.site-footer__about .logo__mark { background: var(--cream); box-shadow: none; }
+
+/* Buttons and navigation. */
+.btn { --btn-bg: var(--ink); --btn-fg: #fff; border-radius: var(--radius); font-weight: 400; }
+.btn::before { background: #3a3a38; }
+.btn--ghost { --btn-bg: transparent; --btn-fg: var(--ink); }
+.btn--ghost::before { background: var(--ink); }
+.btn--ghost:hover { color: #fff; }
+.btn--light, .rooms__end .btn { --btn-bg: var(--cream); --btn-fg: var(--ink); }
+.wp-element-button, .wp-block-button__link { border-radius: var(--radius) !important; font-weight: 400 !important; }
+.site-nav__list a { font-weight: 400; border-radius: var(--radius); }
+.site-nav__list .current-menu-item a { background: transparent; color: var(--ink); box-shadow: inset 0 -1px 0 var(--ink); border-radius: 0; }
+.site-header.is-scrolled { background: rgba(239, 239, 237, 0.86); }
+
+/* Cards and prices. */
+.p-card { border-radius: var(--radius-lg); }
+.p-card__title { font-weight: 400; }
+.shop .products > li:nth-child(6n + 1) .p-card__title { font-family: var(--sans); font-weight: 300; letter-spacing: -0.03em; }
+.flag { border-radius: 4px; }
+.flag--sale, .cart-count { background: var(--sale); color: #fff; }
+.p-card__price ins, .pdp__price ins, .qv__price ins, .looks__price ins { color: var(--sale); }
+.pill { border-radius: var(--radius); font-weight: 400; }
+.pill.is-active { background: var(--ink); color: #fff; }
+
+/* Sections. */
+.statement__facts strong, .statement__facts span { font-weight: 300; }
+.marquee { background: var(--paper); }
+.marquee__group i { color: var(--muted); }
+.room-card { border-radius: var(--radius-lg); }
+.room-card__go { border-radius: var(--radius); }
+.promise { background: var(--paper); }
+.site-footer__word { font-weight: 200; letter-spacing: -0.07em; }
+.shop-ar { border-radius: var(--radius-lg); }
+.viewer, .thumb, .pdp-story__fig, .drawer__panel, .qv__panel { border-radius: var(--radius-lg); }
