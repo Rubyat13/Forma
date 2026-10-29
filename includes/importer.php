@@ -1,6 +1,6 @@
 <?php
 /**
- * "Forma Setup" screen: required-plugin checklist and one-click demo import.
+ * "Forma Setup" screen: required-plugin checklist and one-click starter site import.
  *
  * The import runs as a series of small AJAX steps (setup → one request per
  * product → finish) so it never hits PHP time limits and can show progress.
@@ -11,26 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 const FORMA_3D_TK_SETUP_SLUG = 'forma-setup';
-
-/**
- * Demo catalogue definition shipped with the theme.
- *
- * @return array{categories: array, products: array}
- */
-function forma_3d_tk_demo_data() {
-	static $data = null;
-	if ( null === $data ) {
-		$json = file_get_contents( FORMA_3D_TK_DIR . 'demo/demo.json' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-		$data = json_decode( (string) $json, true );
-		if ( ! is_array( $data ) ) {
-			$data = array(
-				'categories' => array(),
-				'products'   => array(),
-			);
-		}
-	}
-	return $data;
-}
 
 /* ---------------------------------------------------------------------------
  * Menu, welcome redirect and notice.
@@ -50,7 +30,7 @@ function forma_3d_tk_theme_active() {
 	return 'forma-3d' === get_template();
 }
 
-// Land on the setup screen right after the Forma 3D theme is activated (until the demo has been imported).
+// Land on the setup screen right after the Forma 3D theme is activated (until a demo has been imported).
 add_action(
 	'admin_init',
 	function () {
@@ -64,7 +44,7 @@ add_action(
 );
 
 /**
- * Whether to show the welcome notice: with the Forma 3D theme, until the demo is imported or the notice is dismissed.
+ * Whether to show the welcome notice: with the Forma 3D theme, until a demo is imported or the notice is dismissed.
  */
 function forma_3d_tk_show_notice() {
 	$screen = get_current_screen();
@@ -89,7 +69,7 @@ add_action(
 		printf(
 			'<div class="notice notice-info is-dismissible" id="forma-3d-tk-notice" data-nonce="%5$s"><p><strong>%1$s</strong> %2$s <a class="button button-primary" style="margin-left:8px" href="%3$s">%4$s</a></p></div>',
 			esc_html__( 'Welcome to Forma!', 'forma-3d-toolkit' ),
-			esc_html__( 'Import the 3D demo store in one click.', 'forma-3d-toolkit' ),
+			esc_html__( 'Pick a starter site and import it in one click.', 'forma-3d-toolkit' ),
 			esc_url( admin_url( 'themes.php?page=' . FORMA_3D_TK_SETUP_SLUG ) ),
 			esc_html__( 'Open Forma Setup', 'forma-3d-toolkit' ),
 			esc_attr( wp_create_nonce( 'forma-3d-tk-dismiss' ) )
@@ -167,34 +147,42 @@ function forma_3d_tk_required_plugins() {
 function forma_3d_tk_setup_page() {
 	$plugins  = forma_3d_tk_required_plugins();
 	$ready    = 'active' === $plugins[0]['state']['status'];
-	$data     = forma_3d_tk_demo_data();
-	$imported = (bool) get_option( 'forma_demo_imported' );
+	$sites    = forma_3d_tk_starter_sites();
+	$current  = forma_3d_tk_current_site();
+	$selected = isset( $sites[ $current ] ) ? $current : (string) array_key_first( $sites );
 	wp_enqueue_style( 'forma-3d-tk-setup', FORMA_3D_TK_URI . 'assets/setup.css', array(), FORMA_3D_TK_VERSION );
 	wp_enqueue_script( 'forma-3d-tk-setup', FORMA_3D_TK_URI . 'assets/setup.js', array(), FORMA_3D_TK_VERSION, true );
 	wp_localize_script(
 		'forma-3d-tk-setup',
 		'FORMA_SETUP',
 		array(
-			'ajax'     => admin_url( 'admin-ajax.php' ),
-			'nonce'    => wp_create_nonce( 'forma-3d-tk-demo' ),
-			'products' => wp_list_pluck( $data['products'], 'name' ),
-			'i18n'     => array(
-				'setup'   => __( 'Creating categories and store settings…', 'forma-3d-toolkit' ),
-				'finish'  => __( 'Building the homepage and menus…', 'forma-3d-toolkit' ),
-				'done'    => __( 'Your 3D store is ready!', 'forma-3d-toolkit' ),
-				'error'   => __( 'Something went wrong. Please try again.', 'forma-3d-toolkit' ),
+			'ajax'    => admin_url( 'admin-ajax.php' ),
+			'nonce'   => wp_create_nonce( 'forma-3d-tk-demo' ),
+			'current' => $current,
+			'i18n'    => array(
+				'setup'    => __( 'Creating categories and store settings…', 'forma-3d-toolkit' ),
+				'fetch'    => __( 'Downloading the starter site…', 'forma-3d-toolkit' ),
+				'finish'   => __( 'Building the homepage…', 'forma-3d-toolkit' ),
+				'done'     => __( 'Your 3D store is ready!', 'forma-3d-toolkit' ),
+				'error'    => __( 'Something went wrong. Please try again.', 'forma-3d-toolkit' ),
 				/* translators: 1: product name, 2: product number, 3: product count. */
-				'product' => __( 'Importing %1$s (%2$d of %3$d)…', 'forma-3d-toolkit' ),
+				'product'  => __( 'Importing %1$s (%2$d of %3$d)…', 'forma-3d-toolkit' ),
+				/* translators: %s: starter site name. */
+				'import'   => __( 'Import %s', 'forma-3d-toolkit' ),
+				/* translators: %s: starter site name. */
+				'again'    => __( 'Import %s again', 'forma-3d-toolkit' ),
+				'imported' => __( 'Imported', 'forma-3d-toolkit' ),
 			),
 		)
 	);
 	?>
 	<div class="wrap forma-setup">
+		<hr class="wp-header-end"><?php // Admin notices go here, above the header. ?>
 		<header class="frm-hero">
 			<div>
 				<p class="frm-eyebrow"><?php esc_html_e( 'Forma 3D', 'forma-3d-toolkit' ); ?></p>
-				<h1><?php esc_html_e( 'Set up your 3D furniture store', 'forma-3d-toolkit' ); ?></h1>
-				<p><?php esc_html_e( 'Two quick steps: activate the required plugins, then import the demo store — products, 3D models, homepage and all.', 'forma-3d-toolkit' ); ?></p>
+				<h1><?php esc_html_e( 'Set up your 3D store', 'forma-3d-toolkit' ); ?></h1>
+				<p><?php esc_html_e( 'Two quick steps: activate the required plugins, then import a starter site — products, 3D models, homepage and all.', 'forma-3d-toolkit' ); ?></p>
 			</div>
 			<?php if ( wp_get_theme( 'forma-3d' )->get_screenshot() ) : ?>
 				<img src="<?php echo esc_url( wp_get_theme( 'forma-3d' )->get_screenshot() ); ?>" alt="">
@@ -238,33 +226,64 @@ function forma_3d_tk_setup_page() {
 		</section>
 
 		<section class="frm-card" data-import>
-			<h2><span class="frm-num">2</span><?php esc_html_e( 'Import the demo store', 'forma-3d-toolkit' ); ?></h2>
+			<h2><span class="frm-num">2</span><?php esc_html_e( 'Choose a starter site', 'forma-3d-toolkit' ); ?></h2>
+			<div class="frm-sites" role="radiogroup" aria-label="<?php esc_attr_e( 'Starter sites', 'forma-3d-toolkit' ); ?>">
+				<?php foreach ( $sites as $id => $site ) : ?>
+					<label class="frm-site<?php echo $id === $selected ? ' is-selected' : ''; ?>">
+						<input type="radio" name="forma_site" value="<?php echo esc_attr( $id ); ?>" data-name="<?php echo esc_attr( $site['name'] ); ?>" data-remote="<?php echo empty( $site['remote'] ) ? '' : '1'; ?>" <?php checked( $id, $selected ); ?>>
+						<span class="frm-site__img"><img src="<?php echo esc_url( $site['thumb'] ); ?>" alt="" loading="lazy"></span>
+						<span class="frm-site__body">
+							<strong>
+								<?php echo esc_html( $site['name'] ); ?>
+								<?php if ( $id === $current ) : ?>
+									<em class="frm-site__badge"><?php esc_html_e( 'Imported', 'forma-3d-toolkit' ); ?></em>
+								<?php endif; ?>
+							</strong>
+							<span><?php echo esc_html( $site['desc'] ); ?></span>
+							<small>
+								<?php
+								/* translators: 1: number of products, 2: number of categories. */
+								echo esc_html( sprintf( __( '%1$d products · %2$d categories', 'forma-3d-toolkit' ), $site['products'], $site['categories'] ) );
+								if ( ! empty( $site['remote'] ) ) {
+									echo ' · ';
+									/* translators: %d: download size in megabytes. */
+									echo esc_html( sprintf( __( '%d MB download from GitHub', 'forma-3d-toolkit' ), $site['size'] ) );
+								}
+								?>
+							</small>
+						</span>
+					</label>
+				<?php endforeach; ?>
+			</div>
+
 			<div class="frm-import">
 				<ul class="frm-list">
-					<li><?php echo esc_html( sprintf( /* translators: %d count */ __( '%d products, each with a true-to-scale 3D model and 3 photos', 'forma-3d-toolkit' ), count( $data['products'] ) ) ); ?></li>
-					<li><?php echo esc_html( sprintf( /* translators: %d count */ __( '%d product categories', 'forma-3d-toolkit' ), count( $data['categories'] ) ) ); ?></li>
-					<li><?php esc_html_e( 'Scroll-animated homepage, editable with the block editor', 'forma-3d-toolkit' ); ?></li>
+					<li><?php esc_html_e( 'Products with true-to-scale 3D models and 3 photos each, in their categories', 'forma-3d-toolkit' ); ?></li>
+					<li><?php esc_html_e( 'The scroll-animated homepage, editable with the block editor', 'forma-3d-toolkit' ); ?></li>
 					<li><?php esc_html_e( '3D Viewer set to replace product images, with AR and a dimensions ruler', 'forma-3d-toolkit' ); ?></li>
-					<li><?php esc_html_e( 'Pretty permalinks and centimetres as the dimension unit', 'forma-3d-toolkit' ); ?></li>
-					<li><?php esc_html_e( 'Store settings from the demo: prices without cents and product reviews off', 'forma-3d-toolkit' ); ?></li>
+					<li><?php esc_html_e( 'Store settings from the demo: centimetres, prices without cents and product reviews off', 'forma-3d-toolkit' ); ?></li>
 				</ul>
 				<div class="frm-action">
 					<?php if ( ! $ready ) : ?>
 						<p class="frm-warn"><?php esc_html_e( 'Activate WooCommerce first.', 'forma-3d-toolkit' ); ?></p>
 					<?php endif; ?>
+					<label class="frm-replace" data-replace hidden>
+						<input type="checkbox" checked data-replace-input>
+						<span><?php esc_html_e( 'Move the products of the previous starter site to the Trash. Your Home page is replaced; the current version stays in its revisions.', 'forma-3d-toolkit' ); ?></span>
+					</label>
 					<button type="button" class="button button-primary button-hero" data-import-start <?php disabled( ! $ready ); ?>>
-						<?php echo $imported ? esc_html__( 'Import again', 'forma-3d-toolkit' ) : esc_html__( 'Import demo store', 'forma-3d-toolkit' ); ?>
+						<?php esc_html_e( 'Import starter site', 'forma-3d-toolkit' ); ?>
 					</button>
 					<div class="frm-progress" hidden data-progress>
 						<div class="frm-bar"><i data-bar></i></div>
-						<p class="frm-status" data-status></p>
+						<p class="frm-status" data-status role="status"></p>
 					</div>
-					<a class="button button-hero frm-view" href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" <?php echo $imported ? '' : 'hidden'; ?> data-view><?php esc_html_e( 'View your store →', 'forma-3d-toolkit' ); ?></a>
+					<a class="button button-hero frm-view" href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" <?php echo $current ? '' : 'hidden'; ?> data-view><?php esc_html_e( 'View your store →', 'forma-3d-toolkit' ); ?></a>
 				</div>
 			</div>
 		</section>
 
-		<p class="frm-foot"><?php esc_html_e( 'Demo 3D models: Poly Haven (CC0) and Khronos glTF Sample Assets (CC0 / CC BY 4.0). Replace them with your own products any time.', 'forma-3d-toolkit' ); ?></p>
+		<p class="frm-foot"><?php esc_html_e( 'Demo 3D models: Poly Haven (CC0) and Khronos glTF Sample Assets (CC0 / CC BY 4.0). The Lighting and Home Decor starter sites are downloaded from GitHub when you import them. Replace the demo products with your own any time.', 'forma-3d-toolkit' ); ?></p>
 	</div>
 	<?php
 }
@@ -276,7 +295,7 @@ function forma_3d_tk_setup_page() {
 add_action( 'wp_ajax_forma_3d_tk_demo_step', 'forma_3d_tk_demo_ajax_step' );
 
 /**
- * AJAX entry: step = setup | product (with index) | finish.
+ * AJAX entry: step = setup | product (with index) | finish, for one starter site.
  */
 function forma_3d_tk_demo_ajax_step() {
 	check_ajax_referer( 'forma-3d-tk-demo', 'nonce' );
@@ -288,19 +307,23 @@ function forma_3d_tk_demo_ajax_step() {
 	}
 	wp_raise_memory_limit( 'admin' );
 	if ( function_exists( 'set_time_limit' ) ) {
-		set_time_limit( 120 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
+		set_time_limit( 180 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
 	}
 	$step = sanitize_key( wp_unslash( $_POST['step'] ?? '' ) );
+	$site = sanitize_key( wp_unslash( $_POST['site'] ?? 'furniture' ) );
+	if ( ! forma_3d_tk_starter_site( $site ) ) {
+		wp_send_json_error( __( 'Unknown starter site.', 'forma-3d-toolkit' ) );
+	}
 	try {
 		switch ( $step ) {
 			case 'setup':
-				forma_3d_tk_demo_setup();
+				wp_send_json_success( forma_3d_tk_demo_setup( $site, ! empty( $_POST['replace'] ) ) );
 				break;
 			case 'product':
-				forma_3d_tk_demo_product( absint( $_POST['index'] ?? 0 ) );
+				forma_3d_tk_demo_product( $site, absint( $_POST['index'] ?? 0 ) );
 				break;
 			case 'finish':
-				forma_3d_tk_demo_finish();
+				forma_3d_tk_demo_finish( $site );
 				break;
 			default:
 				wp_send_json_error( 'unknown step' );
@@ -312,67 +335,34 @@ function forma_3d_tk_demo_ajax_step() {
 }
 
 /**
- * Copy a bundled demo file into the media library (once) and return its attachment ID.
+ * Step 1: download the starter site (when remote), clear the previous one, categories and store-wide settings.
  *
- * @param string $rel    Path relative to /demo.
- * @param int    $parent_id Parent post.
- * @param string $title  Attachment title.
+ * @param string $site    Starter site ID.
+ * @param bool   $replace Move the products of other starter sites to the Trash.
+ * @return array{products: string[], trashed: int}
  */
-function forma_3d_tk_demo_media( $rel, $parent_id = 0, $title = '' ) {
-	$existing = get_posts(
-		array(
-			'post_type'   => 'attachment',
-			'post_status' => 'inherit',
-			'meta_key'    => '_forma_demo_file', // phpcs:ignore WordPress.DB.SlowDBQuery
-			'meta_value'  => $rel, // phpcs:ignore WordPress.DB.SlowDBQuery
-			'fields'      => 'ids',
-			'numberposts' => 1,
-		)
-	);
-	if ( $existing ) {
-		return (int) $existing[0];
+function forma_3d_tk_demo_setup( $site, $replace ) {
+	$info = forma_3d_tk_starter_site( $site );
+	if ( ! empty( $info['remote'] ) ) {
+		forma_3d_tk_fetch_package( $site );
 	}
-	require_once ABSPATH . 'wp-admin/includes/media.php';
-	require_once ABSPATH . 'wp-admin/includes/file.php';
-	require_once ABSPATH . 'wp-admin/includes/image.php';
+	$data    = forma_3d_tk_demo_data( $site );
+	$trashed = 0;
+	if ( $replace && forma_3d_tk_current_site() && forma_3d_tk_current_site() !== $site ) {
+		$trashed = forma_3d_tk_trash_other_demos( $site );
+	}
 
-	$src = FORMA_3D_TK_DIR . 'demo/' . $rel;
-	if ( ! file_exists( $src ) ) {
-		return 0;
-	}
-	$tmp = wp_tempnam( basename( $src ) );
-	copy( $src, $tmp );
-	$id = media_handle_sideload(
-		array(
-			'name'     => basename( $src ),
-			'tmp_name' => $tmp,
-		),
-		$parent_id,
-		$title
-	);
-	if ( is_wp_error( $id ) ) {
-		wp_delete_file( $tmp );
-		throw new \RuntimeException( esc_html( basename( $src ) . ': ' . $id->get_error_message() ) );
-	}
-	update_post_meta( $id, '_forma_demo_file', $rel );
-	return (int) $id;
-}
-
-/**
- * Step 1: categories and store-wide settings.
- */
-function forma_3d_tk_demo_setup() {
-	$data = forma_3d_tk_demo_data();
 	foreach ( $data['categories'] as $c ) {
-		$term = get_term_by( 'slug', $c['slug'], 'product_cat' );
+		$slug = sanitize_title( $c['slug'] );
+		$term = get_term_by( 'slug', $slug, 'product_cat' );
 		$tid  = $term ? $term->term_id : 0;
 		if ( ! $tid ) {
 			$r = wp_insert_term(
-				$c['name'],
+				sanitize_text_field( $c['name'] ),
 				'product_cat',
 				array(
-					'slug'        => $c['slug'],
-					'description' => $c['description'],
+					'slug'        => $slug,
+					'description' => sanitize_text_field( $c['description'] ),
 				)
 			);
 			if ( is_wp_error( $r ) ) {
@@ -382,6 +372,7 @@ function forma_3d_tk_demo_setup() {
 		}
 		update_term_meta( $tid, 'order', (int) $c['order'] );
 		update_term_meta( $tid, 'forma_bg', sanitize_hex_color( $c['bg'] ) );
+		update_term_meta( $tid, 'forma_demo_site', $site );
 	}
 
 	update_option( 'woocommerce_dimension_unit', 'cm' );
@@ -394,9 +385,13 @@ function forma_3d_tk_demo_setup() {
 			update_option( $name, sanitize_text_field( (string) $value ) );
 		}
 	}
-	// The footer shows the tagline; only fill it in when the site has none.
-	if ( ! empty( $data['site']['tagline'] ) && '' === trim( (string) get_option( 'blogdescription' ) ) ) {
-		update_option( 'blogdescription', sanitize_text_field( $data['site']['tagline'] ) );
+	// The footer shows the tagline: fill it in when the site has none, or when it is still the previous demo's.
+	$tagline = sanitize_text_field( $data['site']['tagline'] ?? '' );
+	$now     = trim( (string) get_option( 'blogdescription' ) );
+	$old     = array( (string) get_option( 'forma_3d_tk_demo_tagline' ), (string) ( forma_3d_tk_demo_data( 'furniture' )['site']['tagline'] ?? '' ) );
+	if ( $tagline && ( '' === $now || in_array( $now, array_filter( $old ), true ) ) ) {
+		update_option( 'blogdescription', $tagline );
+		update_option( 'forma_3d_tk_demo_tagline', $tagline );
 	}
 
 	// 3D Viewer: switch on its WooCommerce integration and a gentle auto-rotate.
@@ -420,62 +415,74 @@ function forma_3d_tk_demo_setup() {
 			)
 		);
 	}
+
+	return array(
+		'products' => array_map( 'sanitize_text_field', wp_list_pluck( $data['products'], 'name' ) ),
+		'trashed'  => $trashed,
+	);
 }
 
 /**
  * Step 2..n: one product with its 3D model and photos.
  *
- * @param int $index Index into demo.json products.
+ * @param string $site  Starter site ID.
+ * @param int    $index Index into the starter site's products.
+ * @throws \RuntimeException When the product does not exist.
  */
-function forma_3d_tk_demo_product( $index ) {
-	$data = forma_3d_tk_demo_data();
+function forma_3d_tk_demo_product( $site, $index ) {
+	$data = forma_3d_tk_demo_data( $site );
 	if ( empty( $data['products'][ $index ] ) ) {
 		throw new \RuntimeException( 'No such demo product.' );
 	}
-	$it  = $data['products'][ $index ];
-	$sku = 'FRM-' . strtoupper( substr( md5( $it['slug'] ), 0, 6 ) );
+	$it   = $data['products'][ $index ];
+	$slug = sanitize_title( $it['slug'] );
+	$name = sanitize_text_field( $it['name'] );
+	$file = sanitize_file_name( $it['model'] );
+	$sku  = forma_3d_tk_demo_sku( $slug );
 
 	$pid     = wc_get_product_id_by_sku( $sku );
 	$product = $pid ? wc_get_product( $pid ) : new WC_Product_Simple();
-	$product->set_name( $it['name'] );
-	$product->set_slug( $it['slug'] );
+	$product->set_name( $name );
+	$product->set_slug( $slug );
 	$product->set_status( 'publish' );
 	if ( ! $pid ) {
 		$product->set_sku( $sku );
 	}
-	$product->set_regular_price( (string) $it['regular_price'] );
-	$product->set_sale_price( (string) $it['sale_price'] );
-	$product->set_short_description( $it['short_description'] );
-	$product->set_description( $it['description'] );
-	$term = get_term_by( 'slug', $it['category'], 'product_cat' );
+	$product->set_regular_price( wc_format_decimal( $it['regular_price'] ) );
+	$product->set_sale_price( wc_format_decimal( $it['sale_price'] ) );
+	$product->set_short_description( wp_kses_post( $it['short_description'] ) );
+	$product->set_description( wp_kses_post( $it['description'] ) );
+	$term = get_term_by( 'slug', sanitize_title( $it['category'] ), 'product_cat' );
 	if ( $term ) {
 		$product->set_category_ids( array( $term->term_id ) );
 	}
 	$product->set_featured( ! empty( $it['featured'] ) );
 	$product->set_menu_order( (int) $it['menu_order'] );
 	// 3D Viewer convention: width = side to side, length = depth.
-	$product->set_width( (string) $it['width'] );
-	$product->set_length( (string) $it['depth'] );
-	$product->set_height( (string) $it['height'] );
-	$product->set_weight( (string) $it['weight'] );
+	$product->set_width( wc_format_decimal( $it['width'] ) );
+	$product->set_length( wc_format_decimal( $it['depth'] ) );
+	$product->set_height( wc_format_decimal( $it['height'] ) );
+	$product->set_weight( wc_format_decimal( $it['weight'] ) );
 	$product->set_stock_status( 'instock' );
 	$product->set_reviews_allowed( false );
 	$pid = $product->save();
 
-	$model  = forma_3d_tk_demo_media( 'models/' . $it['model'] . '.glb', $pid, $it['name'] . ' 3D model' );
+	$model  = forma_3d_tk_demo_media( $site, 'models/' . $file . '.glb', $pid, $name . ' 3D model' );
 	$images = array();
 	foreach ( array( 0, 1, 2 ) as $k ) {
-		$img = forma_3d_tk_demo_media( 'images/' . $it['model'] . '-' . $k . '.webp', $pid, $it['name'] );
-		update_post_meta( $img, '_wp_attachment_image_alt', $it['name'] );
+		$img = forma_3d_tk_demo_media( $site, 'images/' . $file . '-' . $k . '.webp', $pid, $name );
+		update_post_meta( $img, '_wp_attachment_image_alt', $name );
 		$images[] = $img;
 	}
+	$finishes = forma_3d_tk_sanitize_finishes( $it['finishes'] ?? array() );
 	$product->set_image_id( $images[0] );
 	$product->set_gallery_image_ids( array_slice( $images, 1 ) );
 	$product->update_meta_data( '_forma_model_id', $model );
-	$product->update_meta_data( '_forma_bg', $it['bg'] );
-	$product->update_meta_data( '_forma_materials', $it['materials'] );
-	$product->update_meta_data( '_forma_designer', $it['designer'] );
-	$product->update_meta_data( '_forma_finishes', $it['finishes'] ? wp_json_encode( $it['finishes'] ) : '' );
+	$product->update_meta_data( '_forma_bg', (string) sanitize_hex_color( $it['bg'] ) );
+	$product->update_meta_data( '_forma_materials', sanitize_text_field( $it['materials'] ) );
+	$product->update_meta_data( '_forma_designer', sanitize_text_field( $it['designer'] ) );
+	$product->update_meta_data( '_forma_finishes', $finishes ? wp_json_encode( $finishes ) : '' );
+	$product->update_meta_data( '_forma_demo_site', $site );
 	$product->save();
 
 	// Hand the model to the 3D Viewer plugin (read by it even before it is activated).
@@ -522,19 +529,23 @@ function forma_3d_tk_demo_product( $index ) {
 
 /**
  * Final step: category images, front page, permalinks.
+ *
+ * @param string $site Starter site ID.
  */
-function forma_3d_tk_demo_finish() {
-	$data = forma_3d_tk_demo_data();
+function forma_3d_tk_demo_finish( $site ) {
+	$data      = forma_3d_tk_demo_data( $site );
+	$switching = '' !== forma_3d_tk_current_site() && forma_3d_tk_current_site() !== $site;
 	foreach ( $data['categories'] as $c ) {
-		$term = get_term_by( 'slug', $c['slug'], 'product_cat' );
-		if ( $term && $c['image'] ) {
-			$img = forma_3d_tk_demo_media( 'images/' . $c['image'], 0, $c['name'] );
+		$term = get_term_by( 'slug', sanitize_title( $c['slug'] ), 'product_cat' );
+		if ( $term && ! empty( $c['image'] ) ) {
+			$img = forma_3d_tk_demo_media( $site, 'images/' . sanitize_file_name( $c['image'] ), 0, sanitize_text_field( $c['name'] ) );
 			update_term_meta( $term->term_id, 'thumbnail_id', $img );
 		}
 	}
 
-	// The demo's own homepage (its block settings and text), or every Forma block with its defaults.
-	$markup  = ! empty( $data['home'] ) ? (string) $data['home'] : forma_3d_tk_home_markup();
+	// The starter site's own homepage (its block settings and text), or every Forma block with its defaults.
+	$markup  = ! empty( $data['home'] ) ? forma_3d_tk_clean_home( $data['home'] ) : '';
+	$markup  = '' !== $markup ? $markup : forma_3d_tk_home_markup();
 	$home    = get_page_by_path( 'home' );
 	$home_id = $home ? $home->ID : wp_insert_post(
 		array(
@@ -545,8 +556,9 @@ function forma_3d_tk_demo_finish() {
 			'post_content' => wp_slash( $markup ), // Block attributes contain < escapes; wp_insert_post() unslashes.
 		)
 	);
-	// An existing, empty Home page gets the Forma blocks so it can be edited in the block editor.
-	if ( $home && '' === trim( $home->post_content ) ) {
+	// When switching starter sites the Home page gets the new design (the old one stays in its revisions);
+	// an existing, empty Home page gets the Forma blocks so it can be edited in the block editor.
+	if ( $home && ( $switching || '' === trim( $home->post_content ) ) ) {
 		wp_update_post(
 			array(
 				'ID'           => $home->ID,
@@ -570,5 +582,7 @@ function forma_3d_tk_demo_finish() {
 		update_option( 'permalink_structure', '/%postname%/' );
 	}
 	flush_rewrite_rules();
+	update_option( 'forma_demo_site', $site );
 	update_option( 'forma_demo_imported', time() );
+	forma_3d_tk_cleanup_package( $site );
 }

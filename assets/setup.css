@@ -33,3 +33,18 @@
 .forma-setup .frm-foot { margin-top: 18px; color: #8c8f94; font-size: 12px; }
 @media (max-width: 900px) { .forma-setup .frm-hero, .forma-setup .frm-import { grid-template-columns: 1fr; } }
 .forma-setup [hidden] { display: none !important; }
+.forma-setup .frm-sites { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 0 0 24px; }
+.forma-setup .frm-site { position: relative; display: grid; border: 2px solid #e5e3df; border-radius: 14px; overflow: hidden; cursor: pointer; background: #fbfaf8; transition: border-color 0.2s, box-shadow 0.2s; }
+.forma-setup .frm-site:hover { border-color: #c9c4bc; }
+.forma-setup .frm-site.is-selected { border-color: #b4532a; box-shadow: 0 10px 30px -18px rgba(180, 83, 42, 0.6); }
+.forma-setup .frm-site input { position: absolute; top: 12px; right: 12px; margin: 0; }
+.forma-setup .frm-site input:focus-visible { outline: 2px solid #b4532a; outline-offset: 2px; }
+.forma-setup .frm-site__img { display: block; aspect-ratio: 16 / 10; background: #eeeae3; overflow: hidden; }
+.forma-setup .frm-site__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.forma-setup .frm-site__body { display: grid; gap: 4px; padding: 14px 16px 16px; }
+.forma-setup .frm-site__body strong { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+.forma-setup .frm-site__body span { color: #50575e; }
+.forma-setup .frm-site__body small { color: #8c8f94; }
+.forma-setup .frm-site__badge { padding: 2px 8px; border-radius: 99px; background: #edfaef; color: #00a32a; font-size: 11px; font-style: normal; font-weight: 600; }
+.forma-setup .frm-replace { display: flex; gap: 8px; align-items: flex-start; color: #50575e; }
+.forma-setup .frm-replace input { margin-top: 2px; }
