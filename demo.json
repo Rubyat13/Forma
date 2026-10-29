@@ -1,0 +1,428 @@
+{
+    "categories": [
+        {
+            "slug": "chandeliers",
+            "name": "Chandeliers",
+            "description": "Statement lights for the dining room and the hall.",
+            "bg": "#e7ddcd",
+            "order": 0,
+            "image": "Chandelier_01-0.webp"
+        },
+        {
+            "slug": "pendants",
+            "name": "Pendants",
+            "description": "Single lights to hang over a table, an island or a stair.",
+            "bg": "#dfe2dc",
+            "order": 1,
+            "image": "modern_ceiling_lamp_01-0.webp"
+        },
+        {
+            "slug": "table-lamps",
+            "name": "Table & desk lamps",
+            "description": "Light where you read, work and sit.",
+            "bg": "#e9dfd2",
+            "order": 2,
+            "image": "desk_lamp_arm_01-0.webp"
+        },
+        {
+            "slug": "wall-lights",
+            "name": "Wall lights",
+            "description": "Sconces and bulkheads for halls, porches and bedsides.",
+            "bg": "#e1ddd6",
+            "order": 3,
+            "image": "industrial_wall_sconce-0.webp"
+        },
+        {
+            "slug": "lanterns-candles",
+            "name": "Lanterns & candles",
+            "description": "Real flame for tables, mantels and summer evenings.",
+            "bg": "#ebe3d6",
+            "order": 4,
+            "image": "brass_candleholders-0.webp"
+        }
+    ],
+    "products": [
+        {
+            "slug": "aurelia-chandelier",
+            "name": "Aurelia Six-Arm Chandelier",
+            "model": "Chandelier_01",
+            "category": "chandeliers",
+            "regular_price": "1290",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 10,
+            "short_description": "Six curved brass arms, pleated ivory shades and a hand-blown glass column. A classic chandelier with a softer, warmer light.",
+            "description": "<p>Aurelia takes the shape of a traditional six-arm chandelier and slims it down: lighter arms, a single glass column and shades that sit low, so the light falls on the table rather than in your eyes.</p><p>The shades are pleated cotton on a brass rim. Swap them for the linen or smoke colourway to suit the room.</p>",
+            "width": "75",
+            "depth": "82",
+            "height": "80",
+            "weight": "9",
+            "bg": "#e9dfcf",
+            "materials": "Solid brass, pleated cotton shades, mouth-blown glass",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Ivory",
+                    "color": "#efe9dc",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "material": "lamps_classic_chandelier_1"
+                },
+                {
+                    "name": "Linen",
+                    "color": "#dccdb0",
+                    "tint": [
+                        0.93000000000000005,
+                        0.87,
+                        0.76000000000000001
+                    ],
+                    "material": "lamps_classic_chandelier_1"
+                },
+                {
+                    "name": "Smoke",
+                    "color": "#9c968f",
+                    "tint": [
+                        0.62,
+                        0.59999999999999998,
+                        0.57999999999999996
+                    ],
+                    "material": "lamps_classic_chandelier_1"
+                }
+            ]
+        },
+        {
+            "slug": "seraphine-chandelier",
+            "name": "Seraphine Chandelier",
+            "model": "Chandelier_02",
+            "category": "chandeliers",
+            "regular_price": "1150",
+            "sale_price": "990",
+            "featured": false,
+            "menu_order": 20,
+            "short_description": "Slender brass arms and five cream shades on a long drop rod, sized for a dining table.",
+            "description": "<p>Seraphine hangs on a long rod, so it works under high ceilings and over a dining table alike. Five arms curl up from a turned brass body, each with its own cream shade.</p><p>Shorten the rod at fitting time to set the exact height you want.</p>",
+            "width": "68",
+            "depth": "62",
+            "height": "85",
+            "weight": "7",
+            "bg": "#e6ddd0",
+            "materials": "Brushed brass, linen shades",
+            "designer": "Studio Forma",
+            "finishes": []
+        },
+        {
+            "slug": "versailles-chandelier",
+            "name": "Versailles Twelve-Light Chandelier",
+            "model": "Chandelier_03",
+            "category": "chandeliers",
+            "regular_price": "1650",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 30,
+            "short_description": "Twelve candle lights in two tiers, with cut-glass bobèches and a twisted iron drop rod.",
+            "description": "<p>A grand chandelier in the French manner: twelve candle lights on two tiers of scrolled brass arms, each resting in a cut-glass bobèche that throws small sparks of light across the ceiling.</p><p>Use warm candle bulbs and a dimmer for the full effect.</p>",
+            "width": "78",
+            "depth": "79",
+            "height": "104",
+            "weight": "14",
+            "bg": "#e4dccd",
+            "materials": "Cast brass, cut glass, wrought iron rod",
+            "designer": "Atelier Versailles",
+            "finishes": []
+        },
+        {
+            "slug": "opal-globe-pendant",
+            "name": "Opal Globe Pendant",
+            "model": "modern_ceiling_lamp_01",
+            "category": "pendants",
+            "regular_price": "240",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 40,
+            "short_description": "A hand-blown opal glass globe on a fine cord. It turns the bulb into an even, glare-free glow.",
+            "description": "<p>The simplest pendant there is, done well: a sphere of opal glass that hides the bulb completely and spreads the light in every direction.</p><p>Hang one over a side table, or three in a row over a kitchen island. The fitting comes in nickel, brass or black.</p>",
+            "width": "43",
+            "depth": "43",
+            "height": "95",
+            "weight": "2.4",
+            "bg": "#e0e3dd",
+            "materials": "Mouth-blown opal glass, metal fitting, fabric cord",
+            "designer": "Studio Forma",
+            "finishes": [
+                {
+                    "name": "Nickel",
+                    "color": "#b9b7b2",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "material": "modern_ceiling_globe"
+                },
+                {
+                    "name": "Brass",
+                    "color": "#c9a764",
+                    "tint": [
+                        1,
+                        0.82999999999999996,
+                        0.52000000000000002
+                    ],
+                    "material": "modern_ceiling_globe"
+                },
+                {
+                    "name": "Black",
+                    "color": "#2b2a29",
+                    "tint": [
+                        0.22,
+                        0.22,
+                        0.22
+                    ],
+                    "material": "modern_ceiling_globe"
+                }
+            ]
+        },
+        {
+            "slug": "foundry-pendant",
+            "name": "Foundry Enamel Pendant",
+            "model": "hanging_industrial_lamp",
+            "category": "pendants",
+            "regular_price": "380",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 50,
+            "short_description": "A factory pendant with a sage enamel shade, cast junction box and wire guard.",
+            "description": "<p>Foundry is modelled on the lamps that once hung over workshop benches: a heavy enamel shade, a cast junction box and a wire guard over the glass.</p><p>It hangs on a steel chain, so the drop is easy to adjust.</p>",
+            "width": "55",
+            "depth": "55",
+            "height": "136",
+            "weight": "6",
+            "bg": "#dfe2da",
+            "materials": "Enamelled steel, cast aluminium, glass, steel chain",
+            "designer": "Workshop Lumen",
+            "finishes": []
+        },
+        {
+            "slug": "lotus-silk-lantern",
+            "name": "Lotus Silk Lantern Pendant",
+            "model": "chinese_chandelier",
+            "category": "pendants",
+            "regular_price": "620",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 60,
+            "short_description": "Six hand-painted silk panels in a carved hardwood frame, finished with red silk tassels.",
+            "description": "<p>Each of the six panels is painted by hand with plum blossom on silk, then set into a carved hardwood frame with dragon-head brackets.</p><p>Lit from inside, the silk glows a warm cream and the branches stand out in shadow.</p>",
+            "width": "88",
+            "depth": "88",
+            "height": "75",
+            "weight": "8",
+            "bg": "#ebe0d3",
+            "materials": "Carved hardwood, hand-painted silk, silk tassels",
+            "designer": "Studio Forma",
+            "finishes": []
+        },
+        {
+            "slug": "gothic-lantern-pendant",
+            "name": "Gothic Lantern Pendant",
+            "model": "lantern_chandelier_01",
+            "category": "pendants",
+            "regular_price": "540",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 70,
+            "short_description": "Wrought scrollwork and glass panels around a single warm bulb.",
+            "description": "<p>A lantern for halls and stairwells, with leaf-shaped scrollwork in aged bronze wrapped around four glass panels.</p><p>Pair it with a warm filament bulb to bring out the colour of the metal.</p>",
+            "width": "58",
+            "depth": "57",
+            "height": "88",
+            "weight": "7",
+            "bg": "#e4ddd2",
+            "materials": "Aged bronze, glass panels",
+            "designer": "Atelier Versailles",
+            "finishes": []
+        },
+        {
+            "slug": "arc-desk-lamp",
+            "name": "Arc Desk Lamp",
+            "model": "desk_lamp_arm_01",
+            "category": "table-lamps",
+            "regular_price": "180",
+            "sale_price": "",
+            "featured": true,
+            "menu_order": 80,
+            "short_description": "The spring-balanced architect's lamp: two arms, one hand to move it.",
+            "description": "<p>Springs balance both arms, so the lamp stays exactly where you leave it, low over a sketch or high over a keyboard.</p><p>The base clamps to any desk up to 6 cm thick.</p>",
+            "width": "20",
+            "depth": "61",
+            "height": "89",
+            "weight": "2.8",
+            "bg": "#ece0d3",
+            "materials": "Powder-coated steel, steel springs",
+            "designer": "Workshop Lumen",
+            "finishes": [
+                {
+                    "name": "Signal orange",
+                    "color": "#d9632b",
+                    "tint": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "material": "desk_lamp_arm_01"
+                },
+                {
+                    "name": "Rust",
+                    "color": "#a5553a",
+                    "tint": [
+                        0.78000000000000003,
+                        0.55000000000000004,
+                        0.47999999999999998
+                    ],
+                    "material": "desk_lamp_arm_01"
+                },
+                {
+                    "name": "Graphite",
+                    "color": "#474645",
+                    "tint": [
+                        0.34000000000000002,
+                        0.34000000000000002,
+                        0.35999999999999999
+                    ],
+                    "material": "desk_lamp_arm_01"
+                }
+            ]
+        },
+        {
+            "slug": "pipe-table-lamp",
+            "name": "Pipe Table Lamp",
+            "model": "industrial_pipe_lamp",
+            "category": "table-lamps",
+            "regular_price": "220",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 90,
+            "short_description": "Pipe fittings, a wide steel shade and a filament bulb.",
+            "description": "<p>Built from real pipe fittings on a weighted base, with a wide steel shade that tilts to point the light where you need it.</p><p>Comes with a warm filament bulb.</p>",
+            "width": "18",
+            "depth": "26",
+            "height": "36",
+            "weight": "3.5",
+            "bg": "#e2e0db",
+            "materials": "Galvanised steel pipe, steel shade, cast iron base",
+            "designer": "Workshop Lumen",
+            "finishes": []
+        },
+        {
+            "slug": "rosa-oil-lamp",
+            "name": "Rosa Oil Lamp",
+            "model": "vintage_oil_lamp",
+            "category": "table-lamps",
+            "regular_price": "260",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 100,
+            "short_description": "A hand-painted porcelain font, brass collar and tall glass chimney. Burns lamp oil for a real flame.",
+            "description": "<p>Rosa is a working paraffin lamp: fill the porcelain font, trim the wick and light it for a steady, flickering flame behind the glass chimney.</p><p>The roses are painted by hand, so each lamp is a little different.</p>",
+            "width": "22",
+            "depth": "22",
+            "height": "80",
+            "weight": "2.2",
+            "bg": "#ebe1d6",
+            "materials": "Hand-painted porcelain, brass, glass chimney",
+            "designer": "Studio Forma",
+            "finishes": []
+        },
+        {
+            "slug": "bracket-wall-light",
+            "name": "Bracket Wall Light",
+            "model": "industrial_wall_sconce",
+            "category": "wall-lights",
+            "regular_price": "160",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 110,
+            "short_description": "A black enamel cone on a swan-neck arm and an aged brass backplate.",
+            "description": "<p>Mount it beside a mirror, over a bedside table or along a hallway. The swan-neck arm holds the cone shade away from the wall and points it down.</p><p>Wire it in, or use the plug-in kit.</p>",
+            "width": "15",
+            "depth": "25",
+            "height": "34",
+            "weight": "1.8",
+            "bg": "#e2ddd5",
+            "materials": "Enamelled steel, aged brass",
+            "designer": "Workshop Lumen",
+            "finishes": []
+        },
+        {
+            "slug": "bulkhead-wall-light",
+            "name": "Bulkhead Wall Light",
+            "model": "industrial_wall_lamp",
+            "category": "wall-lights",
+            "regular_price": "140",
+            "sale_price": "119",
+            "featured": false,
+            "menu_order": 120,
+            "short_description": "A cast iron cage around ribbed glass, made for porches, hallways and garden walls.",
+            "description": "<p>The bulkhead light from ships and engine rooms, in cast iron with a ribbed glass cover.</p><p>It works indoors and on a sheltered porch.</p>",
+            "width": "27",
+            "depth": "14",
+            "height": "43",
+            "weight": "3.2",
+            "bg": "#dfdcd6",
+            "materials": "Cast iron, ribbed glass",
+            "designer": "Workshop Lumen",
+            "finishes": []
+        },
+        {
+            "slug": "storm-lantern",
+            "name": "Storm Lantern",
+            "model": "Lantern_01",
+            "category": "lanterns-candles",
+            "regular_price": "95",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 130,
+            "short_description": "The hurricane lantern: a glass globe in a brass cage, with a wick you can turn down low.",
+            "description": "<p>A classic storm lantern that stays lit in a breeze. Turn the brass wheel to raise or lower the flame.</p><p>Hang it from the bail handle or stand it on a table.</p>",
+            "width": "12",
+            "depth": "10",
+            "height": "29",
+            "weight": "1.1",
+            "bg": "#ebe4d8",
+            "materials": "Brass, glass globe, cotton wick",
+            "designer": "Studio Forma",
+            "finishes": []
+        },
+        {
+            "slug": "baroque-candelabra-set",
+            "name": "Baroque Candelabra Set",
+            "model": "brass_candleholders",
+            "category": "lanterns-candles",
+            "regular_price": "320",
+            "sale_price": "",
+            "featured": false,
+            "menu_order": 140,
+            "short_description": "Three brass candle holders: a single stick, a three-light and a five-light candelabra.",
+            "description": "<p>A set of three in cast brass, from a single candlestick to a five-light candelabra. Group them down a dining table or along a mantel.</p><p>Takes standard dinner candles.</p>",
+            "width": "105",
+            "depth": "36",
+            "height": "84",
+            "weight": "5",
+            "bg": "#ece4d6",
+            "materials": "Cast brass",
+            "designer": "Atelier Versailles",
+            "finishes": []
+        }
+    ],
+    "site": {
+        "tagline": "Lighting you can turn around"
+    },
+    "options": {
+        "woocommerce_price_num_decimals": "0",
+        "woocommerce_enable_reviews": "no",
+        "woocommerce_thumbnail_cropping": "uncropped"
+    },
+    "home": "<!-- wp:forma/hero {\"eyebrow\":\"Lighting collection — 2026\",\"note\":\"Every lamp is a true-to-scale\\u003cbr\\u003e3D model. Spin it, zoom in,\\u003cbr\\u003ehang it in your room.\",\"line1\":\"Lighting\",\"line2\":\"\\u003cem\\u003eyou can\\u003c/em\\u003e turn\",\"line3\":\"around.\",\"buttonText\":\"Shop the lighting\",\"product\":\"aurelia-chandelier\"} /-->\n\n<!-- wp:forma/statement {\"text\":\"A photo shows you one side of a lamp. We show you all of them: the shade, the arms and the way the brass catches the light.\"} /-->\n\n<!-- wp:forma/showcase {\"buttonText\":\"Explore this light\"} /-->\n\n<!-- wp:forma/rooms {\"eyebrow\":\"(03) — Shop by type\",\"title\":\"Light for\\u003cbr\\u003e\\u003cem\\u003eevery corner.\\u003c/em\\u003e\",\"linkText\":\"View all lighting\",\"endText\":\"New lights arrive every season.\"} /-->\n\n<!-- wp:forma/anatomy {\"eyebrow\":\"(04) — Anatomy of a lantern\",\"product\":\"lotus-silk-lantern\",\"callouts\":[{\"title\":\"Hand-painted silk\",\"text\":\"Plum blossom painted by hand on each of the six panels.\"},{\"title\":\"Carved hardwood frame\",\"text\":\"Dragon-head brackets cut and finished by hand.\"},{\"title\":\"Silk tassels\",\"text\":\"Six red tassels that move when the air does.\"}]} /-->\n\n<!-- wp:forma/marquee {\"items\":[\"Rotate\",\"Zoom in\",\"Hang it in your room\",\"Free delivery\",\"5-year warranty\"]} /-->\n\n<!-- wp:forma/arrivals {\"linkText\":\"Shop all lighting\"} /-->\n\n<!-- wp:forma/promise {\"title\":\"What you see\\u003cbr\\u003eis \\u003cem\\u003ewhat lights up.\\u003c/em\\u003e\",\"items\":[{\"icon\":\"cube\",\"title\":\"Real 3D, not renders\",\"text\":\"Every product page is a live, physically-based model you control.\"},{\"icon\":\"truck\",\"title\":\"Free, padded delivery\",\"text\":\"Every light ships assembled and packed by hand.\"},{\"icon\":\"return\",\"title\":\"30 nights to decide\",\"text\":\"Hang it, switch it on, live with it. Not right? We collect it free.\"},{\"icon\":\"shield\",\"title\":\"5-year warranty\",\"text\":\"On every fitting, arm and switch we sell.\"}],\"quote\":\"“I spun the chandelier round on my phone until I knew exactly how it would hang over our table. It looks even better lit.”\",\"cite\":\"Lena K. — Berlin\"} /-->"
+}
