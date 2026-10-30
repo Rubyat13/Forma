@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Library items: type ('page', 'home' or 'section'), title, description,
- * preview image and block markup.
+ * preview image and block markup. Kit pages also have their kit and a page title.
  *
  * @return array<string, array<string, string>>
  */
@@ -38,6 +38,19 @@ function forma_3d_tk_library_items() {
 				'content' => $pattern['content'],
 			);
 		}
+	}
+
+	// Pages: the template kits (Personal profile, eCommerce, IT company, Photography).
+	foreach ( forma_3d_tk_kit_templates() as $id => $template ) {
+		$items[ 'kit-' . $id ] = array(
+			'type'      => 'page',
+			'kit'       => $template['kit'],
+			'title'     => $template['title'],
+			'pageTitle' => $template['pageTitle'],
+			'desc'      => $template['description'],
+			'thumb'     => $thumb( 'kit-' . $id ),
+			'content'   => $template['content'],
+		);
 	}
 
 	// Homepages: the starter sites' homepage layouts.
@@ -135,12 +148,21 @@ add_action(
 		$items = array();
 		foreach ( forma_3d_tk_library_items() as $id => $item ) {
 			$items[] = array(
-				'id'      => $id,
-				'type'    => $item['type'],
-				'title'   => $item['title'],
-				'desc'    => $item['desc'],
-				'thumb'   => $item['thumb'],
-				'content' => $item['content'],
+				'id'        => $id,
+				'type'      => $item['type'],
+				'kit'       => $item['kit'] ?? '',
+				'title'     => $item['title'],
+				'pageTitle' => $item['pageTitle'] ?? $item['title'],
+				'desc'      => $item['desc'],
+				'thumb'     => $item['thumb'],
+				'content'   => $item['content'],
+			);
+		}
+		$kits = array();
+		foreach ( forma_3d_tk_kits() as $kit => $label ) {
+			$kits[] = array(
+				'id'    => $kit,
+				'label' => $label,
 			);
 		}
 		wp_localize_script(
@@ -148,6 +170,7 @@ add_action(
 			'FORMA_LIBRARY',
 			array(
 				'items'   => $items,
+				'kits'    => $kits,
 				'preview' => add_query_arg(
 					array(
 						'forma_template_preview' => '%id%',
@@ -184,7 +207,7 @@ function forma_3d_tk_library_preview() {
 			'ID'             => 0,
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
-			'post_title'     => $items[ $id ]['title'],
+			'post_title'     => $items[ $id ]['pageTitle'] ?? $items[ $id ]['title'],
 			'post_name'      => 'forma-template-preview',
 			'post_content'   => $items[ $id ]['content'],
 			'post_author'    => get_current_user_id(),

@@ -8,7 +8,7 @@ Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Companion plugin for the Forma 3D theme: one-click 3D starter sites with their own designs, page templates and homepage blocks.
+Companion plugin for the Forma 3D theme: one-click 3D starter sites with their own designs, a template library and homepage blocks.
 
 == Description ==
 
@@ -17,7 +17,8 @@ Forma 3D Toolkit adds the store features of the [Forma 3D](https://wordpress.org
 * Appearance > Forma Setup: four one-click starter sites, each with products, photos, categories, a homepage and its own design (see below).
 * Four store designs: Original, Noir (dark, gold, high-contrast serif), Soft (oat and sage, terracotta, rounded serif, arched cards) and Studio (pale grey and black, light sans-serif). Each starter site comes with its own design; change it any time in Appearance > Customize > Forma 3D options.
 * "Try the Look" block: a carousel of styled outfits. Shoppers add single pieces or the whole look with a bundle discount that is applied in the cart.
-* Forma Templates library: a button in the page editor's toolbar opens 23 templates (pages, homepages and sections). Preview each one live with your store's design, at desktop, tablet or phone width, and import it into the page.
+* Forma Templates library: a button in the page editor's toolbar opens 35 templates (pages, homepages and sections). Preview each one live with your store's design, at desktop, tablet or phone width, and import it into the page.
+* Four template collections for other kinds of sites, 12 pages built with core blocks: Personal profile (homepage, résumé, contact), eCommerce (store homepage, sale, shipping & returns), IT company (homepage, services, pricing) and Photography (homepage, portfolio, packages & booking). They follow the store design you choose and are also in the block inserter under Patterns.
 * Six page templates, offered when you create a new page: About us, Contact, Lookbook, FAQ, Shop the room and a 3D campaign landing page.
 * Eight homepage blocks for the block editor (Hero, Statement, 3D Showcase, Shop by Room, Anatomy, Marquee, Product Grid, Promise) and the "Forma 3D homepage" pattern.
 * A "Forma Display" product tab: finishes (colour swatches that recolour the 3D model), stage colour, materials and designer.
@@ -55,7 +56,7 @@ Yes. Products are matched by SKU and updated, and media files that were already 
 
 = Can I use a design without its starter site? =
 
-Yes. Go to Appearance > Customize > Forma 3D options and choose Original, Noir or Soft under "Store design". Importing a starter site switches to that starter site's design.
+Yes. Go to Appearance > Customize > Forma 3D options and choose Original, Noir, Soft or Studio under "Store design". Importing a starter site switches to that starter site's design.
 
 = How does the "Complete the look" discount work? =
 
@@ -63,7 +64,7 @@ In the Try the Look block settings, set the bundle discount (10% by default, 0 t
 
 = How do I use the template library? =
 
-Open any page in the block editor and click "Forma Templates" in the top toolbar. Pick Pages, Homepages or Sections, click Preview to see the template live with your store's design, and Import to put it on the page. If the page already has content, you choose between replacing it and adding the template below.
+Open any page in the block editor and click "Forma Templates" in the top toolbar. Pick Pages, Homepages, Sections or one of the collections (Personal profile, eCommerce, IT company, Photography), click Preview to see the template live with your store's design, and Import to put it on the page. An untitled page gets the template's title. If the page already has content, you choose between replacing it and adding the template below.
 
 = How do I use the page templates? =
 
@@ -75,7 +76,7 @@ The product fields and .glb uploads do. The homepage blocks, the campaign page t
 
 == External services ==
 
-The Lighting, Home Decor and Fashion starter sites are not included in the plugin. When you choose one of them in Appearance > Forma Setup and click Import, the plugin downloads that starter site's files from GitHub (raw.githubusercontent.com), from the public repository https://github.com/Rubyat13/Forma/tree/starter-sites: a demo.json file with the product and page data, the 3D models (.glb) and the product photos (.webp).
+The Lighting, Home Decor and Fashion starter sites are not included in the plugin. When you choose one of them in Appearance > Forma Setup and click Import, the plugin downloads one zip file for that starter site from GitHub (github.com, which serves the file from codeload.github.com), from a tagged release of the public repository https://github.com/Rubyat13/Forma, for example https://github.com/Rubyat13/Forma/archive/refs/tags/starter-lighting-v2.zip. The zip holds a demo.json file with the product and page data, the 3D models (.glb) and the product photos (.webp). It is unpacked into wp-content/uploads/forma-3d-starter/ and deleted after the import.
 
 Nothing is downloaded until you click Import, and no information about your site, your store or your users is sent. As with any web request, GitHub receives your server's IP address and the standard request headers. GitHub's terms of service: https://docs.github.com/site-policy/github-terms/github-terms-of-service. GitHub's privacy statement: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement.
 
@@ -86,7 +87,8 @@ The Furniture starter site is included in the plugin and needs no download.
 = 1.1.0 =
 * New: Lighting and Home Decor starter sites in Forma Setup, next to Furniture. Pick one and import it in one click.
 * New: switching starter sites moves the previous starter site's products to the Trash and gives the Home page the new design (the old version stays in its revisions).
-* New: Forma Templates library in the page editor: browse 23 pages, homepages and sections, preview them live and import them.
+* New: Forma Templates library in the page editor: browse 35 pages, homepages and sections, preview them live and import them.
+* New: four template collections in the library and the block inserter: Personal profile, eCommerce, IT company and Photography, three pages each.
 * New: Fashion starter site with six styled looks and the new "Try the Look" block (carousel, single pieces and a "Complete the look" bundle discount in the cart).
 * New: four store designs (Original, Noir, Soft and Studio) with their own colours, fonts and shapes. Lighting uses Noir, Home Decor uses Soft and Fashion uses Studio; switch in Appearance > Customize.
 * Starter sites without 3D models turn off the shop's "Try it in your room" section.
@@ -115,5 +117,7 @@ Lighting and Home Decor starter site 3D models: Poly Haven (CC0, https://polyhav
 Fashion starter site photos: CC0 photos from Unsplash (published under CC0 before 2017) via Wikimedia Commons, by Brooke Cagle, Elijah Henderson, Jakob Owens, freestocks.org, Mohammad Faruque and Pete Bellis. Backgrounds removed and garments cropped for the demo.
 
 Demo product photos and the starter site previews are renders of these models and use the same licences.
+
+Template collection photos: CC0 photos from Unsplash (published under CC0 before 2017) via Wikimedia Commons, by Michael Dam, Patryk Sobczak, Melinda Pack, Aleks Dorohovich, rawpixel.com, Sai Kiran Anagani, Helloquence, Carl Heyerdahl, Michael Fruehmann, Joe Roberts, Adrian (aows), Eric Alves, Ben Warren, Matt Nelson, Anne Edgar, Tobias Fischer, Matthew Kane, Shardayyy Photography and Ali Inay.
 
 Fonts in the Noir and Soft designs, all under the SIL Open Font License 1.1 (licence files in assets/designs/fonts): Bodoni Moda (The Bodoni Moda Project Authors, https://github.com/indestructible-type/Bodoni), Jost (The Jost Project Authors, https://github.com/indestructible-type/Jost), Fraunces (The Fraunces Project Authors, https://github.com/undercasetype/Fraunces) and DM Sans (The DM Sans Project Authors, https://github.com/googlefonts/dm-fonts).

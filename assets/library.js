@@ -10,7 +10,8 @@
 	const { Button, Modal, SearchControl, ButtonGroup } = wp.components;
 	const { select, dispatch, subscribe } = wp.data;
 	const { __, sprintf } = wp.i18n;
-	const LIB = window.FORMA_LIBRARY || { items: [], preview: '' };
+	const LIB = window.FORMA_LIBRARY || { items: [], kits: [], preview: '' };
+	const KITS = LIB.kits || [];
 
 	const TYPES = [
 		{ id: 'all', label: __('All templates', 'forma-3d-toolkit') },
@@ -29,6 +30,15 @@
 		h('path', { d: 'M12 3a9 9 0 0 1 0 18z', fill: 'currentColor' })
 	);
 
+	const inView = (item, view) => {
+		if (view.startsWith('kit:')) return item.kit === view.slice(4);
+		return view === 'all' || item.type === view;
+	};
+	const navButton = (id, label, view, setView) => h(Button, {
+		key: id, className: 'forma-library__type' + (view === id ? ' is-active' : ''), onClick: () => setView(id),
+		'aria-pressed': view === id,
+	}, label, h('span', null, LIB.items.filter((it) => inView(it, id)).length));
+
 	const isEmptyPage = () => {
 		const blocks = select('core/block-editor').getBlocks();
 		if (!blocks.length) return true;
@@ -46,7 +56,7 @@
 		// Name an untitled page after the page template.
 		const title = select('core/editor').getEditedPostAttribute('title');
 		if (item.type === 'page' && !String(title || '').trim()) {
-			dispatch('core/editor').editPost({ title: item.title });
+			dispatch('core/editor').editPost({ title: item.pageTitle || item.title });
 		}
 		dispatch('core/notices').createSuccessNotice(
 			sprintf(/* translators: %s: template name. */ __('“%s” imported.', 'forma-3d-toolkit'), item.title),
@@ -54,11 +64,17 @@
 		);
 	}
 
+	// Badge: the kit for kit pages, the type for everything else.
+	const badge = (item) => {
+		const kit = item.kit && KITS.find((k) => k.id === item.kit);
+		return kit ? kit.label : (TYPES.find((t) => t.id === item.type) || {}).label;
+	};
+
 	function Card({ item, onPreview, onImport }) {
 		return h('div', { className: 'forma-library__card' },
 			h('button', { type: 'button', className: 'forma-library__thumb', onClick: () => onPreview(item), 'aria-label': sprintf(/* translators: %s: template name. */ __('Preview %s', 'forma-3d-toolkit'), item.title) },
 				h('img', { src: item.thumb, alt: '', loading: 'lazy' }),
-				h('span', { className: 'forma-library__badge' }, (TYPES.find((t) => t.id === item.type) || {}).label)
+				h('span', { className: 'forma-library__badge' }, badge(item))
 			),
 			h('div', { className: 'forma-library__card-body' },
 				h('strong', null, item.title),
@@ -72,7 +88,8 @@
 	}
 
 	function Library({ onClose }) {
-		const [type, setType] = useState('all');
+		// 'all', a type ('page', 'home', 'section') or a kit ('kit:photo').
+		const [view, setView] = useState('all');
 		const [search, setSearch] = useState('');
 		const [preview, setPreview] = useState(null);
 		const [device, setDevice] = useState('desktop');
@@ -80,8 +97,8 @@
 
 		const items = useMemo(() => {
 			const q = search.trim().toLowerCase();
-			return LIB.items.filter((it) => (type === 'all' || it.type === type) && (!q || (it.title + ' ' + it.desc).toLowerCase().includes(q)));
-		}, [type, search]);
+			return LIB.items.filter((it) => inView(it, view) && (!q || (it.title + ' ' + it.desc).toLowerCase().includes(q)));
+		}, [view, search]);
 
 		const startImport = (item) => {
 			if (isEmptyPage()) {
@@ -119,10 +136,9 @@
 			: h('div', { className: 'forma-library__layout' },
 				h('nav', { className: 'forma-library__nav', 'aria-label': __('Template types', 'forma-3d-toolkit') },
 					h(SearchControl, { value: search, onChange: setSearch, label: __('Search templates', 'forma-3d-toolkit'), __nextHasNoMarginBottom: true }),
-					TYPES.map((t) => h(Button, {
-						key: t.id, className: 'forma-library__type' + (type === t.id ? ' is-active' : ''), onClick: () => setType(t.id),
-						'aria-pressed': type === t.id,
-					}, t.label, h('span', null, t.id === 'all' ? LIB.items.length : LIB.items.filter((it) => it.type === t.id).length)))
+					TYPES.map((t) => navButton(t.id, t.label, view, setView)),
+					KITS.length ? h('h3', { className: 'forma-library__nav-title' }, __('Collections', 'forma-3d-toolkit')) : null,
+					KITS.map((k) => navButton('kit:' + k.id, k.label, view, setView))
 				),
 				h('div', { className: 'forma-library__grid' },
 					items.length

@@ -1,0 +1,85 @@
+/* Forma template kits: styles shared by the Personal profile, eCommerce, IT company and Photography templates. */
+
+/* Rhythm: no extra space above the first block of a card, column or band. */
+:is(.entry, .editor-styles-wrapper) [class*="forma-kit-"] > :first-child,
+:is(.entry, .editor-styles-wrapper) [class*="forma-kit-"] > .wp-block-column > :first-child,
+:is(.entry, .editor-styles-wrapper) [class*="forma-kit-"] .is-style-forma-3d-card > :first-child { margin-top: 0; }
+
+/* Small label above a section heading. */
+:is(.entry, .editor-styles-wrapper) .forma-kit-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted, #7b7369); }
+.entry > .forma-kit-eyebrow { margin-top: clamp(64px, 9vw, 128px); }
+:is(.entry, .editor-styles-wrapper) .forma-kit-eyebrow + :is(h2, h3, p) { margin-top: 14px; }
+
+/* Big numbers. */
+.forma-kit-stats { padding-top: 28px; border-top: 1px solid var(--line-2, rgba(23, 21, 19, 0.22)); }
+:is(.entry, .editor-styles-wrapper) .forma-kit-num { margin: 0; font-family: var(--serif, serif); font-size: clamp(56px, 6vw, 96px); line-height: 0.95; letter-spacing: -0.03em; color: inherit; }
+:is(.entry, .editor-styles-wrapper) .forma-kit-num + p { margin-top: 10px; font-size: 15px; color: var(--muted, #7b7369); }
+
+/* Dark band (and the featured plan). */
+:is(.entry, .editor-styles-wrapper) .forma-kit-dark :is(h2, h3, p, li, cite) { color: inherit; }
+:is(.entry, .editor-styles-wrapper) .forma-kit-dark :is(.forma-kit-eyebrow, .forma-kit-num + p, .has-muted-color) { color: inherit !important; opacity: 0.68; }
+.forma-kit-dark .wp-block-button:not(.is-style-outline) > .wp-block-button__link { background: var(--cream, #f1ebe1) !important; color: var(--dark, #141210) !important; }
+.forma-kit-dark .wp-block-button.is-style-outline > .wp-block-button__link { color: inherit !important; box-shadow: inset 0 0 0 1px currentColor; }
+.forma-kit-dark .wp-block-button > .wp-block-button__link:hover { background: var(--accent, #b4532a) !important; color: #fff !important; box-shadow: none; }
+
+/* Cards that share a row get the same height. */
+.forma-kit-cards > .wp-block-column > .wp-block-group { height: 100%; }
+:is(.entry, .editor-styles-wrapper) .forma-kit-cards h3 { font-size: clamp(24px, 2.2vw, 32px); }
+
+/* Pricing plans. */
+.forma-kit-plans > .wp-block-column { display: flex; flex-direction: column; padding: clamp(24px, 3vw, 40px); border-radius: var(--radius-lg, 28px); box-shadow: inset 0 0 0 1px var(--line-2, rgba(23, 21, 19, 0.22)); }
+.forma-kit-plans > .forma-kit-dark { background: var(--dark, #141210); color: var(--cream, #f1ebe1); box-shadow: none; }
+.forma-kit-plans .wp-block-buttons { margin-top: auto; padding-top: 28px; }
+:is(.entry, .editor-styles-wrapper) .forma-kit-price { margin-bottom: 0; font-family: var(--serif, serif); font-size: clamp(48px, 5vw, 72px); line-height: 1; letter-spacing: -0.03em; color: inherit; }
+
+/* Lists: ticks and tags. */
+:is(.entry, .editor-styles-wrapper) ul.forma-kit-check { padding: 0; list-style: none; }
+:is(.entry, .editor-styles-wrapper) ul.forma-kit-check li { position: relative; margin: 10px 0; padding-left: 28px; }
+:is(.entry, .editor-styles-wrapper) ul.forma-kit-check li::before { content: ""; position: absolute; left: 2px; top: 0.45em; width: 12px; height: 6px; border-left: 2px solid var(--accent, #b4532a); border-bottom: 2px solid var(--accent, #b4532a); transform: rotate(-45deg); }
+:is(.entry, .editor-styles-wrapper) ul.forma-kit-tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+:is(.entry, .editor-styles-wrapper) ul.forma-kit-tags li { margin: 0; padding: 7px 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line-2, rgba(23, 21, 19, 0.22)); font-size: 14px; }
+
+/* Numbered steps and timeline rows. */
+.forma-kit-steps > .wp-block-column { padding-top: 22px; border-top: 1px solid var(--line-2, rgba(23, 21, 19, 0.22)); }
+:is(.entry, .editor-styles-wrapper) .forma-kit-steps h3 { font-size: clamp(24px, 2.2vw, 30px); }
+.wp-block-columns.forma-kit-row { margin-bottom: 0; padding-top: 24px; border-top: 1px solid var(--line-2, rgba(23, 21, 19, 0.22)); }
+:is(.entry, .editor-styles-wrapper) .forma-kit-row h3 { font-size: clamp(24px, 2.2vw, 30px); }
+
+/* Client names. */
+.forma-kit-logos { column-gap: clamp(28px, 5vw, 72px) !important; row-gap: 12px !important; padding: 26px 0; border-top: 1px solid var(--line, rgba(23, 21, 19, 0.12)); border-bottom: 1px solid var(--line, rgba(23, 21, 19, 0.12)); }
+:is(.entry, .editor-styles-wrapper) .forma-kit-logos p:not(.forma-kit-eyebrow) { margin: 0; font-family: var(--serif, serif); font-size: clamp(22px, 2.4vw, 32px); letter-spacing: -0.01em; color: var(--muted, #7b7369); }
+
+/* Testimonials. */
+:is(.entry, .editor-styles-wrapper) .forma-kit-stars { margin-bottom: 0; color: var(--accent, #b4532a); letter-spacing: 0.2em; }
+
+/* Photo cover. */
+.wp-block-cover.forma-kit-cover { overflow: hidden; border-radius: var(--radius-lg, 28px); }
+.forma-kit-cover img.wp-block-cover__image-background { border-radius: 0; }
+:is(.entry, .editor-styles-wrapper) .forma-kit-cover :is(h2, h3, p) { color: #fff; }
+:is(.entry, .editor-styles-wrapper) .forma-kit-cover .forma-kit-eyebrow { color: rgba(255, 255, 255, 0.8); }
+
+/* Masonry gallery: photos keep their own shape. */
+.wp-block-gallery.has-nested-images.forma-kit-masonry { display: block; columns: 3 260px; column-gap: 16px; }
+.wp-block-gallery.has-nested-images.forma-kit-masonry.columns-2 { columns: 2 260px; }
+.wp-block-gallery.has-nested-images.forma-kit-masonry figure.wp-block-image:not(#individual-image) { display: block; width: 100%; margin: 0 0 16px; break-inside: avoid; }
+.wp-block-gallery.has-nested-images.forma-kit-masonry figure.wp-block-image img { height: auto; }
+
+/* Product grids from the shop: four across, with the theme's product cards. */
+.forma-kit-products > .woocommerce { max-width: none !important; margin: 0 !important; }
+.forma-kit-products .products { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.entry .forma-kit-products .p-card__title { margin: 0; font-family: var(--sans); font-size: 17px; font-weight: 500; line-height: 1.25; letter-spacing: -0.01em; }
+.entry .forma-kit-products .p-card a { text-decoration: none !important; }
+@media (max-width: 1180px) { .forma-kit-products .products { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .entry .forma-kit-products .p-card__title { font-size: 14px; } }
+
+/* Social links: icons and names in the text colour. */
+.wp-block-social-links.forma-kit-social { gap: 12px 28px; font-size: 22px; }
+.wp-block-social-links.forma-kit-social .wp-social-link { color: var(--ink, #171513) !important; }
+.entry .wp-block-social-links.forma-kit-social a { text-decoration: none; }
+.wp-block-social-links.forma-kit-social .wp-block-social-link-label { font-size: 15px; }
+
+/* Tables. */
+.wp-block-table.forma-kit-table table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.wp-block-table.forma-kit-table :is(th, td) { padding: 16px 16px 16px 0; border: 0; border-bottom: 1px solid var(--line-2, rgba(23, 21, 19, 0.22)); text-align: left; vertical-align: top; }
+.wp-block-table.forma-kit-table th { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted, #7b7369); }
+.wp-block-table.forma-kit-table thead { border: 0; }

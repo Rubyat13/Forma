@@ -94,6 +94,7 @@ body.forma-design-soft.has-3d-stage {
 .products--related .p-card:hover .p-card__quick,
 .shop .products > li:not(:nth-child(6n + 1)) .p-card:hover .p-card__quick { transform: translate(50%, 0); }
 .flag { background: rgba(255, 255, 255, 0.85); }
+.flag--sale { background: var(--accent); color: #fff; }
 .p-card__quick { background: var(--dark); }
 .p-card__title { font-weight: 600; }
 .p-card__add { background: #fff; }
