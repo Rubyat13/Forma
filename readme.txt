@@ -17,6 +17,7 @@ Forma 3D Toolkit adds the store features of the [Forma 3D](https://wordpress.org
 * Appearance > Forma Setup: four one-click starter sites, each with products, photos, categories, a homepage and its own design (see below).
 * Four store designs: Original, Noir (dark, gold, high-contrast serif), Soft (oat and sage, terracotta, rounded serif, arched cards) and Studio (pale grey and black, light sans-serif). Each starter site comes with its own design; change it any time in Appearance > Customize > Forma 3D options.
 * "Try the Look" block: a carousel of styled outfits. Shoppers add single pieces or the whole look with a bundle discount that is applied in the cart.
+* Forma Templates library: a button in the page editor's toolbar opens 23 templates (pages, homepages and sections). Preview each one live with your store's design, at desktop, tablet or phone width, and import it into the page.
 * Six page templates, offered when you create a new page: About us, Contact, Lookbook, FAQ, Shop the room and a 3D campaign landing page.
 * Eight homepage blocks for the block editor (Hero, Statement, 3D Showcase, Shop by Room, Anatomy, Marquee, Product Grid, Promise) and the "Forma 3D homepage" pattern.
 * A "Forma Display" product tab: finishes (colour swatches that recolour the 3D model), stage colour, materials and designer.
@@ -60,6 +61,10 @@ Yes. Go to Appearance > Customize > Forma 3D options and choose Original, Noir o
 
 In the Try the Look block settings, set the bundle discount (10% by default, 0 turns it off). When a shopper clicks "Add full look to bag", every piece of the look is added and tagged with the look. While all pieces of that look are in the cart, the cart shows a "Complete the look" discount line. Removing a piece removes the discount.
 
+= How do I use the template library? =
+
+Open any page in the block editor and click "Forma Templates" in the top toolbar. Pick Pages, Homepages or Sections, click Preview to see the template live with your store's design, and Import to put it on the page. If the page already has content, you choose between replacing it and adding the template below.
+
 = How do I use the page templates? =
 
 Go to Pages > Add New Page. The "Choose a pattern" window lists the Forma 3D page templates; pick one and edit the text and photos. They are also in the block inserter under Patterns > Forma 3D pages.
@@ -81,6 +86,7 @@ The Furniture starter site is included in the plugin and needs no download.
 = 1.1.0 =
 * New: Lighting and Home Decor starter sites in Forma Setup, next to Furniture. Pick one and import it in one click.
 * New: switching starter sites moves the previous starter site's products to the Trash and gives the Home page the new design (the old version stays in its revisions).
+* New: Forma Templates library in the page editor: browse 23 pages, homepages and sections, preview them live and import them.
 * New: Fashion starter site with six styled looks and the new "Try the Look" block (carousel, single pieces and a "Complete the look" bundle discount in the cart).
 * New: four store designs (Original, Noir, Soft and Studio) with their own colours, fonts and shapes. Lighting uses Noir, Home Decor uses Soft and Fashion uses Studio; switch in Appearance > Customize.
 * Starter sites without 3D models turn off the shop's "Try it in your room" section.

@@ -1,0 +1,48 @@
+/* Forma template library (block editor). */
+
+.forma-library-host { display: flex; align-items: center; margin-left: 8px; }
+.forma-library-button.components-button {
+	gap: 8px; height: 36px; padding: 0 14px 0 10px; border-radius: 999px;
+	background: #171513; color: #f1ebe1; font-weight: 500; white-space: nowrap;
+}
+.forma-library-button.components-button:hover:not(:disabled) { background: #b4532a; color: #fff; }
+.forma-library-button.components-button:focus-visible { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #b4532a; }
+.forma-library-mark { flex: 0 0 auto; }
+@media (max-width: 782px) { .forma-library-button span { display: none; } .forma-library-button.components-button { padding: 0 8px; } }
+
+/* Modal */
+.forma-library .components-modal__content { padding: 0; display: flex; flex-direction: column; overflow: hidden; }
+.forma-library .components-modal__children-container { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.forma-library__layout .forma-library__nav, .forma-library__layout .forma-library__grid { overflow-y: auto; }
+.forma-library .components-modal__header-heading { display: flex; align-items: center; gap: 8px; }
+.forma-library__layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); flex: 1; min-height: 0; }
+.forma-library__nav { display: flex; flex-direction: column; gap: 4px; padding: 20px 16px; border-right: 1px solid #e0e0e0; background: #fafafa; }
+.forma-library__nav .components-search-control { margin-bottom: 12px; }
+.forma-library__type.components-button { justify-content: space-between; width: 100%; height: 40px; border-radius: 8px; }
+.forma-library__type span { color: #757575; font-size: 12px; }
+.forma-library__type.is-active { background: #171513; color: #fff; }
+.forma-library__type.is-active span { color: rgba(255, 255, 255, 0.7); }
+.forma-library__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); grid-auto-rows: max-content; gap: 24px; align-content: start; padding: 24px 28px 40px; overflow-y: auto; }
+.forma-library__empty { color: #757575; }
+
+.forma-library__card { display: flex; flex-direction: column; border: 1px solid #e4e4e4; border-radius: 14px; overflow: hidden; background: #fff; transition: box-shadow 0.2s, transform 0.2s; }
+.forma-library__card:hover { box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.45); transform: translateY(-2px); }
+.forma-library__card > * { flex-shrink: 0; }
+.forma-library__thumb { position: relative; display: block; aspect-ratio: 16 / 10; padding: 0; border: 0; background: #eeeae3; cursor: zoom-in; overflow: hidden; }
+.forma-library__thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s; }
+.forma-library__card:hover .forma-library__thumb img { transform: scale(1.03); }
+.forma-library__badge { position: absolute; left: 10px; bottom: 10px; padding: 3px 9px; border-radius: 99px; background: rgba(255, 255, 255, 0.9); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
+.forma-library__card-body { padding: 14px 16px 6px; }
+.forma-library__card-body strong { font-size: 14px; }
+.forma-library__card-body p { margin: 4px 0 0; color: #757575; font-size: 12.5px; line-height: 1.45; }
+.forma-library__card-actions { display: flex; gap: 8px; margin-top: auto; padding: 12px 16px 16px; }
+
+/* Preview */
+.forma-library__preview { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.forma-library__bar { display: flex; align-items: center; gap: 12px; padding: 10px 20px; border-bottom: 1px solid #e0e0e0; }
+.forma-library__bar-title { flex: 1; font-size: 14px; }
+.forma-library__devices { display: flex; gap: 4px; }
+.forma-library__frame-wrap { flex: 1; display: flex; justify-content: center; min-height: 0; padding: 16px; background: #f0f0f0; }
+.forma-library__frame-wrap iframe { height: 100%; min-height: 0; border: 0; border-radius: 10px; background: #fff; box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.4); transition: width 0.3s; }
+
+.forma-library__ask-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
